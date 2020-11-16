@@ -1,0 +1,13 @@
+.navbar {
+    padding: 1rem 1.2rem;
+}
+
+.navbar-light {
+    .navbar-brand {
+        color: $accent;
+        font-size: 1.5rem;
+        &:hover {
+            color: $accent;
+        }
+    }
+}
