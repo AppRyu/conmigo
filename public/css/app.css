@@ -10956,12 +10956,12 @@ a.text-dark:focus {
   box-sizing: border-box;
 }
 
-.emphasis {
-  color: #536dfe;
-}
-
 img {
   max-width: 100%;
   height: auto;
+}
+
+.emphasis {
+  color: #536dfe;
 }
 
