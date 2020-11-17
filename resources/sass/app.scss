@@ -1,11 +1,14 @@
-// Bootstrap
-@import "~bootstrap-honoka/scss/bootstrap";
-
 // Variables
 @import "variables";
+
+// Bootstrap
+@import "~bootstrap-honoka/scss/bootstrap";
 
 // rewrite Bootstrap
 @import "./bootstrap/bootstrap.scss";
 
 // Base
 @import "base";
+
+// sidebar
+@import "./community/sidebar";

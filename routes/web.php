@@ -13,6 +13,10 @@
 
 Auth::routes();
 
+// トップページ
 Route::get('/', 'TopController@index')->name('index');
+
+//コミュニティ
+Route::get('/community', 'CommunityController@index')->name('community.index');
 
 Route::get('/home', 'HomeController@index')->name('home');
