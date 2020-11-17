@@ -1,0 +1,13 @@
+.subnavbar {
+    background-color: $primary;
+    margin-bottom: 1.5rem;
+    .nav {
+        &-link {
+            font-size: $font-size-sm;
+            color: #fff;
+            &:hover {
+                background-color: lighten($primary, 15%);
+            }
+        }
+    }
+}

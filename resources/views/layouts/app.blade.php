@@ -22,7 +22,8 @@
 <body>
     <div id="app">
         @include('./components/navbar')
-        <main class="py-4">
+        @include('./components/subnavbar')
+        <main>
             @yield('content')
         </main>
     </div>
