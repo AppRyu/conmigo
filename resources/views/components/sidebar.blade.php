@@ -4,7 +4,7 @@
     </div>
     <div class="profile-name">
         <div class="profile-name__user">
-            <a href="">Hayato</a>
+            <a href="">{{ Auth::user()->name }}</a>
         </div>
         <div class="profile-name__id">@hayato_0227</div>
     </div>
