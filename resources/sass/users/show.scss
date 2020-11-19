@@ -20,5 +20,14 @@
     }
     &__icon {
         color: color(sub);
+        &.fa-twitter {
+            color: color(twitter);
+        }
+        &.fa-instagram {
+            color: color(instagram);
+        }
+        &.fa-facebook-f {
+            color: color(facebook);
+        }
     }
 }

@@ -19,6 +19,9 @@
   --base: #fff;
   --accent: #536dfe;
   --sub: #90949c;
+  --twitter: #55acee;
+  --facebook: #3b5998;
+  --instagram: #c6529a;
   --primary: #536dfe;
   --secondary: #6c757d;
   --success: #28a745;
@@ -11064,5 +11067,17 @@ img {
 
 .prof-content__icon {
   color: #90949c;
+}
+
+.prof-content__icon.fa-twitter {
+  color: #55acee;
+}
+
+.prof-content__icon.fa-instagram {
+  color: #c6529a;
+}
+
+.prof-content__icon.fa-facebook-f {
+  color: #3b5998;
 }
 
