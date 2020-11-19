@@ -16,6 +16,9 @@
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
+  --base: #fff;
+  --accent: #536dfe;
+  --sub: #90949c;
   --primary: #536dfe;
   --secondary: #6c757d;
   --success: #28a745;
@@ -8314,6 +8317,22 @@ button.bg-dark:focus {
   width: auto !important;
 }
 
+.w-sm {
+  width: 0.875rem !important;
+}
+
+.w-base {
+  width: 1rem !important;
+}
+
+.w-lg {
+  width: 1.25rem !important;
+}
+
+.w-xl {
+  width: 1.5rem !important;
+}
+
 .h-25 {
   height: 25% !important;
 }
@@ -8332,6 +8351,22 @@ button.bg-dark:focus {
 
 .h-auto {
   height: auto !important;
+}
+
+.h-sm {
+  height: 0.875rem !important;
+}
+
+.h-base {
+  height: 1rem !important;
+}
+
+.h-lg {
+  height: 1.25rem !important;
+}
+
+.h-xl {
+  height: 1.5rem !important;
 }
 
 .mw-100 {
@@ -10949,7 +10984,7 @@ img {
   padding: 15px;
 }
 
-.profile-img {
+.sidebar .profile-img {
   background-color: #fff;
   border: 5px solid #fff;
   border-radius: 50%;
@@ -10957,31 +10992,31 @@ img {
   margin-bottom: 1rem;
 }
 
-.profile-name {
+.sidebar .profile-name {
   margin-bottom: 1rem;
 }
 
-.profile-name__user {
+.sidebar .profile-name__user {
   font-size: 1.25rem;
 }
 
-.profile-name__id {
+.sidebar .profile-name__id {
   font-size: 0.875rem;
   color: #90949c;
 }
 
-.profile-data {
+.sidebar .profile-data {
   font-size: 0.875rem;
 }
 
-.profile-data__link {
+.sidebar .profile-data__link {
   display: block;
   padding: 5px;
   color: #212529;
   border: 1px solid transparent;
 }
 
-.profile-data__link:hover {
+.sidebar .profile-data__link:hover {
   color: inherit;
   text-decoration: none;
   background-color: #f0f2f4;
@@ -11000,5 +11035,34 @@ img {
 
 .subnavbar .nav-link:hover {
   background-color: #9faefe;
+}
+
+.prof-head {
+  font-size: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.prof-content {
+  margin-bottom: 1.5rem;
+}
+
+.prof-content__head {
+  font-size: 1rem;
+  color: #90949c;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #90949c;
+  margin-bottom: 1rem;
+}
+
+.prof-content__name {
+  margin-bottom: 1rem;
+}
+
+.prof-content__contact {
+  margin-bottom: 1rem;
+}
+
+.prof-content__icon {
+  color: #90949c;
 }
 

@@ -4,9 +4,36 @@ $body-bg: #fff;
 
 // font
 $font-size-base: 1rem;
-$font-size-lg: $font-size-base * 1.25;
 $font-size-sm: $font-size-base * 0.875;
+$font-size-lg: $font-size-base * 1.25;
 $font-size-xl: $font-size-base * 1.5;
+
+// font-size
+$font-size-base: 1rem;
+$sizes: (
+    sm: $font-size-base * 0.875,
+    base: $font-size-base,
+    lg: $font-size-base * 1.25,
+    xl: $font-size-base * 1.5
+);
+
+// space
+$space: 1rem;
+$spaces: (
+    0: 0,
+    xs: $space * 0.25,
+    sm: $space * 0.5,
+    base: $space,
+    lg: $space * 1.5,
+    xl: $space * 3
+);
+
+// colors
+$colors: (
+    base: #fff,
+    accent: #536dfe,
+    sub: #90949c
+);
 
 // sidebar
 $sidebar-bg: #e9ebee;

@@ -1,0 +1,11 @@
+@function fs($key: base) {
+    @return map-get($sizes, $key);
+}
+
+@function space($key: base) {
+    @return map-get($spaces, $key);
+}
+
+@function color($key) {
+    @return map-get($colors, $key);
+}

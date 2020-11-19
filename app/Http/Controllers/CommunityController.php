@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class CommunityController extends Controller
 {
-    public function index(User $user)
+    public function index()
     {
         return view('community.index');
     }

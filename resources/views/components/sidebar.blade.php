@@ -10,7 +10,7 @@
     </div>
     <div class="profile-data">
         <div class="profile-intro">
-            <a class="profile-data__link" href="">基本データ</a>
+            <a class="profile-data__link" href="{{ route('user.show', ['user' => Auth::user()->name ]) }}">基本データ</a>
         </div>
         <div class="profile-community">
             <a class="profile-data__link" href="">コミュニティ</a>

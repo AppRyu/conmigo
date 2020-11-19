@@ -7,6 +7,9 @@
 // rewrite Bootstrap
 @import "./bootstrap/bootstrap.scss";
 
+// functions
+@import "./functions";
+
 // Base
 @import "base";
 
@@ -15,3 +18,5 @@
 
 // subnavbar
 @import "./components/subnavbar";
+
+@import "./users/show";

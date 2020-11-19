@@ -1,0 +1,24 @@
+.prof-head {
+    font-size: fs(lg);
+    margin-bottom: space(xl);
+}
+
+.prof-content {
+    margin-bottom: space(lg);
+    &__head {
+        font-size: fs(base);
+        color: color(sub);
+        padding-bottom: space(base);
+        border-bottom: 1px solid color(sub);
+        margin-bottom: space(base);
+    }
+    &__name {
+        margin-bottom: space(base);
+    }
+    &__contact {
+        margin-bottom: space(base);
+    }
+    &__icon {
+        color: color(sub);
+    }
+}
