@@ -28,24 +28,29 @@
 </head>
 <body>
     <div id="app">
-        @include('./components/navbar')
-        @include('./components/subnavbar')
+        <header>
+            @include('./components/navbar')
+            @include('./components/subnavbar')
+        </header>
         <div class="container">
         @hasSection('sidebar')
-                <div class="row">
-                    <main class="col-12 col-md-9">
-                        @yield('content')
-                    </main>
-                    <aside class="col-md-3 d-none d-md-block">
-                        @yield('sidebar')
-                    </aside>
-                </div>
+            <div class="row">
+                <main class="col-12 col-md-9">
+                    @yield('content')
+                </main>
+                <aside class="col-md-3 d-none d-md-block">
+                    @yield('sidebar')
+                </aside>
+            </div>
         @else
             <main class="">
                 @yield('content')
             </main>
         @endif
         </div>
+        <footer>
+            
+        </footer>
     </div>
 </body>
 </html>

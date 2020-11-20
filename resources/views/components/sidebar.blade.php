@@ -6,11 +6,11 @@
         <div class="profile-name__user">
             <a href="">{{ Auth::user()->name }}</a>
         </div>
-        <div class="profile-name__id">@hayato_0227</div>
+        <div class="profile-name__id">{{ Auth::user()->user_name }}</div>
     </div>
     <div class="profile-data">
         <div class="profile-intro">
-            <a class="profile-data__link" href="{{ route('user.show', ['user' => Auth::user()->name ]) }}">基本データ</a>
+            <a class="profile-data__link" href="{{ route('user.show', ['user_name' => Auth::user()->user_name ]) }}">基本データ</a>
         </div>
         <div class="profile-community">
             <a class="profile-data__link" href="">コミュニティ</a>

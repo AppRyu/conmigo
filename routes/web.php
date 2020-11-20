@@ -20,6 +20,6 @@ Route::get('/', 'TopController@index')->name('index');
 Route::resource('/community', 'CommunityController');
 
 //  プロフィール
-Route::resource('/user', 'UserController');
+Route::resource('/user', 'UserController')->parameters(['user' => 'user_name']);
 
 Route::get('/home', 'HomeController@index')->name('home');

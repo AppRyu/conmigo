@@ -12,13 +12,15 @@ class UserController extends Controller
         return view('users.index');
     }
 
-    public function show()
+    public function show(String $user_name)
     {
-        return view('users.show');
+        $user = User::where('user_name', $user_name)->first();
+        return view('users.show', ['user' => $user]);
     }
 
-    public function edit()
+    public function edit(String $user_name)
     {
-        return view('users.edit');
+        $user = User::where('user_name', $user_name)->first();
+        return view('users.edit', ['user' => $user]);
     }
 }
