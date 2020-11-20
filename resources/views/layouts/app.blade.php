@@ -7,7 +7,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    @hasSection('title')
     <title>{{ config('app.name', 'Laravel') }} - @yield('title')</title>
+    @else
+    <title>{{ config('app.name', 'Laravel') }}</title>
+    @endif
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -27,13 +31,7 @@
         @include('./components/navbar')
         @include('./components/subnavbar')
 
-        <!-- トップページの場合 -->
-        @if(Route::currentRouteName() === 'index')
-            <main>
-                @yield('content')
-            </main>
-        <!-- トップページ以外の場合 -->
-        @else
+        @hasSection('sidebar')
             <div class="container">
                 <div class="row">
                     <main class="col-12 col-md-9">
@@ -44,6 +42,10 @@
                     </aside>
                 </div>
             </div>
+        @else
+            <main>
+                @yield('content')
+            </main>
         @endif
 
     </div>
