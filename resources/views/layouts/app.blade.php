@@ -30,9 +30,8 @@
     <div id="app">
         @include('./components/navbar')
         @include('./components/subnavbar')
-
+        <div class="container">
         @hasSection('sidebar')
-            <div class="container">
                 <div class="row">
                     <main class="col-12 col-md-9">
                         @yield('content')
@@ -41,13 +40,12 @@
                         @yield('sidebar')
                     </aside>
                 </div>
-            </div>
         @else
-            <main>
+            <main class="">
                 @yield('content')
             </main>
         @endif
-
+        </div>
     </div>
 </body>
 </html>
