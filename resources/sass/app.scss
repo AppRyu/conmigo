@@ -1,22 +1,9 @@
-// Variables
 @import "variables";
-
-// Bootstrap
 @import "~bootstrap-honoka/scss/bootstrap";
-
-// rewrite Bootstrap
 @import "./bootstrap/bootstrap.scss";
-
-// functions
 @import "./functions";
-
-// Base
 @import "base";
-
-// sidebar
+@import "./layouts/base";
 @import "./community/sidebar";
-
-// subnavbar
 @import "./components/subnavbar";
-
-@import "./users/show";
+@import "./users/prof";

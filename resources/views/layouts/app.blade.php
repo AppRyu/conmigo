@@ -35,7 +35,7 @@
         <div class="container">
         @hasSection('sidebar')
             <div class="row">
-                <main class="col-12 col-md-9">
+                <main class="main col-12 col-md-9">
                     @yield('content')
                 </main>
                 <aside class="col-md-3 d-none d-md-block">
@@ -43,14 +43,12 @@
                 </aside>
             </div>
         @else
-            <main class="">
+            <main class="main">
                 @yield('content')
             </main>
         @endif
         </div>
-        <footer>
-            
-        </footer>
+        @include('./components/footer')
     </div>
 </body>
 </html>

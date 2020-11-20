@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.footer {
+    margin-top: auto;
+    background-color: color(accent);
+    color: color(base);
+    > .container {
+        text-align: center;
+        padding: {
+            top: space(base);
+            bottom: space(base);
+        }
+    }
+}
+
+.copyright {
+    font-size: fs(sm);
+    margin-bottom: space(0);
+}

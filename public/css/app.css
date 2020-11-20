@@ -10969,6 +10969,10 @@ a.text-dark:focus {
   color: #536dfe;
 }
 
+.emphasis {
+  color: #536dfe;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -10978,8 +10982,27 @@ img {
   height: auto;
 }
 
-.emphasis {
-  color: #536dfe;
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer {
+  margin-top: auto;
+  background-color: #536dfe;
+  color: #fff;
+}
+
+.footer > .container {
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.copyright {
+  font-size: 0.875rem;
+  margin-bottom: 0;
 }
 
 .sidebar {
