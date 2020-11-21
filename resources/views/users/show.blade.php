@@ -9,9 +9,9 @@
             <h3 class="prof-content__head">プロフィール</h3>
             <div class="prof-content__name">{{ $user->name }}</div>
             @if($user->comment)
-                <div class="prof-content__comment">{{ $user->comment }}</div>
+                <p class="prof-content__comment">{!! nl2br(e($user->comment)) !!}</p>
             @else
-                <div class="prof-content__comment">コメントは設定されていません。</div>
+                <p class="prof-content__comment">コメントは設定されていません。</p>
             @endif
         </div>
         <div class="prof-content">
@@ -19,25 +19,25 @@
             <div class="prof-content__contact">
                 <i class="fas fa-globe fa-lg prof-content__icon"></i>
                 @if($user->mysite)
-                <a href="{{ $user->mysite }}"></a>
+                <a href="https://{{ $user->mysite }}" target="_blank" rel="noopener noreferrer">{{ $user->mysite }}</a>
                 @endif
             </div>
             <div class="prof-content__contact">
                 <i class="fab fa-twitter fa-lg prof-content__icon"></i>
                 @if($user->twitter)
-                <a href="{{ $user->twitter }}"></a>
+                <a href="https://twitter.com/{{ $user->twitter }}" target="_blank" rel="noopener noreferrer">{{ $user->twitter }}</a>
                 @endif
             </div>
             <div class="prof-content__contact">
                 <i class="fab fa-instagram fa-lg prof-content__icon"></i>
                 @if($user->instagram)
-                <a href="{{ $user->instagram }}"></a>
+                <a href="https://www.instagram.com/{{ $user->instagram }}" target="_blank" rel="noopener noreferrer">{{ $user->instagram }}</a>
                 @endif
             </div>
             <div class="prof-content__contact">
                 <i class="fab fa-facebook-f fa-lg prof-content__icon"></i>
                 @if($user->facebook)
-                <a href="{{ $user->facebook }}"></a>
+                <a href="https://www.facebook.com/{{ $user->facebook }}" target="_blank" rel="noopener noreferrer">{{ $user->facebook }}</a>
                 @endif
             </div>
         </div>
