@@ -10969,6 +10969,10 @@ a.text-dark:focus {
   color: #536dfe;
 }
 
+textarea {
+  min-height: 150px;
+}
+
 .emphasis {
   color: #536dfe;
 }
