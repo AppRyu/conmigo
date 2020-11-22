@@ -12,15 +12,15 @@
         &-name {
             margin-bottom: 1rem;
             &__user {
-                font-size: $font-size-lg;
+                font-size: fs(lg);
             }
             &__id {
-                font-size: $font-size-sm;
+                font-size: fs(sm);
                 color: $sub;
             }
         }
         &-data {
-            font-size: $font-size-sm;
+            font-size: fs(sm);
             &__link {
                 display: block;
                 padding: 5px;
