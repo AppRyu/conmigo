@@ -16,8 +16,10 @@ Auth::routes();
 // トップページ
 Route::get('/', 'TopController@index')->name('index');
 
-// コミュニティ
-Route::resource('/community', 'CommunityController');
+// コミュニティ (認証あり)
+Route::resource('/community', 'CommunityController')->except(['index','show'])->middleware('auth');
+// コミュニティ一覧と詳細 (認証なし)
+Route::resource('/community', 'CommunityController')->only(['index', 'show']);
 
 //  プロフィール
 Route::resource('/user', 'UserController')->parameters(['user' => 'user_name']);

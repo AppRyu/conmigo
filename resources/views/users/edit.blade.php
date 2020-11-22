@@ -3,7 +3,7 @@
 @section('title', 'プロフィール編集')
 
 @section('content')
-    <form method="post" action="{{ route('user.update', ['user_name' => $user->user_name]) }}">
+    <form method="post" action="{{ route('user.update', ['user_name' => $user->user_name]) }}" enctype="multipart/form-data">
         @csrf
         @method('put')
         <h2 class="prof-head">基本データ</h2>
@@ -36,6 +36,10 @@
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
                 <textarea class="form-control @error('comment') is-invalid @enderror" name="comment" id="comment" placeholder="自己紹介文を入力してください...">{{ old('comment', $user->comment) }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="profile_image">トップ画像</label>
+                <input type="file" class="form-control" name="profile_image" id="profile_image">
             </div>
         </div>
         <div class="prof-content">

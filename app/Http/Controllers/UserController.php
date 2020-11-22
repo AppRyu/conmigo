@@ -22,7 +22,17 @@ class UserController extends Controller
     public function update(UserRequest $request, String $user_name)
     {
         $user = User::where('user_name', $user_name)->first();
-        $user->fill($request->all())->save();
+        
+        if($request->profile_image) {
+            $file = $request->file('profile_image')->store('public/img');
+            $path = basename($file);
+        } else {
+            $path = 'default.png';
+        }
+
+        $user->fill($request->except('profile_image'));
+        $user->profile_image = $path;
+        $user->save();
         return redirect()->route('user.show', ['user_name' => $user->user_name]);
     }
 
@@ -31,4 +41,5 @@ class UserController extends Controller
         $user = User::where('user_name', $user_name)->first();
         return view('users.edit', ['user' => $user]);
     }
+
 }
