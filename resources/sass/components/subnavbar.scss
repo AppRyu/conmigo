@@ -1,12 +1,11 @@
 .subnavbar {
-    background-color: $primary;
-    margin-bottom: 1.5rem;
+    background-color: color(accent);
     .nav {
         &-link {
-            font-size: $font-size-sm;
-            color: #fff;
+            font-size: fs(sm);
+            color: color(base);
             &:hover {
-                background-color: lighten($primary, 15%);
+                background-color: lighten(color(accent), 15%);
             }
         }
     }

@@ -10997,6 +10997,11 @@ img {
   box-sizing: border-box;
 }
 
+.main.container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 .footer {
   position: absolute;
   /* ←絶対位置 */
@@ -11063,7 +11068,6 @@ img {
 
 .subnavbar {
   background-color: #536dfe;
-  margin-bottom: 1.5rem;
 }
 
 .subnavbar .nav-link {

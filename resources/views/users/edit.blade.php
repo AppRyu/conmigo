@@ -99,9 +99,3 @@
     </form>
 @endsection
 
-@section('sidebar')
-    @auth
-        <!-- プロフィールサイドバー -->
-        @include('./components/sidebar')
-    @endauth
-@endsection

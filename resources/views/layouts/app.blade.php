@@ -32,22 +32,22 @@
             @include('./components/navbar')
             @include('./components/subnavbar')
         </header>
-        <div class="container">
+        <main class="main container">
         @hasSection('sidebar')
             <div class="row">
-                <main class="main col-md-10">
+                <article class="col-md-10">
                     @yield('content')
-                </main>
+                </article>
                 <aside class="col-md-2 d-none d-md-block">
                     @yield('sidebar')
                 </aside>
             </div>
         @else
-            <main class="main">
+            <article>
                 @yield('content')
-            </main>
+            </article>
         @endif
-        </div>
+        </main>
         @include('./components/footer')
     </div>
 </body>
