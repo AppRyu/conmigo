@@ -23,6 +23,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "bootstrap-honoka": "^4.4.0"
+        "bootstrap-honoka": "^4.4.0",
+        "vue-ctk-date-time-picker": "^2.5.0"
     }
 }
