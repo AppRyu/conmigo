@@ -4,10 +4,10 @@
 
 .navbar-light {
     .navbar-brand {
-        color: $primary;
-        font-size: $font-size-xl;
+        color: color(c---tertiary);
+        font-size: fs(xl);
         &:hover {
-            color: $primary;
+            color: color(c---tertiary);
         }
     }
 }

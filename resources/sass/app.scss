@@ -1,8 +1,6 @@
-@import "variables";
-@import "~bootstrap-honoka/scss/bootstrap";
-@import "./bootstrap/bootstrap.scss";
+@import "./variables";
 @import "./functions";
-@import "base";
+@import "./bootstrap/bootstrap.scss";
 @import "./layouts/base";
 @import "./community/sidebar";
 @import "./components/subnavbar";

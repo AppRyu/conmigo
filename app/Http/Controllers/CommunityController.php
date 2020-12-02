@@ -22,4 +22,10 @@ class CommunityController extends Controller
     {
         return view('community.create');
     }
+
+    public function store(Request $request)
+    {
+        $input = $request->all();
+        dd($input);
+    }
 }

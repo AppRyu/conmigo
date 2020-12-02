@@ -1,12 +1,5 @@
 // Body
 $body-bg: #fff;
-//$body-color:;
-
-// font
-$font-size-base: 1rem;
-$font-size-sm: $font-size-base * 0.875;
-$font-size-lg: $font-size-base * 1.25;
-$font-size-xl: $font-size-base * 1.5;
 
 // font-size
 $font-size-base: 1rem;
@@ -30,17 +23,17 @@ $spaces: (
 
 // colors
 $colors: (
+    c---primary:#4b4f56,
+    c---secondary:#90949c,
+    c---tertiary:#536dfe,
+    c---quaternary:#ffffff,
+    c---bg--base:#fff,
+    c---bg--sub:#e9ebee,
+    c---bg--accent:#536dfe,
+    c---sns--twitter:#55acee,
+    c---sns--facebook:#3b5998,
+    c---sns--instagram: #c6529a,
     base: #fff,
     accent: #536dfe,
     sub: #90949c,
-    twitter: #55acee,
-    facebook: #3b5998,
-    instagram: #c6529a
 );
-
-// sidebar
-$sidebar-bg: #e9ebee;
-
-// Colors
-$primary: #536dfe;
-$sub: #90949c;

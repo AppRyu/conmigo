@@ -2,6 +2,13 @@
     box-sizing: border-box;
 }
 
+a {
+    color:color(c---tertiary);
+    &:hover {
+        color:darken(color(c---tertiary), 15%);
+    }
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -9,10 +16,10 @@ img {
 }
 
 #app {
-    min-height: 100vh; /* ←コンテンツの高さの最小値＝ブラウザの高さに指定 */
-    position: relative; /* ←相対位置 */
-    padding-bottom: 53px; /* ←フッターの高さを指定 */
-    box-sizing: border-box;
+    // コンテンツが少ない時フッターを最下層に固定
+    min-height: 100vh;
+    position: relative; 
+    padding-bottom: 53px; // ←フッターの高さを指定
 }
 
 .main {
@@ -25,10 +32,10 @@ img {
 }
 
 .footer {
-    position: absolute; /* ←絶対位置 */
+    position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: color(accent);
+    background-color: color(c---bg--accent);
     color: color(base);
     > .container {
         text-align: center;
@@ -43,3 +50,8 @@ img {
     font-size: fs(sm);
     margin-bottom: space(0);
 }
+
+.emphasis {
+    color: color(accent);
+}
+
