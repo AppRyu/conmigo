@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Community;
 use Illuminate\Http\Request;
+use App\Http\Requests\CommunityRequest;
 use Illuminate\Support\Facades\Auth;
 
 class CommunityController extends Controller
@@ -23,9 +24,10 @@ class CommunityController extends Controller
         return view('community.create');
     }
 
-    public function store(Request $request)
-    {
-        $input = $request->all();
-        dd($input);
+    public function store(CommunityRequest $request, Community $community)
+    {      
+        $community->fill($request->all());
+        $community->save();
+        return redirect()->route('community.index'); 
     }
 }
