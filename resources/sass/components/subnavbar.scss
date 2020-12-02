@@ -1,11 +1,11 @@
 .subnavbar {
-    background-color: color(accent);
+    background-color: color(c---bg--accent);
     .nav {
         &-link {
             font-size: fs(sm);
-            color: color(base);
+            color: color(c---quaternary);
             &:hover {
-                background-color: lighten(color(accent), 15%);
+                background-color: lighten(color(c---bg--accent), 15%);
             }
         }
     }

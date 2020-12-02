@@ -36,7 +36,7 @@ img {
     bottom: 0;
     width: 100%;
     background-color: color(c---bg--accent);
-    color: color(base);
+    color: color(c---quaternary);
     > .container {
         text-align: center;
         padding: {
@@ -52,6 +52,6 @@ img {
 }
 
 .emphasis {
-    color: color(accent);
+    color: color(c---tertiary);
 }
 
