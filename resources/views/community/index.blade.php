@@ -3,40 +3,22 @@
 @section('title', 'コミュニティ一覧')
 
 @section('content')
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">駆け出しエンジニアでもくもく会</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">もっと詳しく見る</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">初心者歓迎もくもく会</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">もっと詳しく見る</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">エンジニア・デザイナーでもくもく会</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">もっと詳しく見る</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">PHP学習者ともくもく会</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">もっと詳しく見る</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">JavaScript学習者ともくもく会</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">もっと詳しく見る</a>
-            </div>
+        <div class="community-container">
+            <a class="community-content__link" href="{{ route('community.show', ['id' => 3]) }}">
+                <div class="community-content">
+                    <div class="community-content__left">
+                        <div class="community-flg">募集中<br>あと3人</div>
+                    </div>
+                    <div class="community-content__right">
+                        <h3 class="community-name">駆け出しエンジニアもくもく会</h3>
+                        <div class="community-time"><span class="community-time__head">日時</span>2020年3月14日15:00~17:00</div>
+                        <div class="community-row">
+                            <div class="community-requested">応募数<span class="community-requested__num">3</span>件</div>
+                            <div class="community-created-user"><a class="community-created-user__link" href="">appryu_0722</a></div>
+                        </div>
+                    </div>
+                </div>
+            </a>
         </div>
 @endsection
     
