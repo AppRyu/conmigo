@@ -1,9 +1,9 @@
 .sidebar {
-    background-color: color(c---bg--sub);
+    background-color: color(c---bg--gray);
     padding: 15px;
     .profile {
         &-img {
-            background-color:color(c---bg--base);
+            background-color:color(c---bg--white);
             border: 5px solid color(c---quaternary);
             border-radius: 50%;
             overflow: hidden;

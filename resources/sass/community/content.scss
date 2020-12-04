@@ -1,8 +1,10 @@
 .community-content {
-  display: flex;
   padding:space(base);
-  border:1px solid color(c---bg--sub);
+  border:1px solid color(c---bg--gray);
   border-radius:5px;
+  @include mq('xs') {
+    display: flex;
+  }
   &__link {
     color:color(c---primary);
     &:hover {
@@ -11,7 +13,9 @@
     }
   }
   &__left {
-    margin-right:space(base);
+    @include mq('xs') {
+      margin-right:space(base);
+    }
   }
   &__right {
     flex:1;
@@ -28,22 +32,44 @@
 }
 
 .community-flg {
-  background-color: color(c---bg--accent);
+  display:inline-block;
+  background-color: color(c---bg--dark-blue);
   color:color(c---quaternary);
   padding:space(sm) space(base);
   border-radius:5px;
 }
 
+.community-times {
+  @include mq('md') {
+    display: flex;
+  }
+}
+
 .community-time {
-  color:color(c---quinary);
   font-weight:bold;
+  &:first-child {
+    margin-bottom:space(base);
+    @include mq('md') {
+      margin: {
+        bottom:0;
+        right:space(base);
+      }
+    }
+  }
   &__head {
     font-weight:400;
-    background-color: color(c---bg--sub-accent);
     padding:space(xs) space(sm);
     font-size:fs(sm);
     border-radius:5px;
-    margin-right:space(base);
+    margin-right:space(sm);
+    &--start {
+      color:color(c---quinary);
+      background-color: color(c---bg--light-red);
+    }
+    &--end {
+      color:color(c---tertiary);
+      background-color: color(c---bg--light-blue);
+    }
   }
 }
 
