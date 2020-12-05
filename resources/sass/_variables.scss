@@ -13,7 +13,7 @@ $spaces: (
     sm      : $space * 0.5,
     base    : $space,
     lg      : $space * 1.5,
-    xl      : $space * 3
+    xl      : $space * 3,
 );
 
 $colors: (
@@ -22,11 +22,13 @@ $colors: (
     c---tertiary        :#536dfe,
     c---quaternary      :#ffffff,
     c---quinary         :#BF3059,
+    c---dark--green     :#5CA62A,
     c---bg--white       :#ffffff,
     c---bg--gray        :#e9ebee,
     c---bg--light-blue  :#EBEBFC,
     c---bg--dark-blue   :#536dfe,
     c---bg--light-red   :#FCEEEE,
+    c---bg--light-green :#EAF7DC,
     c---sns--twitter    :#55acee,
     c---sns--facebook   :#3b5998,
     c---sns--instagram  :#c6529a,

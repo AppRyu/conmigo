@@ -9,6 +9,7 @@
     color:color(c---primary);
     &:hover {
       color:inherit;
+      background-color:color(c---bg--light-blue);
       text-decoration: none;
     }
   }
@@ -67,8 +68,8 @@
       background-color: color(c---bg--light-red);
     }
     &--end {
-      color:color(c---tertiary);
-      background-color: color(c---bg--light-blue);
+      color:color(c---dark--green);
+      background-color: color(c---bg--light-green);
     }
   }
 }

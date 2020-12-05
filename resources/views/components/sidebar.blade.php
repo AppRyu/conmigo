@@ -1,6 +1,6 @@
 <div class="sidebar">
     <div class="profile-img">
-        <img rounded-circle src="{{ asset('/storage/img/'.Auth::user()->profile_image) }}" alt="プロフィール画像">
+        <img src="{{ asset('/storage/img/'.Auth::user()->profile_image) }}" alt="プロフィール画像">
     </div>
     <div class="profile-name">
         <div class="profile-name__user">

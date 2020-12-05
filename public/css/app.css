@@ -160,6 +160,7 @@ img {
 
 .community-content__link:hover {
   color: inherit;
+  background-color: #EBEBFC;
   text-decoration: none;
 }
 
@@ -226,8 +227,8 @@ img {
 }
 
 .community-time__head--end {
-  color: #536dfe;
-  background-color: #EBEBFC;
+  color: #5CA62A;
+  background-color: #EAF7DC;
 }
 
 .community-row {
