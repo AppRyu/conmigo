@@ -1,0 +1,10 @@
+.comm-det__head {
+  font-size:fs(xl);
+}
+
+.comm-det-tb {
+  &__th {
+    color:clr(c---gray);
+    font-weight:normal;
+  }
+}

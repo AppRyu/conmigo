@@ -7,9 +7,9 @@
     margin-bottom: space(lg);
     &__head {
         font-size: fs(base);
-        color: color(c---secondary);
+        color: clr(c---gray);
         padding-bottom: space(base);
-        border-bottom: 1px solid color(c---secondary);
+        border-bottom: 1px solid clr(c---gray);
         margin-bottom: space(base);
     }
     &__name {
@@ -19,15 +19,15 @@
         margin-bottom: space(base);
     }
     &__icon {
-        color: color(c---secondary);
+        color: clr(c---gray);
         &.fa-twitter {
-            color: color(c---sns--twitter);
+            color: clr(c---sns--twitter);
         }
         &.fa-instagram {
-            color: color(c---sns--instagram);
+            color: clr(c---sns--instagram);
         }
         &.fa-facebook-f {
-            color: color(c---sns--facebook);
+            color: clr(c---sns--facebook);
         }
     }
 }

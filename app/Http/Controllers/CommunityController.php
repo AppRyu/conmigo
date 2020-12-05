@@ -15,9 +15,10 @@ class CommunityController extends Controller
         return view('community.index', ['communities' => $communities]);
     }
 
-    public function show()
+    public function show(String $id)
     {
-        return view('community.show');
+        $community = Community::where('id', $id)->first();
+        return view('community.show', ['community' => $community]);
     }
 
     public function create()

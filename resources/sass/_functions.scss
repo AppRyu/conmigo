@@ -6,6 +6,6 @@
     @return map-get($spaces, $key);
 }
 
-@function color($key) {
+@function clr($key) {
     @return map-get($colors, $key);
 }

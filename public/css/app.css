@@ -249,6 +249,15 @@ img {
   margin-left: 0.5rem;
 }
 
+.comm-det__head {
+  font-size: 1.5rem;
+}
+
+.comm-det-tb__th {
+  color: #90949c;
+  font-weight: normal;
+}
+
 .subnavbar {
   background-color: #536dfe;
 }

@@ -1,10 +1,10 @@
 .sidebar {
-    background-color: color(c---bg--gray);
+    background-color: clr(c---bg--gray);
     padding: 15px;
     .profile {
         &-img {
-            background-color:color(c---bg--white);
-            border: 5px solid color(c---quaternary);
+            background-color:clr(c---bg--white);
+            border: 5px solid clr(c---white);
             border-radius: 50%;
             overflow: hidden;
             margin-bottom: space(base);
@@ -16,7 +16,7 @@
             }
             &__id {
                 font-size: fs(sm);
-                color: color(c---secondary);
+                color: clr(c---gray);
             }
         }
         &-data {
@@ -24,7 +24,7 @@
             &__link {
                 display: block;
                 padding: 5px;
-                color: color(c---primary);
+                color: clr(c---black);
                 border: 1px solid transparent;
                 &:hover {
                     color: inherit;

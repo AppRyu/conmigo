@@ -3,9 +3,9 @@
 }
 
 a {
-    color:color(c---tertiary);
+    color:clr(c---dark-blue);
     &:hover {
-        color:darken(color(c---tertiary), 15%);
+        color:darken(clr(c---dark-blue), 15%);
     }
 }
 
@@ -35,8 +35,8 @@ img {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: color(c---bg--dark-blue);
-    color: color(c---quaternary);
+    background-color: clr(c---bg--dark-blue);
+    color: clr(c---white);
     > .container {
         text-align: center;
         padding: {
@@ -52,6 +52,6 @@ img {
 }
 
 .emphasis {
-    color: color(c---tertiary);
+    color: clr(c---dark-blue);
 }
 

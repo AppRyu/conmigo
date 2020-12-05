@@ -4,10 +4,10 @@
 
 .navbar-light {
     .navbar-brand {
-        color: color(c---tertiary);
+        color: clr(c---dark-blue);
         font-size: fs(xl);
         &:hover {
-            color: color(c---tertiary);
+            color: clr(c---dark-blue);
         }
     }
 }

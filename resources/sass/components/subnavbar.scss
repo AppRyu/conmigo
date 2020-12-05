@@ -1,11 +1,11 @@
 .subnavbar {
-    background-color: color(c---bg--dark-blue);
+    background-color: clr(c---bg--dark-blue);
     .nav {
         &-link {
             font-size: fs(sm);
-            color: color(c---quaternary);
+            color: clr(c---white);
             &:hover {
-                background-color: lighten(color(c---bg--dark-blue), 15%);
+                background-color: lighten(clr(c---bg--dark-blue), 15%);
             }
         }
     }

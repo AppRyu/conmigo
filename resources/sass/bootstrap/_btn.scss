@@ -1,26 +1,26 @@
 .btn-primary {
-  color:color(c---quaternary);
-  background:color(c---bg--dark-blue);
-  border-color:color(c---tertiary);
+  color:clr(c---white);
+  background:clr(c---bg--dark-blue);
+  border-color:clr(c---dark-blue);
   &:hover {
-    background:darken(color(c---bg--dark-blue), 15%);
-    border-color:darken(color(c---bg--dark-blue), 15%);
+    background:darken(clr(c---bg--dark-blue), 15%);
+    border-color:darken(clr(c---bg--dark-blue), 15%);
   }
   &:focus {
-    background:darken(color(c---bg--dark-blue), 15%);
-    border-color:darken(color(c---bg--dark-blue), 15%);
-    box-shadow: 0 0 0 0.2rem lighten(color(c---tertiary), 15%);
+    background:darken(clr(c---bg--dark-blue), 15%);
+    border-color:darken(clr(c---bg--dark-blue), 15%);
+    box-shadow: 0 0 0 0.2rem lighten(clr(c---dark-blue), 15%);
   }
 }
 
 .btn-outline-primary {
-  color:color(c---tertiary);
-  border-color:color(c---tertiary);
+  color:clr(c---dark-blue);
+  border-color:clr(c---dark-blue);
   &:hover {
-    background:darken(color(c---bg--dark-blue), 15%);
-    border-color:darken(color(c---tertiary), 15%);
+    background:darken(clr(c---bg--dark-blue), 15%);
+    border-color:darken(clr(c---dark-blue), 15%);
   }
   &:focus {
-    box-shadow: 0 0 0 0.2rem lighten(color(c---tertiary), 15%);
+    box-shadow: 0 0 0 0.2rem lighten(clr(c---dark-blue), 15%);
   }
 }
