@@ -37,17 +37,46 @@ class Community extends Model
         return $result;
     }
 
-    public function getStartTimeAttribute($value)
+    public function getDateAndTimeInJa($point)
     {
-        $result = self::formattedTime($value);
-        return $this->attributes['start_time'] = $result;
+        $result = self::formattedTime($point);
+        return $result;
+    }
+    
+    public function getOnlyDate($point)  // start or end in $point
+    {
+        $date = substr($point, 0, 10);
+        $date = preg_split('|[/.\-]|', $date);
+        $result = "{$date[0]}年{$date[1]}月{$date[2]}日";
+        return $result;
     }
 
-    public function getEndTimeAttribute($value) 
+    public function getOnlyTime($point): string // start or end in $point
     {
-        $result = self::formattedTime($value);
-        return $this->attributes['end_time'] = $result;
+        $time = substr($point, -8, 8);
+        $time = preg_split('|[/.\:]|', $time);
+        $hours = (int)$time[0];
+        $minutes = (int)$time[1]; 
+        if($hours <= 12) {
+            $border = '午前';
+        } else {
+            $border = '午後';
+        }
+        $result = "{$border}{$hours}時{$minutes}分";
+        return $result;
     }
+
+    // public function getStartTimeAttribute($value)
+    // {
+    //     $result = self::formattedTime($value);
+    //     return $this->attributes['start_time'] = $result;
+    // }
+
+    // public function getEndTimeAttribute($value) 
+    // {
+    //     $result = self::formattedTime($value);
+    //     return $this->attributes['end_time'] = $result;
+    // }
 
     public function setStartTimeAttribute($value)
     {

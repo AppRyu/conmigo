@@ -17,8 +17,19 @@ class CommunityController extends Controller
 
     public function show(String $id)
     {
-        $community = Community::where('id', $id)->first();
-        return view('community.show', ['community' => $community]);
+        $communities = new Community;
+        $community = $communities->where('id', $id)->first();
+        $startDay = $community->getOnlyDate($community->start_time);
+        $startTime = $community->getOnlyTime($community->start_time);
+        $endDay = $community->getOnlyDate($community->end_time);
+        $endTime = $community->getOnlyTime($community->end_time);
+        return view('community.show', [
+            'community' => $community,
+            'startDay' => $startDay,
+            'startTime' =>  $startTime,
+            'endDay' => $endDay,
+            'endTime' => $endTime
+            ]);
     }
 
     public function create()

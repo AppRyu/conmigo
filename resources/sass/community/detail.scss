@@ -1,10 +1,23 @@
-.comm-det__head {
+.comm-det__hd {
   font-size:fs(xl);
 }
 
 .comm-det-tb {
+  width:100%;
+  &__tr {
+    border-bottom:1px solid clr(c---light-gray);
+    &:first-child {
+      border-top:1px solid clr(c---light-gray);
+    }
+  }
   &__th {
-    color:clr(c---gray);
     font-weight:normal;
+    background-color: clr(c---bg--light-gray);
+    text-align: center;
+    padding:space(sm) space(base);
+    width:100px;
+  }
+  &__td {
+    padding:space(sm) space(base);
   }
 }

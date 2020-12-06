@@ -249,13 +249,32 @@ img {
   margin-left: 0.5rem;
 }
 
-.comm-det__head {
+.comm-det__hd {
   font-size: 1.5rem;
 }
 
+.comm-det-tb {
+  width: 100%;
+}
+
+.comm-det-tb__tr {
+  border-bottom: 1px solid #ced4da;
+}
+
+.comm-det-tb__tr:first-child {
+  border-top: 1px solid #ced4da;
+}
+
 .comm-det-tb__th {
-  color: #90949c;
   font-weight: normal;
+  background-color: #f9f9f9;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  width: 100px;
+}
+
+.comm-det-tb__td {
+  padding: 0.5rem 1rem;
 }
 
 .subnavbar {
