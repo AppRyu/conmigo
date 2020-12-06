@@ -16,67 +16,84 @@ class Community extends Model
             '分' => '', 
     ];
 
-    private static function formattedTime($value)
+    /**
+     * 日付のフォーマットを整える
+     * 
+     * DBから取得した日時から、時刻を削除して日付のみ取得
+     * ex 2020-12-15 12:30:30 -> 2020-12-15
+     * 
+     * @param string $value
+     * @return string $formattedDate
+     */
+    private static function formatDate(string $value): string
     {
-        // 日付のみを取得
-        // ex 2020-12-15 12:30:30 -> 2020-12-15
         $date = substr($value, 0, 10);
         $date = preg_split('|[/.\-]|', $date);
-        // 時間のみを取得
-        // ex 2020-12-15 12:30:30 -> 12:30:30
+        $formattedDate = "{$date[0]}年{$date[1]}月{$date[2]}日";
+        return $formattedDate;
+    }
+
+    /**
+     * 時刻のフォーマットを整える
+     * 
+     * DBから取得した日時から、日時を削除して時刻のみ取得
+     * ex 2020-12-15 12:30:30 -> 12:30:30
+     * 
+     * @param string $value
+     * @return string $formattedTime
+     */
+    private static function formatTime(string $value): string
+    {
         $time = substr($value, -8, 8);
         $time = preg_split('|[/.\:]|', $time);
         $hours = (int)$time[0];
         $minutes = (int)$time[1]; 
         if($hours <= 12) {
-            $border = '午前';
+            $periodOfTime = '午前';
         } else {
-            $border = '午後';
+            $periodOfTime = '午後';
         }
-        $result = "{$date[0]}年{$date[1]}月{$date[2]}日{$border}{$hours}時{$minutes}分";
-        return $result;
+        $formattedTime = "{$periodOfTime}{$hours}時{$minutes}分";
+        return $formattedTime;
     }
 
-    public function getDateAndTimeInJa($point)
+    /**
+     * 時刻と日付を取得
+     * 
+     * @param string $value
+     * @return string $dateAndTime
+     */
+    public function getDateAndTime(string $value): string
     {
-        $result = self::formattedTime($point);
-        return $result;
+        $date = self::formatDate($value);
+        $time = self::formatTime($value);
+        $dateAndTime = "{$date} {$time}";
+        return $dateAndTime;
     }
-    
-    public function getOnlyDate($point)  // start or end in $point
+
+    /**
+     * 日付を取得
+     * 
+     * @param string $value
+     * @return string $date
+     */
+    public function getDate(string $value): string  // start or end in $value
     {
-        $date = substr($point, 0, 10);
-        $date = preg_split('|[/.\-]|', $date);
-        $result = "{$date[0]}年{$date[1]}月{$date[2]}日";
-        return $result;
+        $date = self::formatDate($value);
+        return $date;
     }
 
-    public function getOnlyTime($point): string // start or end in $point
+    /**
+     * 時間を取得
+     * 
+     * @param string $value
+     * @return string $time
+     */
+    public function getTime(string $value): string // start or end in $value
     {
-        $time = substr($point, -8, 8);
-        $time = preg_split('|[/.\:]|', $time);
-        $hours = (int)$time[0];
-        $minutes = (int)$time[1]; 
-        if($hours <= 12) {
-            $border = '午前';
-        } else {
-            $border = '午後';
-        }
-        $result = "{$border}{$hours}時{$minutes}分";
-        return $result;
+        $time = self::formatTime($value);
+        return $time;
     }
-
-    // public function getStartTimeAttribute($value)
-    // {
-    //     $result = self::formattedTime($value);
-    //     return $this->attributes['start_time'] = $result;
-    // }
-
-    // public function getEndTimeAttribute($value) 
-    // {
-    //     $result = self::formattedTime($value);
-    //     return $this->attributes['end_time'] = $result;
-    // }
 
     public function setStartTimeAttribute($value)
     {
