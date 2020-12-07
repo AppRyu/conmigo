@@ -43,4 +43,9 @@ class CommunityController extends Controller
         $community->save();
         return redirect()->route('community.index'); 
     }
+
+    public function apply(Community $community)
+    {
+        
+    }
 }

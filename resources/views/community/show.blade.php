@@ -18,11 +18,13 @@
 	</table>
 	<div class="comm-det-desc">
 		<h3 class="comm-det-desc__hd"><span class="comm-det-desc__hd_emphasis">コミュニティの詳細</span></h3>
-		<div class="comm-det-desc__cmt">{{ $community->detail }}</div>
+		<div class="comm-det-desc__cmt">{!! nl2br(e($community->detail)) !!}</div>
 	</div>
-	<div class="comm-det-rct">
-		<a class="comm-det-rct__btn" href="">応募する</a>
-	</div>
+	<community-recruit-btn
+		:initial-is-applied-by='@json($community->isAppliedBy($community))'
+		:authorized='@json(Auth::check())'
+	>
+	</community-recruit-btn>
 @endsection
     
 @section('sidebar')

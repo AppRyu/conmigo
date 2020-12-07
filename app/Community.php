@@ -16,6 +16,26 @@ class Community extends Model
             '分' => '', 
     ];
 
+    public function recruits()
+    {
+        return $this->hasMany('App\Recruit', 'community_id', 'id');
+    }
+
+    // public function isAppliedBy(?Community $community): bool
+    // {
+    //     return $community
+    //         ? (bool)$this->recruits->where('id', $community->id)->count()
+    //         : false;
+    // }
+
+    public function isAppliedBy(?Community $community)
+    {
+        //dd((bool)$this->recruits->where('community_id', $this->id)->count());
+        return $community
+            ? (bool)$this->recruits->where('community_id', $this->id)->count()
+            : false;
+    }
+
     /**
      * 日付のフォーマットを整える
      * 

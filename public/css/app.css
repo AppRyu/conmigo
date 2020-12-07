@@ -312,16 +312,21 @@ img {
 
 .comm-det-rct__btn {
   color: #ffffff;
-  background-color: #536dfe;
   border: none;
   border-radius: 0.25rem;
   padding: 0.5rem 1rem;
 }
 
-.comm-det-rct__btn:hover {
-  color: #ffffff;
+.comm-det-rct__btn_disabled {
+  background-color: #9faefe;
+}
+
+.comm-det-rct__btn_active {
+  background-color: #536dfe;
+}
+
+.comm-det-rct__btn_active:hover {
   background-color: #072cfe;
-  text-decoration: none;
 }
 
 .subnavbar {

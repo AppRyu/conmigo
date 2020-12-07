@@ -51,14 +51,17 @@
   text-align: center;
   &__btn {
     color:clr(c---white);
-    background-color: clr(c---bg--dark-blue);
     border:none;
     border-radius:.25rem;
     padding:space(sm) space(base);
-    &:hover {
-      color:clr(c---white);
-      background-color:darken(clr(c---bg--dark-blue), 15%);
-      text-decoration: none;
+    &_disabled {
+        background-color:lighten(clr(c---bg--dark-blue), 15%);
+    }
+    &_active {
+        background-color: clr(c---bg--dark-blue);
+        &:hover {
+          background-color:darken(clr(c---bg--dark-blue), 15%);
+        }
     }
   }
 }
