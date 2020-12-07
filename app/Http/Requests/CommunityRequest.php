@@ -25,8 +25,8 @@ class CommunityRequest extends FormRequest
     {
         return [
             'name'       => 'required|string|max:50',
-            'start_time' => 'required',
-            'end_time'   => 'required',
+            'start' => 'required',
+            'end'   => 'required',
             'detail'     => 'required|string|max:500'
         ];
     }
@@ -34,8 +34,8 @@ class CommunityRequest extends FormRequest
     public function attributes()
     {
         return [
-            'start_time'  => '開始日時',
-            'end_time'    => '終了日時' 
+            'start'  => '開始日時',
+            'end'    => '終了日時' 
         ];
     }
 }

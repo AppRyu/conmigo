@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Community extends Model
 {
-    protected $fillable = ['name', 'created_user', 'start_time', 'end_time', 'detail'];
+    protected $fillable = ['name', 'created_user', 'start', 'end', 'detail'];
 
     private const DATE_REPLACE = [
             '年' => '-',
@@ -95,13 +95,13 @@ class Community extends Model
         return $time;
     }
 
-    public function setStartTimeAttribute($value)
+    public function setStartAttribute($value)
     {
-        $this->attributes['start_time'] = str_replace(array_keys(self::DATE_REPLACE), array_values(self::DATE_REPLACE), $value);
+        $this->attributes['start'] = str_replace(array_keys(self::DATE_REPLACE), array_values(self::DATE_REPLACE), $value);
     }
 
-    public function setEndTimeAttribute($value)
+    public function setEndAttribute($value)
     {
-        $this->attributes['end_time'] = str_replace(array_keys(self::DATE_REPLACE), array_values(self::DATE_REPLACE), $value);
+        $this->attributes['end'] = str_replace(array_keys(self::DATE_REPLACE), array_values(self::DATE_REPLACE), $value);
     }
 }

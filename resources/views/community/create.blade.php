@@ -22,18 +22,18 @@
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="start_time-input">開始時間 <span class="text-danger">*</span></label>
+                <label for="start-input">開始時間 <span class="text-danger">*</span></label>
                 <community-set-time-input :data='@json([
-                                            "id"          => "start_time",
-                                            "name"        => "start_time",
+                                            "id"          => "start",
+                                            "name"        => "start",
                                             "placeholder" => "開始時間を設定してください"
                                         ])'></community-set-time-input>
             </div>
             <div class="form-group col-md-6">
-                <label for="end_time-input">終了時間 <span class="text-danger">*</span></label>
+                <label for="end-input">終了時間 <span class="text-danger">*</span></label>
                 <community-set-time-input :data='@json([
-                                            "id"          => "end_time",
-                                            "name"        => "end_time",
+                                            "id"          => "end",
+                                            "name"        => "end",
                                             "placeholder" => "終了時間を設定してください"
                                         ])'></community-set-time-input>
             </div>

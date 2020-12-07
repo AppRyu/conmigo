@@ -19,10 +19,10 @@ class CommunityController extends Controller
     {
         $communities = new Community;
         $community = $communities->where('id', $id)->first();
-        $startDay = $community->getDate($community->start_time);
-        $startTime = $community->getTime($community->start_time);
-        $endDay = $community->getDate($community->end_time);
-        $endTime = $community->getTime($community->end_time);
+        $startDay = $community->getDate($community->start);
+        $startTime = $community->getTime($community->start);
+        $endDay = $community->getDate($community->end);
+        $endTime = $community->getTime($community->end);
         return view('community.show', [
             'community' => $community,
             'startDay' => $startDay,

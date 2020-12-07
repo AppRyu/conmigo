@@ -18,8 +18,8 @@ class CreateCommunitiesTable extends Migration
             $table->string('name');
             $table->string('created_user');
             $table->foreign('created_user')->references('user_name')->on('users')->onDelete('cascade');
-            $table->dateTime('start_time');
-            $table->dateTime('end_time');
+            $table->dateTime('start');
+            $table->dateTime('end');
             $table->string('detail');
             $table->timestamps();
         });
