@@ -250,11 +250,13 @@ img {
 }
 
 .comm-det__hd {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .comm-det-tb {
   width: 100%;
+  margin-bottom: 1.5rem;
 }
 
 .comm-det-tb__tr {
@@ -266,6 +268,7 @@ img {
 }
 
 .comm-det-tb__th {
+  font-size: 0.875rem;
   font-weight: normal;
   background-color: #f9f9f9;
   text-align: center;
@@ -274,7 +277,51 @@ img {
 }
 
 .comm-det-tb__td {
+  font-size: 0.875rem;
   padding: 0.5rem 1rem;
+}
+
+.comm-det-tb__td_d-inline-block {
+  display: inline-block;
+}
+
+.comm-det-tb__td_d-inline-block:first-child {
+  margin-right: 0.5rem;
+}
+
+.comm-det-desc {
+  margin-bottom: 1.5rem;
+}
+
+.comm-det-desc__hd {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #536dfe;
+  border-bottom: 1px solid #ced4da;
+  padding-bottom: 0.5rem;
+}
+
+.comm-det-desc__hd_emphasis {
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #536dfe;
+}
+
+.comm-det-rct {
+  text-align: center;
+}
+
+.comm-det-rct__btn {
+  color: #ffffff;
+  background-color: #536dfe;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+}
+
+.comm-det-rct__btn:hover {
+  color: #ffffff;
+  background-color: #072cfe;
+  text-decoration: none;
 }
 
 .subnavbar {

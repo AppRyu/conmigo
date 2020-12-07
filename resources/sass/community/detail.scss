@@ -1,9 +1,11 @@
 .comm-det__hd {
-  font-size:fs(xl);
+  font-size:fs(lg);
+  margin-bottom:space(lg);
 }
 
 .comm-det-tb {
   width:100%;
+  margin-bottom:space(lg);
   &__tr {
     border-bottom:1px solid clr(c---light-gray);
     &:first-child {
@@ -11,6 +13,7 @@
     }
   }
   &__th {
+    font-size:fs(sm);
     font-weight:normal;
     background-color: clr(c---bg--light-gray);
     text-align: center;
@@ -18,6 +21,44 @@
     width:100px;
   }
   &__td {
+    font-size:fs(sm);
     padding:space(sm) space(base);
+    &_d-inline-block {
+      display: inline-block;
+      &:first-child {
+        margin-right: space(sm);
+      }
+    }
+  }
+}
+
+.comm-det-desc {
+  margin-bottom:space(lg);
+  &__hd {
+    font-size:fs(base);
+    font-weight:bold;
+    color:clr(c---dark-blue);
+    border-bottom: 1px solid clr(c---light-gray);
+    padding-bottom: space(sm);
+    &_emphasis {
+      padding-bottom: space(sm);
+      border-bottom:2px solid clr(c---dark-blue);
+    }
+  }
+}
+
+.comm-det-rct {
+  text-align: center;
+  &__btn {
+    color:clr(c---white);
+    background-color: clr(c---bg--dark-blue);
+    border:none;
+    border-radius:.25rem;
+    padding:space(sm) space(base);
+    &:hover {
+      color:clr(c---white);
+      background-color:darken(clr(c---bg--dark-blue), 15%);
+      text-decoration: none;
+    }
   }
 }
