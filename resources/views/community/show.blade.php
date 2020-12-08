@@ -21,8 +21,9 @@
 		<div class="comm-det-desc__cmt">{!! nl2br(e($community->detail)) !!}</div>
 	</div>
 	<community-recruit-btn
-		:initial-is-applied-by='@json($community->isAppliedBy($community))'
+		:initial-is-applied-by='@json($community->isAppliedBy(Auth::user()))'
 		:authorized='@json(Auth::check())'
+		endpoint="{{ route('community.apply', ['id' => $community->id]) }}"
 	>
 	</community-recruit-btn>
 @endsection

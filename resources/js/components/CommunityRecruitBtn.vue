@@ -29,7 +29,7 @@ export default {
     },
     data() {
         return {
-            isApplied: this.initialIsAppliedBy
+            isApplied: this.initialIsAppliedBy,
         };
     },
     computed: {
@@ -42,10 +42,19 @@ export default {
     },
     methods: {
         clickApply() {
-          if(!this.authorized) {
-            alert("応募はログイン中のみしようできます");
-            return;
-          }
+            if(!this.authorized) {
+              alert("ログイン中のみ応募できます");
+              return;
+            }
+            this.apply();
+        },
+        async apply() {
+            await axios.post(this.endpoint)
+            .then(response => {
+                this.isApplied = true;
+            }).catch(function(error) {
+                console.log(error);
+            });
         }
     }
 }

@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Community extends Model
 {
-    protected $fillable = ['name', 'created_user', 'start', 'end', 'detail'];
+    protected $fillable = [
+        'name', 'created_user', 'start', 'end', 'detail'
+    ];
 
     private const DATE_REPLACE = [
             '年' => '-',
@@ -16,23 +18,30 @@ class Community extends Model
             '分' => '', 
     ];
 
+    public function users() 
+    {
+        return $this->belongsTo('App\User', 'created_user', 'user_name');
+    }
+
     public function recruits()
     {
         return $this->hasMany('App\Recruit', 'community_id', 'id');
     }
 
-    // public function isAppliedBy(?Community $community): bool
-    // {
-    //     return $community
-    //         ? (bool)$this->recruits->where('id', $community->id)->count()
-    //         : false;
-    // }
-
-    public function isAppliedBy(?Community $community)
+    public function callingName()
     {
-        //dd((bool)$this->recruits->where('community_id', $this->id)->count());
-        return $community
-            ? (bool)$this->recruits->where('community_id', $this->id)->count()
+        return $this->users->email;
+    }
+
+    /**
+     * todo:usersテーブルとの連携も必要
+     * 
+     * @return boolean 
+     */
+    public function isAppliedBy(?User $user): bool
+    {
+        return $user
+            ? (bool)$this->recruits->where('applied_user', $user->id)->count()
             : false;
     }
 

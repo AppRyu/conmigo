@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Community;
+use App\Recruit;
 use Illuminate\Http\Request;
 use App\Http\Requests\CommunityRequest;
 use Illuminate\Support\Facades\Auth;
@@ -44,8 +45,12 @@ class CommunityController extends Controller
         return redirect()->route('community.index'); 
     }
 
-    public function apply(Community $community)
+    public function apply(Request $request)
     {
-        
+        Recruit::create([
+            'community_id' => $request->id,
+            'applied_user' => $request->user()->id,
+        ]);
+        return response("OK", 200);
     }
 }

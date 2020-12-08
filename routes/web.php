@@ -27,6 +27,10 @@ Route::resource('/community', 'CommunityController')
 Route::resource('/community', 'CommunityController')
       ->only(['index', 'show'])
       ->parameters(['community' => 'id']);
+// コミュニティに参加機能
+Route::post('/community/{id}/apply', 'CommunityController@apply')
+      ->name('community.apply')
+      ->middleware('auth');
 
 //  プロフィール
 Route::resource('/user', 'UserController')
