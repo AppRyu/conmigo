@@ -52,6 +52,7 @@ textarea {
 
 body {
   font-size: 0.875rem;
+  color: #4b4f56;
 }
 
 a {
@@ -102,6 +103,75 @@ img {
   color: #536dfe;
 }
 
+.auth-container {
+  max-width: 400px;
+  margin: 7em auto;
+  padding: 2.5rem 2.5rem 1rem;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.auth-hd {
+  color: #536dfe;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.auth-form__group {
+  margin-bottom: 1rem;
+}
+
+.auth-form__group_btn {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.auth-form__group_checkbox {
+  margin-bottom: initial;
+}
+
+.auth-form__label {
+  font-size: 0.75rem;
+}
+
+.auth-form__label_checkbox {
+  vertical-align: center;
+}
+
+.auth-form__input {
+  display: block;
+  width: 100%;
+  color: #4b4f56;
+  border: 2px solid #f5f5f5;
+  background-color: #fafafa;
+  outline: none;
+  border-radius: 20px;
+  padding: 0.375rem 0.75rem;
+}
+
+.auth-form__input:focus {
+  border: 2px solid #ced4da;
+}
+
+.auth-form__btn {
+  border-radius: 5em;
+  outline: none;
+  color: #ffffff;
+  background: linear-gradient(to right, #536dfe, #39A2F2);
+  border: 0;
+  padding: 0.75rem 2.5rem;
+  font-size: 0.875rem;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+.auth-link__forgot {
+  color: #39A2F2;
+  font-size: 0.75rem;
+  text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+}
+
 .sidebar {
   background-color: #e9ebee;
   padding: 15px;
@@ -125,7 +195,7 @@ img {
 
 .sidebar .profile-name__id {
   font-size: 0.75rem;
-  color: #90949c;
+  color: #ced4da;
 }
 
 .sidebar .profile-data {
@@ -158,16 +228,6 @@ img {
   }
 }
 
-.community-content__link {
-  color: #4b4f56;
-}
-
-.community-content__link:hover {
-  color: inherit;
-  background-color: #EBEBFC;
-  text-decoration: none;
-}
-
 @media screen and (min-width: 544px) {
   .community-content__left {
     margin-right: 1rem;
@@ -180,10 +240,13 @@ img {
 
 .community-name {
   font-size: 1rem;
+}
+
+.community-name__link {
   color: #536dfe;
 }
 
-.community-name:hover {
+.community-name__link:hover {
   text-decoration: underline;
   color: #072cfe;
 }
@@ -192,7 +255,7 @@ img {
   display: inline-block;
   background-color: #536dfe;
   color: #ffffff;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   border-radius: 5px;
 }
 
@@ -219,10 +282,10 @@ img {
 
 .community-time__head {
   font-weight: 400;
-  padding: 0.25rem 0.5rem;
+  padding: 0.375rem 0.75rem;
   font-size: 0.75rem;
   border-radius: 5px;
-  margin-right: 0.5rem;
+  margin-right: 0.75rem;
 }
 
 .community-time__head--start {
@@ -249,8 +312,8 @@ img {
 .community-requested__num {
   font-size: 1.25rem;
   color: #536dfe;
-  margin-right: 0.5rem;
-  margin-left: 0.5rem;
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
 }
 
 .comm-det__hd {
@@ -264,23 +327,23 @@ img {
 }
 
 .comm-det-tb__tr {
-  border-bottom: 1px solid #ced4da;
+  border-bottom: 1px solid #f5f5f5;
 }
 
 .comm-det-tb__tr:first-child {
-  border-top: 1px solid #ced4da;
+  border-top: 1px solid #f5f5f5;
 }
 
 .comm-det-tb__th {
   font-weight: normal;
-  background-color: #f9f9f9;
+  background-color: #fafafa;
   text-align: center;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   width: 100px;
 }
 
 .comm-det-tb__td {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
 }
 
 .comm-det-tb__td_d-inline-block {
@@ -288,7 +351,7 @@ img {
 }
 
 .comm-det-tb__td_d-inline-block:first-child {
-  margin-right: 0.5rem;
+  margin-right: 0.75rem;
 }
 
 .comm-det-desc {
@@ -299,12 +362,12 @@ img {
   font-size: 1rem;
   font-weight: bold;
   color: #536dfe;
-  border-bottom: 1px solid #ced4da;
-  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #f5f5f5;
+  padding-bottom: 0.75rem;
 }
 
 .comm-det-desc__hd_emphasis {
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.75rem;
   border-bottom: 2px solid #536dfe;
 }
 
@@ -316,7 +379,7 @@ img {
   color: #ffffff;
   border: none;
   border-radius: 0.25rem;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
 }
 
 .comm-det-rct__btn_disabled {
@@ -355,9 +418,9 @@ img {
 
 .prof-content__head {
   font-size: 0.875rem;
-  color: #90949c;
+  color: #ced4da;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #90949c;
+  border-bottom: 1px solid #ced4da;
   margin-bottom: 1rem;
 }
 
@@ -370,7 +433,7 @@ img {
 }
 
 .prof-content__icon {
-  color: #90949c;
+  color: #ced4da;
 }
 
 .prof-content__icon.fa-twitter {

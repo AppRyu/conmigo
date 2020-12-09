@@ -30,27 +30,33 @@
 </head>
 <body>
     <div id="app">
-        <header>
-            @include('./components/navbar')
-            @include('./components/subnavbar')
-        </header>
-        <main class="main container">
-        @hasSection('sidebar')
-            <div class="row">
-                <article class="col-md-9">
+        @hasSection('auth')
+            <main class="main container">
+                @yield('auth')
+            </main>
+        @else
+            <header>
+                @include('./components/navbar')
+                @include('./components/subnavbar')
+            </header>
+            <main class="main container">
+            @hasSection('sidebar')
+                <div class="row">
+                    <article class="col-md-9">
+                        @yield('content')
+                    </article>
+                    <aside class="col-md-3 d-none d-md-block">
+                        @yield('sidebar')
+                    </aside>
+                </div>
+            @else
+                <article>
                     @yield('content')
                 </article>
-                <aside class="col-md-3 d-none d-md-block">
-                    @yield('sidebar')
-                </aside>
-            </div>
-        @else
-            <article>
-                @yield('content')
-            </article>
+            @endif
+            </main>
+            @include('./components/footer')
         @endif
-        </main>
-        @include('./components/footer')
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

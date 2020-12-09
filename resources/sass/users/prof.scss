@@ -7,9 +7,9 @@
     margin-bottom: space(lg);
     &__head {
         font-size: fs(base);
-        color: clr(c---gray);
+        color: clr(c---dark-gray);
         padding-bottom: space(base);
-        border-bottom: 1px solid clr(c---gray);
+        border-bottom: 1px solid clr(c---dark-gray);
         margin-bottom: space(base);
     }
     &__name {
@@ -19,7 +19,7 @@
         margin-bottom: space(base);
     }
     &__icon {
-        color: clr(c---gray);
+        color: clr(c---dark-gray);
         &.fa-twitter {
             color: clr(c---sns--twitter);
         }

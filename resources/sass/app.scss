@@ -3,6 +3,8 @@
 @import "./mixin";
 @import "./bootstrap/bootstrap.scss";
 @import "./layouts/base";
+@import "./auth/login";
+@import "./auth/register";
 @import "./community/sidebar";
 @import "./community/content";
 @import "./community/detail";
