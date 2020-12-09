@@ -2,7 +2,7 @@
 
 @section('title', 'ログイン')
 
-@section('auth')
+@section('content')
 
 <div class="auth-container">
     <h1 class="auth-hd">Sign in</h1>
