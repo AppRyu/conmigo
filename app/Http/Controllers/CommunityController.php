@@ -12,8 +12,10 @@ class CommunityController extends Controller
 {
     public function index()
     {
-        $communities = Community::paginate(30);
-        return view('community.index', ['communities' => $communities]);
+        $communities = Community::paginate(30)->sortByDesc('created_at');
+        return view('community.index', [
+            'communities' => $communities
+            ]);
     }
 
     public function show(String $id)
