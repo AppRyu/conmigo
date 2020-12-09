@@ -50,6 +50,10 @@ textarea {
   box-sizing: border-box;
 }
 
+body {
+  font-size: 0.875rem;
+}
+
 a {
   color: #536dfe;
 }
@@ -90,7 +94,7 @@ img {
 }
 
 .copyright {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   margin-bottom: 0;
 }
 
@@ -116,16 +120,16 @@ img {
 }
 
 .sidebar .profile-name__user {
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .sidebar .profile-name__id {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   color: #90949c;
 }
 
 .sidebar .profile-data {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
 }
 
 .sidebar .profile-data__link {
@@ -175,7 +179,7 @@ img {
 }
 
 .community-name {
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: #536dfe;
 }
 
@@ -216,7 +220,7 @@ img {
 .community-time__head {
   font-weight: 400;
   padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   border-radius: 5px;
   margin-right: 0.5rem;
 }
@@ -238,12 +242,12 @@ img {
 }
 
 .community-requested {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: bold;
 }
 
 .community-requested__num {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: #536dfe;
   margin-right: 0.5rem;
   margin-left: 0.5rem;
@@ -268,7 +272,6 @@ img {
 }
 
 .comm-det-tb__th {
-  font-size: 0.875rem;
   font-weight: normal;
   background-color: #f9f9f9;
   text-align: center;
@@ -277,7 +280,6 @@ img {
 }
 
 .comm-det-tb__td {
-  font-size: 0.875rem;
   padding: 0.5rem 1rem;
 }
 
@@ -334,7 +336,7 @@ img {
 }
 
 .subnavbar .nav-link {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   color: #ffffff;
 }
 
@@ -343,7 +345,7 @@ img {
 }
 
 .prof-head {
-  font-size: 1.25rem;
+  font-size: 1rem;
   margin-bottom: 1.5rem;
 }
 
@@ -352,7 +354,7 @@ img {
 }
 
 .prof-content__head {
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: #90949c;
   padding-bottom: 1rem;
   border-bottom: 1px solid #90949c;

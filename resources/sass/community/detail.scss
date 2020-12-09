@@ -1,5 +1,5 @@
 .comm-det__hd {
-  font-size:fs(lg);
+  font-size:fs(xl);
   margin-bottom:space(lg);
 }
 
@@ -13,7 +13,6 @@
     }
   }
   &__th {
-    font-size:fs(sm);
     font-weight:normal;
     background-color: clr(c---bg--light-gray);
     text-align: center;
@@ -21,7 +20,6 @@
     width:100px;
   }
   &__td {
-    font-size:fs(sm);
     padding:space(sm) space(base);
     &_d-inline-block {
       display: inline-block;
@@ -35,7 +33,7 @@
 .comm-det-desc {
   margin-bottom:space(lg);
   &__hd {
-    font-size:fs(base);
+    font-size:fs(lg);
     font-weight:bold;
     color:clr(c---dark-blue);
     border-bottom: 1px solid clr(c---light-gray);
