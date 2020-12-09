@@ -10,9 +10,11 @@
                 <div class="community-flg">募集中</div>
             </div>
             <div class="community-content__right">
-                <a class="community-content__link" href="{{ route('community.show', ['id' => $community->id]) }}">
-                    <h3 class="community-name">{{ $community->name }}</h3>
-                </a>
+                <h3 class="community-name">
+                    <a class="community-name__link" href="{{ route('community.show', ['id' => $community->id]) }}">
+                        {{ $community->name }}
+                    </a>
+                </h3>
                 <div class="community-times">
                     <div class="community-time"><span class="community-time__head community-time__head--start">開始日時</span><span class="d-inline-block">{{ $community->getDate($community->start) }}</span><span class="d-inline-block">{{ $community->getTime($community->start) }}</span></div>
                     <div class="community-time"><span class="community-time__head community-time__head--end">終了日時</span><span class="d-inline-block">{{ $community->getDate($community->end) }}</span><span class="d-inline-block">{{ $community->getTime($community->end) }}</span></div>
