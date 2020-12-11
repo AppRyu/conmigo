@@ -26,6 +26,7 @@ Route::namespace('Front')->group(function() {
       Route::group(['middleware' => 'auth'], function() {
             Route::resource('/community', 'CommunityController')->except(['index', 'show'])->parameters(['community' => 'id']);
             Route::post('/community/{id}/apply', 'CommunityController@apply')->name('community.apply');
+            Route::get('/community/admin/{user_name}', 'CommunityAdminController@index')->name('community.admin');
       });
       Route::resource('/community', 'CommunityController')->only(['index', 'show'])->parameters(['community' => 'id']);
 
