@@ -1,12 +1,19 @@
-@import "./variables";
-@import "./functions";
-@import "./mixin";
-@import "./bootstrap/bootstrap.scss";
-@import "./layouts/base";
+@import "./setting/variables";
+@import "./setting/function";
+
+@import "./mixin/breakpoint";
+
+@import "./base/base";
+
+@import "./override/bootstrap/btn";
+@import "./override/bootstrap/form";
+@import "./override/bootstrap/navbar";
+
 @import "./auth/login";
 @import "./auth/register";
 @import "./community/sidebar";
 @import "./community/content";
 @import "./community/detail";
+@import "./community/admin";
 @import "./components/subnavbar";
 @import "./users/prof";

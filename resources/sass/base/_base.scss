@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: fs(base);
+    color: clr(c---black);
+}
+
+a {
+    color: clr(c---dark-blue);
+    &:hover {
+        color: darken(clr(c---dark-blue), 15%);
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+#app {
+    // コンテンツが少ない時フッターを最下層に固定
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 53px; // ←フッターの高さを指定
+}
+
+.main {
+    &.container {
+        padding: {
+            top: 30px;
+            bottom: 30px;
+        }
+    }
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: clr(c---bg--dark-blue);
+    color: clr(c---white);
+    > .container {
+        text-align: center;
+        padding: {
+            top: space(base);
+            bottom: space(base);
+        }
+    }
+}
+
+.copyright {
+    font-size: fs(sm);
+    margin-bottom: space(0);
+}
+
+.emphasis {
+    color: clr(c---dark-blue);
+}

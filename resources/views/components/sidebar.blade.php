@@ -13,7 +13,7 @@
             <a class="profile-data__link" href="{{ route('user.show', ['user_name' => Auth::user()->user_name ]) }}">基本データ</a>
         </div>
         <div class="profile-community">
-            <a class="profile-data__link" href="">コミュニティ管理</a>
+            <a class="profile-data__link" href="{{ route('community.admin', ['user_name' => Auth::user()->user_name]) }}">コミュニティ管理</a>
         </div>
     </div>
 </div>

@@ -1,0 +1,47 @@
+$font-size-base: 1rem;
+$sizes: (
+    sm: $font-size-base * 0.75,
+    base: $font-size-base * 0.875,
+    lg: $font-size-base,
+    xl: $font-size-base * 1.25,
+    xxl: $font-size-base * 1.5,
+);
+
+$space: 1rem;
+$spaces: (
+    0: 0,
+    xs: $space * 0.375,
+    sm: $space * 0.75,
+    base: $space,
+    lg: $space * 1.5,
+    xl: $space * 2.5,
+    xxl: $space * 3.5,
+);
+
+$colors: (
+    c---black: #4b4f56,
+    c---white: #ffffff,
+    c---light-gray: #f5f5f5,
+    c---dark-gray: #ced4da,
+    c---light-blue: #39a2f2,
+    c---dark-blue: #536dfe,
+    c---dark-red: #bf3059,
+    c---dark--green: #5ca62a,
+    c---bg--white: #ffffff,
+    c---bg--light-gray: #fafafa,
+    c---bg--gray: #e9ebee,
+    c---bg--light-blue: #39a2f2,
+    c---bg--dark-blue: #536dfe,
+    c---bg--light-red: #fceeee,
+    c---bg--light-green: #eaf7dc,
+    c---sns--twitter: #55acee,
+    c---sns--facebook: #3b5998,
+    c---sns--instagram: #c6529a,
+);
+
+$breakpoints: (
+    xs: "screen and (min-width: 544px)",
+    sm: "screen and (min-width: 768px)",
+    md: "screen and (min-width: 992px)",
+    lg: "screen and (min-width: 1200px)",
+);

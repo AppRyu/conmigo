@@ -1,0 +1,26 @@
+.btn-primary {
+    color: clr(c---white);
+    background: clr(c---bg--dark-blue);
+    border-color: clr(c---dark-blue);
+    &:hover {
+        background: darken(clr(c---bg--dark-blue), 15%);
+        border-color: darken(clr(c---bg--dark-blue), 15%);
+    }
+    &:focus {
+        background: darken(clr(c---bg--dark-blue), 15%);
+        border-color: darken(clr(c---bg--dark-blue), 15%);
+        box-shadow: 0 0 0 0.2rem lighten(clr(c---dark-blue), 15%);
+    }
+}
+
+.btn-outline-primary {
+    color: clr(c---dark-blue);
+    border-color: clr(c---dark-blue);
+    &:hover {
+        background: darken(clr(c---bg--dark-blue), 15%);
+        border-color: darken(clr(c---dark-blue), 15%);
+    }
+    &:focus {
+        box-shadow: 0 0 0 0.2rem lighten(clr(c---dark-blue), 15%);
+    }
+}
