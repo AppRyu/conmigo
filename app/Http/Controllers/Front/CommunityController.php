@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Front;
 
 use App\Community;
 use App\Recruit;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\CommunityRequest;
-use Illuminate\Support\Facades\Auth;
 
 class CommunityController extends Controller
 {

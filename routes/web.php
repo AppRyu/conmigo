@@ -14,27 +14,25 @@
 
 Auth::routes();
 
-// トップページ
-Route::get('/', 'TopController@index')
-      ->name('index');
+Route::get('/test', function() {
+      return view('test');
+});
 
-// コミュニティ (認証あり)
-Route::resource('/community', 'CommunityController')
-      ->except(['index','show'])
-      ->parameters(['community' => 'id'])
-      ->middleware('auth');
-// コミュニティ一覧と詳細 (認証なし)
-Route::resource('/community', 'CommunityController')
-      ->only(['index', 'show'])
-      ->parameters(['community' => 'id']);
-// コミュニティに参加機能
-Route::post('/community/{id}/apply', 'CommunityController@apply')
-      ->name('community.apply')
-      ->middleware('auth');
+Route::namespace('Front')->group(function() {
 
-//  プロフィール
-Route::resource('/user', 'UserController')
-      ->parameters(['user' => 'user_name']);
+      // トップページ
+      Route::get('/', 'TopController@index')->name('index');
 
-Route::get('/home', 'HomeController@index')
-      ->name('home');
+      Route::group(['middleware' => 'auth'], function() {
+            Route::resource('/community', 'CommunityController')->except(['index', 'show'])->parameters(['community' => 'id']);
+            Route::post('/community/{id}/apply', 'CommunityController@apply')->name('community.apply');
+      });
+      Route::resource('/community', 'CommunityController')->only(['index', 'show'])->parameters(['community' => 'id']);
+
+      //  プロフィール
+      Route::resource('/user', 'UserController')->parameters(['user' => 'user_name']);
+      
+      Route::get('/home', 'HomeController@index')->name('home');
+
+});
+
