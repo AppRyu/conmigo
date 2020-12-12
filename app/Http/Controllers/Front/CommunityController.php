@@ -13,7 +13,7 @@ class CommunityController extends Controller
     public function index()
     {
         $communities = Community::paginate(30)->sortByDesc('created_at');
-        return view('community.index', [
+        return view('front.community.index', [
             'communities' => $communities
             ]);
     }
@@ -26,7 +26,7 @@ class CommunityController extends Controller
         $startTime = $community->getTime($community->start);
         $endDay = $community->getDate($community->end);
         $endTime = $community->getTime($community->end);
-        return view('community.show', [
+        return view('front.community.show', [
             'community' => $community,
             'startDay' => $startDay,
             'startTime' =>  $startTime,
@@ -37,7 +37,7 @@ class CommunityController extends Controller
 
     public function create()
     {
-        return view('community.create');
+        return view('front.community.create');
     }
 
     public function store(CommunityRequest $request, Community $community)

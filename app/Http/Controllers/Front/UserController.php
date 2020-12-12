@@ -13,13 +13,13 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('users.index');
+        return view('front.user.index');
     }
 
     public function show(String $user_name)
     {
         $user = User::where('user_name', $user_name)->first();
-        return view('users.show', ['user' => $user]);
+        return view('front.user.show', ['user' => $user]);
     }
 
     public function update(UserRequest $request, String $user_name)
@@ -63,7 +63,7 @@ class UserController extends Controller
     public function edit(String $user_name)
     {
         $user = User::where('user_name', $user_name)->first();
-        return view('users.edit', ['user' => $user]);
+        return view('front.user.edit', ['user' => $user]);
     }
 
 }
