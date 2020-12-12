@@ -21,7 +21,7 @@
                 </div>
                 <div class="community-row">
                     <div class="community-requested">応募数<span class="community-requested__num">{{ $community->recruits->where('community_id', $community->id)->count() }}</span>件</div>
-                    <div class="community-created-user"><a class="community-created-user__link" href="{{ route('user.show', ['user_name' => $community->created_user]) }}">{{ $community->users->user_name }}</a></div>
+                    <div class="community-created-user"><a class="community-created-user__link" href="{{ route('user.show', ['user_name' => $community->users->user_name]) }}">{{ $community->users->user_name }}</a></div>
                 </div>
             </div>
         </div>
