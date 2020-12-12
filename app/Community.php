@@ -20,7 +20,7 @@ class Community extends Model
 
     public function users() 
     {
-        return $this->belongsTo('App\User', 'created_user', 'user_name');
+        return $this->belongsTo('App\User', 'created_user', 'id');
     }
 
     public function recruits()

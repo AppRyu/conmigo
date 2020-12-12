@@ -6,6 +6,7 @@ use App\Community;
 use App\Recruit;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\CommunityRequest;
 
 class CommunityController extends Controller
 {

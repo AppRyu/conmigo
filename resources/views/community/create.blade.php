@@ -16,7 +16,7 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text">@</div>
                     </div>
-                    <input type="text" class="form-control" name="created_user" id="created_user" value="{{ Auth::user()->user_name }}" readonly>
+                    <input type="text" class="form-control" name="created_user" id="created_user" value="{{ Auth::user()->id }}" readonly>
                 </div>
             </div>
         </div>

@@ -36,4 +36,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function communities()
+    {
+        return $this->hasMany('App\Community', 'created_user', 'user_name');
+    }
 }
