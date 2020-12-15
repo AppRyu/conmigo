@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Community extends Model
@@ -43,6 +44,28 @@ class Community extends Model
         return $user
             ? (bool)$this->recruits->where('applied_user', $user->id)->count()
             : false;
+    }
+
+    /**
+     * 合計募集数を取得
+     * 
+     * @return integer
+     */
+    public function getTotalRecruitment():int
+    {
+        return (int)$this->recruits->where('community_id', $this->id)->count();
+    }
+
+    /**
+     * 現在日時より過去が判定
+     * 
+     * @param datetime
+     * @return boolean
+     */
+    public function isPast($dateAndTime):bool
+    {
+        $dt = new Carbon($dateAndTime);
+        return $dt->isPast();
     }
 
     /**

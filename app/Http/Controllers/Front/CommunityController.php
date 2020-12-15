@@ -7,6 +7,7 @@ use App\Recruit;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\CommunityRequest;
+use App\Http\Requests\Community\CommunityDestroyRequest;
 
 class CommunityController extends Controller
 {
@@ -45,6 +46,21 @@ class CommunityController extends Controller
         $community->fill($request->all());
         $community->save();
         return redirect()->route('community.index'); 
+    }
+
+    /**
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy(Int $id)
+    {
+        $community = Community::find($id);
+        // コミュニティ作成者がログインユーザー以外の場合
+        if(auth()->user()->id != $community->created_user) {
+            return redirect(route('community.admin', ['user_name' => auth()->user()->user_name]))->with('error', '許可されていない操作です');
+        }
+        $community->delete();
+        return redirect(route('community.admin', ['user_name' => auth()->user()->user_name]))->with('error', '削除処理に成功しました');
     }
 
     public function apply(Request $request)
