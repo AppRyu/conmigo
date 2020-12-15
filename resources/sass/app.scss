@@ -2,6 +2,7 @@
 @import "./setting/function";
 
 @import "./mixin/breakpoint";
+@import "./mixin/tag";
 
 @import "./base/base";
 
@@ -11,9 +12,11 @@
 
 @import "./auth/login";
 @import "./auth/register";
+
+@import "./page/community/admin";
+
 @import "./community/sidebar";
 @import "./community/content";
 @import "./community/detail";
-@import "./community/admin";
 @import "./components/subnavbar";
 @import "./users/prof";

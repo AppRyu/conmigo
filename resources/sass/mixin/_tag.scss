@@ -1,0 +1,26 @@
+$initSize: "normal";
+$initColor: "blue";
+@mixin _tag($size: $initSize, $color: $initColor) {
+    font-weight: 400;
+    border-radius: 5px;
+    @if ($size == "small") {
+        font-size: fs(xs);
+        padding: space(xs) space(sm);
+    }
+    @if ($size == "normal") {
+        padding: space(xs) space(sm);
+        font-size: fs(sm);
+    }
+    @if ($color == "blue") {
+        color: clr(c---dark-blue);
+        background-color: clr(c---bg--light-blue);
+    }
+    @if ($color == "red") {
+        color: clr(c---dark-red);
+        background-color: clr(c---bg--light-red);
+    }
+    @if ($color == "green") {
+        color: clr(c---dark--green);
+        background-color: clr(c---bg--light-green);
+    }
+}
