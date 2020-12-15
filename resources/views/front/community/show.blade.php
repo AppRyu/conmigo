@@ -20,12 +20,15 @@
 		<h3 class="comm-det-desc__hd"><span class="comm-det-desc__hd_emphasis">コミュニティの詳細</span></h3>
 		<div class="comm-det-desc__cmt">{!! nl2br(e($community->detail)) !!}</div>
 	</div>
+	{{-- ログインユーザー以外が企画したコミュニティのみ応募ボタンを表示 --}}
+	@if(Auth::id() !== $community->created_user)
 	<community-recruit-btn
 		:initial-is-applied-by='@json($community->isAppliedBy(Auth::user()))'
 		:authorized='@json(Auth::check())'
 		endpoint="{{ route('community.apply', ['id' => $community->id]) }}"
 	>
 	</community-recruit-btn>
+	@endif
 @endsection
     
 @section('sidebar')
