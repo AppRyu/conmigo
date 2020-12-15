@@ -1,5 +1,6 @@
 $font-size-base: 1rem;
 $sizes: (
+    xs: $font-size-base * 0.5,
     sm: $font-size-base * 0.75,
     base: $font-size-base * 0.875,
     lg: $font-size-base,
@@ -33,6 +34,7 @@ $colors: (
     c---bg--light-blue: #39a2f2,
     c---bg--dark-blue: #536dfe,
     c---bg--light-red: #fceeee,
+    c---bg--dark-red: #de342f,
     c---bg--light-green: #eaf7dc,
     c---sns--twitter: #55acee,
     c---sns--facebook: #3b5998,
