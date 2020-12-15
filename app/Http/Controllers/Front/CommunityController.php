@@ -6,8 +6,7 @@ use App\Community;
 use App\Recruit;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\CommunityRequest;
-use App\Http\Requests\Community\CommunityDestroyRequest;
+use App\Http\Requests\Community\CommunityStoreRequest;
 
 class CommunityController extends Controller
 {
@@ -41,9 +40,10 @@ class CommunityController extends Controller
         return view('front.community.create');
     }
 
-    public function store(CommunityRequest $request, Community $community)
+    public function store(CommunityStoreRequest $request, Community $community)
     {      
         $community->fill($request->all());
+        $community->created_user = auth()->user()->id;
         $community->save();
         return redirect()->route('community.index'); 
     }
