@@ -59720,8 +59720,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
   el: "#app",
   components: {
     CommunitySetTimeInput: _components_CommunitySetTimeInput_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    CommunityRecruitBtn: _components_CommunityRecruitBtn_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    CommunityAdminTabs: CommunityAdminTabs
+    CommunityRecruitBtn: _components_CommunityRecruitBtn_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   }
 });
 

@@ -8,6 +8,5 @@ const app = new Vue({
     components: {
         CommunitySetTimeInput,
         CommunityRecruitBtn,
-        CommunityAdminTabs
     }
 });
