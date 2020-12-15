@@ -19,7 +19,7 @@ class CommunityController extends Controller
             ]);
     }
 
-    public function show(String $id)
+    public function show(Int $id)
     {
         $communities = new Community;
         $community = $communities->where('id', $id)->first();
