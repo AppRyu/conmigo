@@ -1,13 +1,7 @@
 <template>
     <div class="comm-det-rct">
-        <button 
-            class="comm-det-rct__btn"
-            :class="buttonColor"
-            :disabled="isApplied"
-            @click="clickApply"
-            
-        >
-        {{ buttonText }}
+        <button class="comm-det-rct__btn" :class="buttonColor" :disabled="isApplied" @click="clickApply">
+            {{ buttonText }}
         </button>
     </div>
 </template>
@@ -17,15 +11,15 @@ export default {
     props: {
         initialIsAppliedBy: {
             type: Boolean,
-            default: false
+            default: false,
         },
         authorized: {
             type: Boolean,
-            default: false
+            default: false,
         },
         endpoint: {
             type: String,
-        }
+        },
     },
     data() {
         return {
@@ -38,24 +32,26 @@ export default {
         },
         buttonText() {
             return this.isApplied ? "応募済み" : "応募する";
-        }
+        },
     },
     methods: {
         clickApply() {
-            if(!this.authorized) {
-              alert("ログイン中のみ応募できます");
-              return;
+            if (!this.authorized) {
+                alert("ログイン中のみ応募できます");
+                return;
             }
             this.apply();
         },
         async apply() {
-            await axios.post(this.endpoint)
-            .then(response => {
-                this.isApplied = true;
-            }).catch(function(error) {
-                console.log(error);
-            });
-        }
-    }
-}
+            await axios
+                .post(this.endpoint)
+                .then((response) => {
+                    this.isApplied = true;
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        },
+    },
+};
 </script>
