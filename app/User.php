@@ -39,6 +39,6 @@ class User extends Authenticatable
 
     public function communities()
     {
-        return $this->hasMany('App\Community', 'created_user', 'user_name');
+        return $this->hasMany('App\Community', 'created_user', 'id');
     }
 }
