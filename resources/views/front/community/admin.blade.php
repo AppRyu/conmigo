@@ -29,7 +29,7 @@
                     <td class="ca-tb__td">
                         {{-- 削除ボタン --}}
                         @if(!Auth::guest() && Auth::user()->id == $community->created_user)
-                        <form action="{{ route('community.destroy', ['id' => $community->id]) }}" method="post">
+                        <form action="{{ route('community.destroy', ['community' => $community]) }}" method="post">
                             @csrf
                             @method('delete')
                             <input type="submit" value="削除" class="ca-tb__btn" onclick="return confirm('削除しますか？')">

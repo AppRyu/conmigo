@@ -11,7 +11,7 @@
             </div>
             <div class="community-content__right">
                 <h3 class="community-name">
-                    <a class="community-name__link" href="{{ route('community.show', ['id' => $community->id]) }}">
+                    <a class="community-name__link" href="{{ route('community.show', ['community' => $community]) }}">
                         {{ $community->name }}
                     </a>
                 </h3>

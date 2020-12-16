@@ -8,11 +8,11 @@
 		<tbody>
 			<tr class="comm-det-tb__tr">
 				<th class="comm-det-tb__th" scope="row">開始日時</th>
-				<td class="comm-det-tb__td"><span class="comm-det-tb__td_d-inline-block">{{ $startDay }}</span><span class="comm-det-tb__td_d-inline-block">{{ $startTime }}</span></td>
+				<td class="comm-det-tb__td"><span class="comm-det-tb__td_d-inline-block">{{ $community->getDate($community->start) }}</span><span class="comm-det-tb__td_d-inline-block">{{ $community->getTime($community->start) }}</span></td>
 			</tr>
 			<tr class="comm-det-tb__tr">
 				<th class="comm-det-tb__th" scope="row">終了日時</th>
-				<td class="comm-det-tb__td"><span class="comm-det-tb__td_d-inline-block">{{ $endDay }}</span><span class="comm-det-tb__td_d-inline-block">{{ $endTime }}</span></td>
+				<td class="comm-det-tb__td"><span class="comm-det-tb__td_d-inline-block">{{ $community->getDate($community->end) }}</span><span class="comm-det-tb__td_d-inline-block">{{ $community->getTime($community->end) }}</span></td>
 			</tr>
 		</tbody>
 	</table>

@@ -24,11 +24,11 @@ Route::namespace('Front')->group(function() {
       Route::get('/', 'TopController@index')->name('index');
 
       Route::group(['middleware' => 'auth'], function() {
-            Route::resource('/community', 'CommunityController')->except(['index', 'show'])->parameters(['community' => 'id']);
+            Route::resource('community', 'CommunityController')->except(['index', 'show']);
             Route::post('/community/{id}/apply', 'CommunityController@apply')->name('community.apply');
             Route::get('/community/admin/{user_name}', 'CommunityAdminController@index')->name('community.admin');
       });
-      Route::resource('/community', 'CommunityController')->only(['index', 'show'])->parameters(['community' => 'id']);
+      Route::resource('/community', 'CommunityController')->only(['index', 'show']);
 
       //  プロフィール
       Route::resource('/user', 'UserController')->parameters(['user' => 'user_name']);

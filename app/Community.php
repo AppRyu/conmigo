@@ -115,10 +115,9 @@ class Community extends Model
      * @param string $value
      * @return string $date
      */
-    public function getDate(string $value): string  // start or end in $value
+    public function getDate(string $value): string 
     {
-        $date = self::formatDate($value);
-        return $date;
+        return $this->formatDate($value);
     }
 
     /**
@@ -127,9 +126,8 @@ class Community extends Model
      * @param string $value
      * @return string $time
      */
-    public function getTime(string $value): string // start or end in $value
+    public function getTime(string $value): string
     {
-        $time = self::formatTime($value);
-        return $time;
+        return $this->formatTime($value);
     }
 }

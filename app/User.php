@@ -41,4 +41,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Community', 'created_user', 'id');
     }
+
+    public function recruits()
+    {
+        return $this->hasMany('App\Recruits', 'applied_user', 'id');
+    }
 }
