@@ -11,14 +11,6 @@ class Community extends Model
         'name', 'created_user', 'start', 'end', 'detail'
     ];
 
-    private const DATE_REPLACE = [
-            '年' => '-',
-            '月' => '-',
-            '日' => '',
-            '時' => ':',
-            '分' => '', 
-    ];
-
     public function users() 
     {
         return $this->belongsTo('App\User', 'created_user', 'id');
@@ -29,13 +21,7 @@ class Community extends Model
         return $this->hasMany('App\Recruit', 'community_id', 'id');
     }
 
-    public function callingName()
-    {
-        return $this->users->email;
-    }
-
     /**
-     * todo:usersテーブルとの連携も必要
      * 
      * @return boolean 
      */
@@ -72,7 +58,7 @@ class Community extends Model
      * 日付のフォーマットを整える
      * 
      * DBから取得した日時から、時刻を削除して日付のみ取得
-     * ex 2020-12-15 12:30:30 -> 2020-12-15
+     * ex 2020-12-15 12:30:30 -> 2020年12月15日
      * 
      * @param string $value
      * @return string $formattedDate
@@ -89,7 +75,7 @@ class Community extends Model
      * 時刻のフォーマットを整える
      * 
      * DBから取得した日時から、日時を削除して時刻のみ取得
-     * ex 2020-12-15 12:30:30 -> 12:30:30
+     * ex 2020-12-15 12:30:30 -> [ 午前 or 午後 ]12時30分
      * 
      * @param string $value
      * @return string $formattedTime
@@ -145,15 +131,5 @@ class Community extends Model
     {
         $time = self::formatTime($value);
         return $time;
-    }
-
-    public function setStartAttribute($value)
-    {
-        $this->attributes['start'] = str_replace(array_keys(self::DATE_REPLACE), array_values(self::DATE_REPLACE), $value);
-    }
-
-    public function setEndAttribute($value)
-    {
-        $this->attributes['end'] = str_replace(array_keys(self::DATE_REPLACE), array_values(self::DATE_REPLACE), $value);
     }
 }
