@@ -14,8 +14,11 @@
         color: clr(c---dark-blue);
         background-color: clr(c---bg--light-gray);
         border: 1px solid clr(c---dark-gray);
+        text-align: center;
         &:hover {
+            color: inherit;
             background-color: clr(c---bg--white);
+            text-decoration: none;
         }
         &:focus {
             outline: none;

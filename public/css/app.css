@@ -190,10 +190,13 @@ textarea {
   color: #536dfe;
   background-color: #fafafa;
   border: 1px solid #ced4da;
+  text-align: center;
 }
 
 .ca-navTabs__item:hover {
+  color: inherit;
   background-color: #ffffff;
+  text-decoration: none;
 }
 
 .ca-navTabs__item:focus {
