@@ -26,7 +26,7 @@ Route::namespace('Front')->group(function() {
       Route::group(['middleware' => 'auth'], function() {
             Route::resource('community', 'CommunityController')->except(['index', 'show']);
             Route::post('/community/{id}/apply', 'CommunityController@apply')->name('community.apply');
-            Route::get('/community/admin/{user_name}', 'CommunityAdminController@index')->name('community.admin');
+            Route::get('/community/admin/{user_name}', 'CommunityPlanedController@index')->name('community.planed');
             Route::get('/community/applied', 'CommunityAppliedController@index')->name('community.applied');
       });
       Route::resource('/community', 'CommunityController')->only(['index', 'show']);

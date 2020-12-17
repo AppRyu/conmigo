@@ -6,7 +6,7 @@
 <section class="ca-tabs">
         <h2 class="ca-hd">応募したコミュニティ</h2>
         <div class="ca-navTabs">
-            <a class="ca-navTabs__item" href="{{ route('community.admin', ['user_name' => Auth::user()->user_name]) }}">企画した</a>
+            <a class="ca-navTabs__item" href="{{ route('community.planed', ['user_name' => Auth::user()->user_name]) }}">企画した</a>
             <a class="ca-navTabs__item ca-navTabs__item_active" href="{{ route('community.applied') }}">応募した</a>
         </div>
         <table class="ca-tb">
