@@ -61,7 +61,8 @@ class CommunityController extends Controller
      */
     public function show(Community $community)
     {
-        return view('front.community.show', ['community' => $community]);
+        $appliedUsers = Recruit::where('community_id', $community->id)->get();
+        return view('front.community.show', ['community' => $community, 'appliedUsers' => $appliedUsers]);
     }
 
     /**

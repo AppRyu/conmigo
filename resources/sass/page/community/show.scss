@@ -1,0 +1,113 @@
+.comm-det__hd {
+    font-size: fs(xl);
+    margin-bottom: space(lg);
+    &_emphasis {
+        color: clr(c---dark-blue);
+        margin-left: space(sm);
+    }
+}
+
+.comm-det-tb {
+    width: 100%;
+    margin-bottom: space(lg);
+    &__tr {
+        border-bottom: 1px solid clr(c---light-gray);
+        &:first-child {
+            border-top: 1px solid clr(c---light-gray);
+        }
+    }
+    &__th {
+        font-weight: normal;
+        background-color: clr(c---bg--light-gray);
+        text-align: center;
+        padding: space(sm) space(base);
+        width: 100px;
+    }
+    &__td {
+        padding: space(sm) space(base);
+        &_d-inline-block {
+            display: inline-block;
+            &:first-child {
+                margin-right: space(sm);
+            }
+        }
+    }
+}
+
+.comm-det-desc {
+    margin-bottom: space(lg);
+    &__hd {
+        font-size: fs(lg);
+        font-weight: bold;
+        color: clr(c---dark-blue);
+        border-bottom: 1px solid clr(c---light-gray);
+        padding-bottom: space(sm);
+        &_emphasis {
+            padding-bottom: space(sm);
+            border-bottom: 2px solid clr(c---dark-blue);
+        }
+    }
+}
+
+.comm-det-rct {
+    text-align: center;
+    &__btn {
+        color: clr(c---white);
+        border: none;
+        border-radius: 0.25rem;
+        padding: space(sm) space(base);
+        &_disabled {
+            background-color: lighten(clr(c---bg--dark-blue), 15%);
+        }
+        &_active {
+            background-color: clr(c---bg--dark-blue);
+            &:hover {
+                background-color: darken(clr(c---bg--dark-blue), 15%);
+            }
+        }
+    }
+}
+
+.created-user-info__hd {
+    font-size: fs(lg);
+    font-weight: bold;
+    color: clr(c---dark-blue);
+    border-bottom: 1px solid clr(c---light-gray);
+    padding-bottom: space(sm);
+    &_emphasis {
+        padding-bottom: space(sm);
+        border-bottom: 2px solid clr(c---dark-blue);
+    }
+}
+
+.applied-user-tb {
+    width: 100%;
+    &__hd {
+        color: clr(c---white);
+        background: clr(c---bg--dark-blue);
+    }
+    &__bd {
+        > .applied-user-tb__tr {
+            &:hover {
+                background-color: clr(c---bg--gray);
+            }
+        }
+    }
+    &__thc {
+        font-weight: normal;
+        padding: space(xs);
+        border: 1px solid clr(c---bg--dark-blue);
+    }
+    &__td {
+        padding: space(xs);
+        border-bottom: 1px solid clr(c---dark-gray);
+        line-height: 31px;
+    }
+    &__img {
+        width: 30px;
+        height: auto;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: space(sm);
+    }
+}
