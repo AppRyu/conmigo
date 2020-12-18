@@ -32,21 +32,23 @@
 		@endif
 		<section class="created-user">
 			<h3 class="created-user__hd"><span class="created-user__hd_emphasis">クリエイトユーザー情報</span></h3>
-			<div class="created-user-card">
-				<div class="created-user-card__row">
-					<div class="created-user-card__img">
-						@if($community->users->profile_image)
-						<img src="{{ asset('/storage/img/'.$community->users->profile_image) }}" alt="企画したユーザープロフィール画像">
-						@else
-						<img src="{{ asset('./img/default-icon.png') }}" alt="企画したユーザープロフィール画像">
-						@endif
+			<a class="created-use-card__link" href="{{ route('user.show', ['user_name' => $community->users->user_name]) }}">
+				<div class="created-user-card">
+					<div class="created-user-card__row">
+						<div class="created-user-card__img">
+							@if($community->users->profile_image)
+							<img src="{{ asset('/storage/img/'.$community->users->profile_image) }}" alt="企画したユーザープロフィール画像">
+							@else
+							<img src="{{ asset('./img/default-icon.png') }}" alt="企画したユーザープロフィール画像">
+							@endif
+						</div>
+						<section class="created-user-card__intro">
+							<h4 class="created-user-card__name">{{ $community->users->name }}</h4>
+							<p class="created-user-card__cmt">{{ $community->users->comment }}</p>
+						</section>
 					</div>
-					<section class="created-user-card__intro">
-						<h4 class="created-user-card__name">{{ $community->users->name }}</h4>
-						<p class="created-user-card__cmt">{{ $community->users->comment }}</p>
-					</section>
 				</div>
-			</div>
+			</a>
 		</section>
 		<h2 class="comm-det__hd">現在の応募<span class="comm-det__hd_emphasis">{{ $appliedUsers->count() }}件</span></h2>
 		<table class="applied-user-tb">

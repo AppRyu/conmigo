@@ -12,9 +12,10 @@ body {
 }
 
 a {
-    color: clr(c---dark-blue);
+    color: clr(c---black);
     &:hover {
-        color: darken(clr(c---dark-blue), 15%);
+        color: clr(c---black);
+        text-decoration: none;
     }
 }
 

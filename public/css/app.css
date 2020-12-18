@@ -8,11 +8,12 @@ body {
 }
 
 a {
-  color: #536dfe;
+  color: #4b4f56;
 }
 
 a:hover {
-  color: #072cfe;
+  color: #4b4f56;
+  text-decoration: none;
 }
 
 img {
@@ -368,8 +369,16 @@ textarea {
 }
 
 .created-user-card {
+  border: 1px solid #f5f5f5;
+  background-color: #e9ebee;
+  padding: 0.75rem;
   margin-bottom: 1.5rem;
   overflow: hidden;
+}
+
+.created-user-card__link {
+  text-decoration: none;
+  color: #4b4f56;
 }
 
 @media screen and (min-width: 544px) {
@@ -381,6 +390,9 @@ textarea {
 .created-user-card__img {
   width: 80px;
   margin-right: 0.75rem;
+  border: 2px solid white;
+  border-radius: 50%;
+  overflow: hidden;
   float: left;
 }
 

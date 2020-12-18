@@ -81,8 +81,15 @@
         }
     }
     &-card {
+        border: 1px solid clr(c---light-gray);
+        background-color: clr(c---bg--gray);
+        padding: space(sm);
         margin-bottom: space(lg);
         overflow: hidden;
+        &__link {
+            text-decoration: none;
+            color: clr(c---black);
+        }
         &__row {
             @include mq("xs") {
                 display: flex;
@@ -91,6 +98,9 @@
         &__img {
             width: 80px;
             margin-right: space(sm);
+            border: 2px solid white;
+            border-radius: 50%;
+            overflow: hidden;
             float: left;
             @include mq("xs") {
                 flex-shrink: 0;
