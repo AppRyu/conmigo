@@ -34,10 +34,16 @@
 			<h3 class="created-user__hd"><span class="created-user__hd_emphasis">クリエイトユーザー情報</span></h3>
 			<div class="created-user-card">
 				<div class="created-user-card__row">
-					<div class="created-user-card__img"><img src="{{ asset('./img/default-icon.png') }}" alt="企画したユーザーのプロフィール画像"></div>
+					<div class="created-user-card__img">
+						@if($community->users->profile_image)
+						<img src="{{ asset('/storage/img/'.$community->users->profile_image) }}" alt="企画したユーザープロフィール画像">
+						@else
+						<img src="{{ asset('./img/default-icon.png') }}" alt="企画したユーザープロフィール画像">
+						@endif
+					</div>
 					<section class="created-user-card__intro">
-						<h4 class="created-user-card__name">大原櫻子</h4>
-						<p class="created-user-card__cmt">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+						<h4 class="created-user-card__name">{{ $community->users->name }}</h4>
+						<p class="created-user-card__cmt">{{ $community->users->comment }}</p>
 					</section>
 				</div>
 			</div>
@@ -53,7 +59,13 @@
 			<tbody class="applied-user-tb__bd">
 				@foreach($appliedUsers as $appliedUser)
 				<tr class="applied-user-tb__tr">
-					<td class="applied-user-tb__td"><img class="applied-user-tb__img" src="{{ asset('/storage/img/'.$appliedUser->users->profile_image) }}" alt="応募したユーザーのプロフィール画像">{{ $appliedUser->users->user_name }}</td>
+					<td class="applied-user-tb__td">
+						@if($appliedUser->users->profile_image)
+						<img class="applied-user-tb__img" src="{{ asset('/storage/img/'.$appliedUser->users->profile_image) }}" alt="応募したユーザーのプロフィール画像">
+						@else
+						<img class="applied-user-tb__img" src="{{ asset('./img/default-icon.png') }}" alt="応募したユーザーのプロフィール画像">
+						@endif
+						{{ $appliedUser->users->user_name }}</td>
 					<td class="applied-user-tb__td">{{ $appliedUser->created_at }}</td>
 				</tr>
 				@endforeach
