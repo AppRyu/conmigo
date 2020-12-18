@@ -3,7 +3,7 @@
         @if(Auth::user()->profile_image !== null)
         <img src="{{ asset('/storage/img/'.Auth::user()->profile_image) }}" alt="プロフィール画像">
         @else
-        <img src="./img/default-icon.png" alt="プロフィール画像">
+        <img src="{{ asset('./img/default-icon.png') }}" alt="プロフィール画像">
         @endif
     </div>
     <div class="profile-name">

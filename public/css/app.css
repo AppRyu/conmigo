@@ -354,7 +354,7 @@ textarea {
   background-color: #072cfe;
 }
 
-.created-user-info__hd {
+.created-user__hd {
   font-size: 1rem;
   font-weight: bold;
   color: #536dfe;
@@ -362,9 +362,41 @@ textarea {
   padding-bottom: 0.75rem;
 }
 
-.created-user-info__hd_emphasis {
+.created-user__hd_emphasis {
   padding-bottom: 0.75rem;
   border-bottom: 2px solid #536dfe;
+}
+
+.created-user-card {
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 544px) {
+  .created-user-card__row {
+    display: flex;
+  }
+}
+
+.created-user-card__img {
+  width: 80px;
+  margin-right: 0.75rem;
+  float: left;
+}
+
+@media screen and (min-width: 544px) {
+  .created-user-card__img {
+    flex-shrink: 0;
+  }
+}
+
+.created-user-card__name {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.created-user-card__cmt {
+  text-align: justify;
 }
 
 .applied-user-tb {

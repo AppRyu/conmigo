@@ -68,15 +68,41 @@
     }
 }
 
-.created-user-info__hd {
-    font-size: fs(lg);
-    font-weight: bold;
-    color: clr(c---dark-blue);
-    border-bottom: 1px solid clr(c---light-gray);
-    padding-bottom: space(sm);
-    &_emphasis {
+.created-user {
+    &__hd {
+        font-size: fs(lg);
+        font-weight: bold;
+        color: clr(c---dark-blue);
+        border-bottom: 1px solid clr(c---light-gray);
         padding-bottom: space(sm);
-        border-bottom: 2px solid clr(c---dark-blue);
+        &_emphasis {
+            padding-bottom: space(sm);
+            border-bottom: 2px solid clr(c---dark-blue);
+        }
+    }
+    &-card {
+        margin-bottom: space(lg);
+        overflow: hidden;
+        &__row {
+            @include mq("xs") {
+                display: flex;
+            }
+        }
+        &__img {
+            width: 80px;
+            margin-right: space(sm);
+            float: left;
+            @include mq("xs") {
+                flex-shrink: 0;
+            }
+        }
+        &__name {
+            font-size: fs(lg);
+            font-weight: bold;
+        }
+        &__cmt {
+            text-align: justify;
+        }
     }
 }
 

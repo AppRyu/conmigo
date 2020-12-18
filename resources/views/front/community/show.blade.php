@@ -30,8 +30,17 @@
 		>
 		</community-recruit-btn>
 		@endif
-		<section class="created-user-info">
-			<h3 class="created-user-info__hd"><span class="created-user-info__hd_emphasis">クリエイトユーザー情報</span></h3>
+		<section class="created-user">
+			<h3 class="created-user__hd"><span class="created-user__hd_emphasis">クリエイトユーザー情報</span></h3>
+			<div class="created-user-card">
+				<div class="created-user-card__row">
+					<div class="created-user-card__img"><img src="{{ asset('./img/default-icon.png') }}" alt="企画したユーザーのプロフィール画像"></div>
+					<section class="created-user-card__intro">
+						<h4 class="created-user-card__name">大原櫻子</h4>
+						<p class="created-user-card__cmt">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+					</section>
+				</div>
+			</div>
 		</section>
 		<h2 class="comm-det__hd">現在の応募<span class="comm-det__hd_emphasis">{{ $appliedUsers->count() }}件</span></h2>
 		<table class="applied-user-tb">
@@ -44,7 +53,7 @@
 			<tbody class="applied-user-tb__bd">
 				@foreach($appliedUsers as $appliedUser)
 				<tr class="applied-user-tb__tr">
-					<td class="applied-user-tb__td"><img class="applied-user-tb__img" src="{{ asset('/storage/img/'.$appliedUser->users->profile_image) }}" alt="">{{ $appliedUser->users->user_name }}</td>
+					<td class="applied-user-tb__td"><img class="applied-user-tb__img" src="{{ asset('/storage/img/'.$appliedUser->users->profile_image) }}" alt="応募したユーザーのプロフィール画像">{{ $appliedUser->users->user_name }}</td>
 					<td class="applied-user-tb__td">{{ $appliedUser->created_at }}</td>
 				</tr>
 				@endforeach
