@@ -1,5 +1,10 @@
 {
+    "scss.validate": false,
     "editor.tabSize": 4,
     "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.stylelint": true
+    },
     "prettier.disableLanguages": ["javascript", "vue"]
 }
