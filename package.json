@@ -30,6 +30,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "k-progress": "^1.5.0",
         "vue-ctk-date-time-picker": "^2.5.0"
     }
 }
