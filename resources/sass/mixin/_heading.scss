@@ -1,0 +1,17 @@
+$initSize: 'normal';
+$initWeight: 'normal';
+@mixin _heading($size: $initSize, $weight: $initWeight) {
+    @if ($size == 'normal') {
+        font-size: fs(lg);
+    }
+    @if ($size == 'large') {
+        font-size: fs(xl);
+    }
+
+    @if ($weight == 'normal') {
+        font-weight: normal;
+    }
+    @if ($weight == 'bold') {
+        font-weight: bold;
+    }
+}

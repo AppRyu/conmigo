@@ -1,0 +1,44 @@
+$initDisplay: 'inline-block';
+$initColor: 'primary';
+@mixin _btn($display: $initDisplay, $color: $initColor) {
+    padding: 0.375rem 0.75rem;
+    text-align: center;
+    user-select: none;
+    border-radius: 0.25rem;
+    &:focus {
+        outline: none;
+    }
+    @if ($display == 'inline-block') {
+        display: inline-block;
+    }
+    @if ($display == 'block') {
+        display: block;
+    }
+    @if ($color == 'primary') {
+        color: clr(c---white);
+        background-color: clr(c---bg--dark-blue);
+        border: 1px solid clr(c---dark-blue);
+        &:hover {
+            background-color: lighten(clr(c---bg--dark-blue), 15%);
+            border: 1px solid transparent;
+        }
+    }
+    @if ($color == 'danger') {
+        color: clr(c---white);
+        background-color: clr(c---bg--dark-red);
+        border: 1px solid clr(c---dark-red);
+        &:hover {
+            background-color: lighten(clr(c---bg--dark-red), 15%);
+            border: 1px solid transparent;
+        }
+    }
+    @if ($color == 'green') {
+        color: clr(c---white);
+        background-color: clr(c---bg--dark-green);
+        border: 1px solid clr(c---bg--dark-green);
+        &:hover {
+            background-color: lighten(clr(c---bg--dark-green), 15%);
+            border: 1px solid transparent;
+        }
+    }
+}
