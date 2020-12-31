@@ -2,11 +2,11 @@
     padding: space(base);
     border: 1px solid clr(c---bg--gray);
     border-radius: 5px;
-    @include mq("xs") {
+    @include mq('xs') {
         display: flex;
     }
     &__left {
-        @include mq("xs") {
+        @include mq('xs') {
             margin-right: space(base);
         }
     }
@@ -35,7 +35,7 @@
 }
 
 .community-times {
-    @include mq("md") {
+    @include mq('md') {
         display: flex;
     }
 }
@@ -44,7 +44,7 @@
     font-weight: bold;
     &:first-child {
         margin-bottom: space(base);
-        @include mq("md") {
+        @include mq('md') {
             margin: {
                 bottom: 0;
                 right: space(base);
@@ -59,7 +59,7 @@
             background-color: clr(c---bg--light-red);
         }
         &--end {
-            color: clr(c---dark--green);
+            color: clr(c---dark-green);
             background-color: clr(c---bg--light-green);
         }
     }

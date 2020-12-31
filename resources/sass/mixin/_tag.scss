@@ -22,7 +22,7 @@ $initColor: 'blue';
         background-color: clr(c---bg--light-red);
     }
     @if ($color == 'green') {
-        color: clr(c---dark--green);
+        color: clr(c---dark-green);
         background-color: clr(c---bg--light-green);
     }
 }
