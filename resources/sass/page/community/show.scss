@@ -91,18 +91,18 @@
             color: clr(c---black);
         }
         &__row {
-            @include mq("xs") {
+            @include mq('xs') {
                 display: flex;
             }
         }
         &__img {
             width: 80px;
             margin-right: space(sm);
-            border: 2px solid white;
+            border: 2px solid clr(c---white);
             border-radius: 50%;
             overflow: hidden;
             float: left;
-            @include mq("xs") {
+            @include mq('xs') {
                 flex-shrink: 0;
             }
         }
