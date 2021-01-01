@@ -19,5 +19,8 @@
         <div class="profile-community">
             <a class="profile-data__link" href="{{ route('community.planed', ['user_name' => Auth::user()->user_name]) }}">コミュニティ管理</a>
         </div>
+        <div class="profile-community">
+            <a class="profile-data__link" href="">メッセージ</a>
+        </div>
     </div>
 </div>
