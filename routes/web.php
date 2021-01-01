@@ -39,7 +39,7 @@ Route::namespace('Front')->group(function() {
             Route::get('/community/applied', 'CommunityAppliedController@index')->name('community.applied');
 
             // チャット
-            Route::get('/chat/{community_id}', 'ChatController@show')->name('chat.show');
+            Route::get('/chat/{community}', 'ChatController@show')->name('chat.show');
       });
 
       //  プロフィール
