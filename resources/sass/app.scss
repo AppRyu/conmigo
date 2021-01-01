@@ -1,22 +1,25 @@
-@import "./setting/variables";
-@import "./setting/function";
+@import './setting/variables';
+@import './setting/function';
 
-@import "./mixin/breakpoint";
-@import "./mixin/tag";
+@import './mixin/breakpoint';
+@import './mixin/btn';
+@import './mixin/heading';
+@import './mixin/tag';
 
-@import "./base/base";
+@import './base/base';
 
-@import "./override/bootstrap/btn";
-@import "./override/bootstrap/form";
-@import "./override/bootstrap/navbar";
+@import './override/bootstrap/btn';
+@import './override/bootstrap/form';
+@import './override/bootstrap/navbar';
 
-@import "./auth/login";
-@import "./auth/register";
+@import './auth/login';
+@import './auth/register';
 
-@import "./page/community/admin";
-@import "./page/community/show";
+@import './page/community/admin';
+@import './page/community/show';
+@import './page/community/plan/show';
 
-@import "./community/sidebar";
-@import "./community/content";
-@import "./components/subnavbar";
-@import "./users/prof";
+@import './community/sidebar';
+@import './community/content';
+@import './components/subnavbar';
+@import './users/prof';

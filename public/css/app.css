@@ -38,7 +38,7 @@ img {
   bottom: 0;
   width: 100%;
   background-color: #536dfe;
-  color: #ffffff;
+  color: #fff;
 }
 
 .footer > .container {
@@ -57,7 +57,7 @@ img {
 }
 
 .btn-primary {
-  color: #ffffff;
+  color: #fff;
   background: #536dfe;
   border-color: #536dfe;
 }
@@ -159,7 +159,7 @@ textarea {
 .auth-form__btn {
   border-radius: 5em;
   outline: none;
-  color: #ffffff;
+  color: #fff;
   background: linear-gradient(to right, #536dfe, #39a2f2);
   border: 0;
   padding: 0.75rem 2.5rem;
@@ -196,7 +196,7 @@ textarea {
 
 .ca-navTabs__item:hover {
   color: inherit;
-  background-color: #ffffff;
+  background-color: #fff;
   text-decoration: none;
 }
 
@@ -207,7 +207,7 @@ textarea {
 .ca-navTabs__item_active {
   font-weight: bold;
   color: #4b4f56;
-  background-color: #ffffff;
+  background-color: #fff;
   border-top: 2px solid #536dfe;
   border-bottom: 1px solid transparent;
 }
@@ -244,8 +244,8 @@ textarea {
 .ca-tb__tag_normal-red {
   font-weight: 400;
   border-radius: 5px;
-  padding: 0.375rem 0.75rem;
   font-size: 0.75rem;
+  padding: 0.375rem 0.75rem;
   color: #bf3059;
   background-color: #fceeee;
 }
@@ -253,14 +253,14 @@ textarea {
 .ca-tb__tag_normal-green {
   font-weight: 400;
   border-radius: 5px;
-  padding: 0.375rem 0.75rem;
   font-size: 0.75rem;
+  padding: 0.375rem 0.75rem;
   color: #5ca62a;
   background-color: #eaf7dc;
 }
 
 .ca-tb__btn {
-  color: #ffffff;
+  color: #fff;
   background-color: #de342f;
   padding: 5px 10px;
   border-radius: 5px;
@@ -337,7 +337,7 @@ textarea {
 }
 
 .comm-det-rct__btn {
-  color: #ffffff;
+  color: #fff;
   border: none;
   border-radius: 0.25rem;
   padding: 0.75rem 1rem;
@@ -390,7 +390,7 @@ textarea {
 .created-user-card__img {
   width: 80px;
   margin-right: 0.75rem;
-  border: 2px solid white;
+  border: 2px solid #fff;
   border-radius: 50%;
   overflow: hidden;
   float: left;
@@ -416,7 +416,7 @@ textarea {
 }
 
 .applied-user-tb__hd {
-  color: #ffffff;
+  color: #fff;
   background: #536dfe;
 }
 
@@ -444,14 +444,94 @@ textarea {
   margin-right: 0.75rem;
 }
 
+.select-user__hd {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.select-user-list {
+  list-style: none;
+}
+
+.select-user-list__label {
+  position: relative;
+  cursor: pointer;
+}
+
+.select-user-list__input {
+  position: relative;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.select-user-list__input:before {
+  position: absolute;
+  z-index: 1;
+  top: 0.125rem;
+  left: 0.1875rem;
+  width: 0.75rem;
+  height: 0.375rem;
+  content: "";
+  transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+  transform: rotate(-45deg) scale(0, 0);
+  border: 2px solid #da3c41;
+  border-top-style: none;
+  border-right-style: none;
+}
+
+.select-user-list__input:after {
+  position: absolute;
+  top: -0.125rem;
+  left: 0;
+  width: 1rem;
+  height: 1rem;
+  content: "";
+  cursor: pointer;
+  border: 2px solid #f2f2f2;
+  background: #fff;
+}
+
+.select-user-list__input:checked:before {
+  transform: rotate(-45deg) scale(1, 1);
+}
+
+.select-user__btn {
+  padding: 0.375rem 0.75rem;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border-radius: 0.25rem;
+  display: inline-block;
+  color: #fff;
+  background-color: #81d14b;
+  border: 1px solid #81d14b;
+}
+
+.select-user__btn:focus {
+  outline: none;
+}
+
+.select-user__btn:hover {
+  background-color: #ace188;
+  border: 1px solid transparent;
+}
+
+.select-user__btn_disabled {
+  background-color: #ace188;
+  border: 1px solid #ace188;
+}
+
 .sidebar {
   background-color: #e9ebee;
   padding: 15px;
 }
 
 .sidebar .profile-img {
-  background-color: #ffffff;
-  border: 5px solid #ffffff;
+  background-color: #fff;
+  border: 5px solid #fff;
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 1rem;
@@ -526,7 +606,7 @@ textarea {
 .community-flg {
   display: inline-block;
   background-color: #536dfe;
-  color: #ffffff;
+  color: #fff;
   padding: 0.75rem 1rem;
   border-radius: 5px;
 }
@@ -555,8 +635,8 @@ textarea {
 .community-time__tag {
   font-weight: 400;
   border-radius: 5px;
-  padding: 0.375rem 0.75rem;
   font-size: 0.75rem;
+  padding: 0.375rem 0.75rem;
   color: #536dfe;
   background-color: #39a2f2;
   margin-right: 0.75rem;
@@ -596,7 +676,7 @@ textarea {
 
 .subnavbar .nav-link {
   font-size: 0.75rem;
-  color: #ffffff;
+  color: #fff;
 }
 
 .subnavbar .nav-link:hover {
