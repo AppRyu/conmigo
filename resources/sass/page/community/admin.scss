@@ -57,10 +57,10 @@
     }
     &__tag {
         &_normal-red {
-            @include _tag("normal", "red");
+            @include _tag('normal', 'red');
         }
         &_normal-green {
-            @include _tag("normal", "green");
+            @include _tag('normal', 'green');
         }
     }
     &__btn {
