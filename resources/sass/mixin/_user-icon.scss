@@ -1,0 +1,16 @@
+$initSize: 'normal';
+@mixin _user-icon($size: $initSize) {
+    height: auto;
+    border-radius: 50%;
+    overflow: hidden;
+    @if ($size == 'small') {
+        width: 30px;
+    }
+    @if ($size == 'normal') {
+        // normalサイズのiconを設定するクリエイトユーザーのサイズ
+        //width: ;
+    }
+    @if ($size == 'large') {
+        // TODO サイドバーの大きさ
+    }
+}
