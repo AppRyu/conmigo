@@ -23,15 +23,27 @@ Route::namespace('Front')->group(function() {
       // トップページ
       Route::get('/', 'TopController@index')->name('index');
 
+      // コミュニティ一覧＆詳細
+      Route::resource('/community', 'CommunityController')->only(['index', 'show']);
+
       Route::group(['middleware' => 'auth'], function() {
             Route::resource('community', 'CommunityController')->except(['index', 'show']);
             Route::post('/community/{id}/apply', 'CommunityController@apply')->name('community.apply');
             Route::get('/community/admin/{user_name}', 'CommunityPlanedController@index')->name('community.planed');
+
+            // 企画したコミュニティ
+            Route::get('/community/plan/{community}', 'CommunityPlanedController@show')->name('community.plan.show');
+            Route::post('/community/plan/{community}', 'CommunityPlanedController@determineUser')->name('community.plan.determineUser');
+            
+            // 応募したコミュニティ
             Route::get('/community/applied', 'CommunityAppliedController@index')->name('community.applied');
+
+            // チャット
+            Route::get('/chat/{community_id}', 'ChatController@show')->name('chat.show');
       });
-      Route::resource('/community', 'CommunityController')->only(['index', 'show']);
 
       //  プロフィール
+      // TODO : 一覧と詳細はログインしていなくても表示できるようにする
       Route::resource('/user', 'UserController')->parameters(['user' => 'user_name']);
       
       Route::get('/home', 'HomeController@index')->name('home');
