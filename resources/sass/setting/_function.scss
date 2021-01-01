@@ -2,6 +2,10 @@
     @return map-get($sizes, $key);
 }
 
+@function fw($key: normal) {
+    @return map-get($font-weight, $key);
+}
+
 @function space($key: base) {
     @return map-get($spaces, $key);
 }

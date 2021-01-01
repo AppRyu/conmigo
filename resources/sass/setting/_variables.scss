@@ -8,6 +8,11 @@ $sizes: (
     xxl: $font-size-base * 1.5,
 );
 
+$font-weight: (
+    normal: 400,
+    bold: 500,
+);
+
 $space: 1rem;
 $spaces: (
     0: 0,
