@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="prof">
-        <h2 class="prof-head">基本データ</h2>
+        <h2 class="prof-tit"><i class="fas fa-user prof-tit__icon"></i>基本データ</h2>
         <div class="prof-content">
             <h3 class="prof-content__head">プロフィール</h3>
             <div class="prof-content__name">{{ $user->name }}</div>
