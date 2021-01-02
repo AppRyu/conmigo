@@ -23,9 +23,6 @@ Route::namespace('Front')->group(function() {
       // トップページ
       Route::get('/', 'TopController@index')->name('index');
 
-      // コミュニティ一覧＆詳細
-      Route::resource('/community', 'CommunityController')->only(['index', 'show']);
-
       Route::group(['middleware' => 'auth'], function() {
             Route::resource('community', 'CommunityController')->except(['index', 'show']);
             Route::post('/community/{id}/apply', 'CommunityController@apply')->name('community.apply');
@@ -41,6 +38,10 @@ Route::namespace('Front')->group(function() {
             // チャット
             Route::get('/chat/{community}', 'ChatController@show')->name('chat.show');
       });
+
+      // コミュニティ一覧＆詳細
+      Route::resource('/community', 'CommunityController')->only(['index', 'show']);
+
 
       //  プロフィール
       // TODO : 一覧と詳細はログインしていなくても表示できるようにする
