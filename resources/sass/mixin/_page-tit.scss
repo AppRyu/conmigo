@@ -1,0 +1,6 @@
+@mixin _page-tit() {
+    border-left: 3px solid clr(c---black);
+    padding-left: space(base);
+    font-size: fs(xxl);
+    font-weight: fw(bold);
+}
