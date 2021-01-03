@@ -1,0 +1,31 @@
+$marginSizeList: 0, xs, sm, base, lg, xl, xxl;
+
+@each $size in $marginSizeList {
+    .u-mt-#{$size} {
+        margin-top: space(#{$size});
+    }
+    .u-mb-#{$size} {
+        margin-bottom: space(#{$size});
+    }
+    .u-mr-#{$size} {
+        margin-right: space(#{$size});
+    }
+    .u-ml-#{$size} {
+        margin-left: space(#{$size});
+    }
+    .u-my-#{$size} {
+        margin: {
+            top: space(#{$size});
+            bottom: space(#{$size});
+        }
+    }
+    .u-mx-#{$size} {
+        margin: {
+            right: space(#{$size});
+            left: space(#{$size});
+        }
+    }
+    .u-m-#{$size} {
+        margin: space(#{$size});
+    }
+}

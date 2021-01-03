@@ -1,0 +1,31 @@
+$paddingSizeList: 0, xs, sm, base, lg, xl, xxl;
+
+@each $size in $paddingSizeList {
+    .u-pt-#{$size} {
+        padding-top: space(#{$size});
+    }
+    .u-pb-#{$size} {
+        padding-bottom: space(#{$size});
+    }
+    .u-pr-#{$size} {
+        padding-right: space(#{$size});
+    }
+    .u-pl-#{$size} {
+        padding-left: space(#{$size});
+    }
+    .u-py-#{$size} {
+        padding: {
+            top: space(#{$size});
+            bottom: space(#{$size});
+        }
+    }
+    .u-px-#{$size} {
+        padding: {
+            right: space(#{$size});
+            left: space(#{$size});
+        }
+    }
+    .u-p-#{$size} {
+        padding: space(#{$size});
+    }
+}
