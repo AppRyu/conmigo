@@ -5,6 +5,8 @@
 @import './mixin/btn';
 @import './mixin/heading';
 @import './mixin/tag';
+@import './mixin/user-icon';
+@import './mixin/page-tit';
 
 @import './base/base';
 
@@ -15,11 +17,12 @@
 @import './auth/login';
 @import './auth/register';
 
-@import './page/community/admin';
 @import './page/community/show';
+@import './page/community/plan/index';
 @import './page/community/plan/show';
+@import './page/chat/show';
+@import './page/user/show';
 
 @import './community/sidebar';
 @import './community/content';
 @import './components/subnavbar';
-@import './users/prof';
