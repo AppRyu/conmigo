@@ -2,14 +2,20 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Community;
 use App\Member;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class ChatController extends Controller
 {
-    public function show(Int $community_id) 
+    public function index()
     {
-        return view('front.chat.show');
+        return view('front.chat.index');
+    }
+
+    public function show(Community $community) 
+    {
+        return view('front.chat.show', ['community' => $community]);
     }
 }

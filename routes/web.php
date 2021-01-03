@@ -35,7 +35,8 @@ Route::namespace('Front')->group(function() {
             // 応募したコミュニティ
             Route::get('/community/applied', 'CommunityAppliedController@index')->name('community.applied');
 
-            // チャット
+            // チャットルーム
+            Route::get('/chat', 'ChatController@index')->name('chat.index');
             Route::get('/chat/{community}', 'ChatController@show')->name('chat.show');
       });
 
