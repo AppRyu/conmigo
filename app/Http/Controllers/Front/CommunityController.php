@@ -97,7 +97,7 @@ class CommunityController extends Controller
     public function destroy(Community $community)
     {
         $community->delete();
-        return redirect(route('community.planed', ['user_name' => auth()->user()->user_name]))->with('error', '削除処理に成功しました');
+        return redirect(route('community.plan.index', ['user_name' => auth()->user()->user_name]))->with('error', '削除処理に成功しました');
     }
 
     public function apply(Request $request)
