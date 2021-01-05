@@ -1,0 +1,7 @@
+$fontWeightList: thin, normal, bold;
+
+@each $weight in $fontWeightList {
+    .u-fw-#{$weight} {
+        font-weight: fw(#{$weight});
+    }
+}

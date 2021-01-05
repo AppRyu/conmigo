@@ -1,0 +1,7 @@
+$fontSizeList: xs, sm, base, lg, xl, xxl;
+
+@each $size in $fontSizeList {
+    .u-fs-#{$size} {
+        font-size: fs(#{$size});
+    }
+}
