@@ -18,7 +18,7 @@ class CreateCommunityMessagesTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('community_id');
-            $table->foreign('community_id')->references('id')->on('users');
+            $table->foreign('community_id')->references('id')->on('communities');
             $table->text('message');
             $table->timestamps();
         });
