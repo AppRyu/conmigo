@@ -12,6 +12,6 @@ class CommunityAppliedController extends Controller
     public function index() {
         $appliedId = Recruit::where('applied_user', auth()->user()->id)->get('community_id')->toArray();
         $appliedCommunities = Community::whereIn('id', $appliedId)->paginate(15);
-        return view('front.community.applied', ['appliedCommunities' => $appliedCommunities]);
+        return view('front.community.apply.index', ['appliedCommunities' => $appliedCommunities]);
     }
 }
