@@ -1,29 +1,24 @@
 .chat-tit {
     border-left: 3px solid clr(c---black);
     padding-left: space(base);
-    margin-bottom: space(xl);
     font-size: fs(xxl);
     font-weight: fw(bold);
     &__sub {
         font-size: fs(sm);
-        margin-top: space(xs);
     }
-    &__icon {
-        margin-right: space(base);
-    }
+}
+
+.chat-container {
+    border: 1px solid clr(c---bg--gray);
+    border-radius: 5px;
 }
 
 .chat-content {
     display: flex;
     justify-content: flex-start;
-    padding: space(base);
-    border: 1px solid clr(c---bg--gray);
-    border-radius: 5px;
-    &__img {
-        margin-right: space(base);
-    }
+    border-bottom: 1px solid clr(c---bg--gray);
     &__prof-icon {
-        @include _user-icon('small');
+        @include _user-icon('normal');
         border: 1px solid clr(c---bg--gray);
     }
     &__box {
@@ -50,7 +45,6 @@
         width: 100%;
         border: 1px solid clr(c---bg--gray);
         border-radius: 5px;
-        margin-bottom: space(base);
         &:focus {
             outline: 2px solid clr(c---bg--dark-blue);
         }

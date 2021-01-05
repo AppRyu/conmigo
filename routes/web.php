@@ -38,6 +38,7 @@ Route::namespace('Front')->group(function() {
             // チャットルーム
             Route::get('/chat', 'ChatController@index')->name('chat.index');
             Route::get('/chat/{community}', 'ChatController@show')->name('chat.show');
+            Route::post('/chat/{community}', 'ChatController@sendMessage')->name('chat.sendMessage');
       });
 
       // コミュニティ一覧＆詳細
