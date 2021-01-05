@@ -33,7 +33,7 @@ Route::namespace('Front')->group(function() {
             Route::post('/community/plan/{community}', 'CommunityPlanedController@determineUser')->name('community.plan.determineUser');
             
             // 応募したコミュニティ
-            Route::get('/community/applied', 'CommunityAppliedController@index')->name('community.applied');
+            Route::get('/community/applied', 'CommunityApplyController@index')->name('community.applied');
 
             // チャットルーム
             Route::get('/chat', 'ChatController@index')->name('chat.index');
