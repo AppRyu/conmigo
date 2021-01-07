@@ -3,6 +3,9 @@
 @section('title', 'コミュニティ作成')
 
 @section('content')
+    <h2 class="page-tit u-mb-xl"><i class="far fa-plus-square u-mr-base"></i>コミュニティを作成
+    <div class="u-fs-sm u-mt-xs">あなたがホストとなってコミュニティを作成してください。</div>
+    </h2>
     <form method="post" action="{{ route('community.store') }}">
         @csrf
         <div class="form-row">
