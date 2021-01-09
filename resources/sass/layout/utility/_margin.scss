@@ -1,4 +1,5 @@
 $marginSizeList: 0, xs, sm, base, lg, xl, xxl;
+$breakpointList: xs, sm, md, lg;
 
 @each $size in $marginSizeList {
     .u-mt-#{$size} {
@@ -27,5 +28,51 @@ $marginSizeList: 0, xs, sm, base, lg, xl, xxl;
     }
     .u-m-#{$size} {
         margin: space(#{$size});
+    }
+}
+
+@each $size in $marginSizeList {
+    @each $breakpoint in $breakpointList {
+        .u-#{$breakpoint}-mt-#{$size} {
+            @include mq(#{$breakpoint}) {
+                margin-top: space(#{$size});
+            }
+        }
+        .u-#{$breakpoint}-mb-#{$size} {
+            @include mq(#{$breakpoint}) {
+                margin-bottom: space(#{$size});
+            }
+        }
+        .u-#{$breakpoint}-mr-#{$size} {
+            @include mq(#{$breakpoint}) {
+                margin-right: space(#{$size});
+            }
+        }
+        .u-#{$breakpoint}-ml-#{$size} {
+            @include mq(#{$breakpoint}) {
+                margin-left: space(#{$size});
+            }
+        }
+        .u-#{$breakpoint}-my-#{$size} {
+            @include mq(#{$breakpoint}) {
+                margin: {
+                    top: space(#{$size});
+                    bottom: space(#{$size});
+                }
+            }
+        }
+        .u-#{$breakpoint}-mx-#{$size} {
+            @include mq(#{$breakpoint}) {
+                margin: {
+                    right: space(#{$size});
+                    left: space(#{$size});
+                }
+            }
+        }
+        .u-#{$breakpoint}-m-#{$size} {
+            @include mq(#{$breakpoint}) {
+                margin: space(#{$size});
+            }
+        }
     }
 }
