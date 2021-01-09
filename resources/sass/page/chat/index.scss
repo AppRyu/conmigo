@@ -1,0 +1,12 @@
+.msg-sec {
+    border: 1px solid clr(c---bg--gray);
+    border-radius: 5px;
+    &__tit {
+        color: clr(c---dark-blue);
+    }
+}
+.msg-content {
+    @include mq('md') {
+        display: flex;
+    }
+}
