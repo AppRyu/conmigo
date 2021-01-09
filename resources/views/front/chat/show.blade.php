@@ -4,8 +4,8 @@
 
 @section('content')
     <section class="chat-inner">
-        <h2 class="chat-tit u-mb-xl"><i class="fas fa-comments chat-tit__icon u-mr-base"></i>チャットルーム
-            <div class="chat-tit__sub u-mt-xs">コミュニティに関する連絡はこちらのページをご利用ください。</div>
+        <h2 class="chat-tit u-mb-xl"><i class="fas fa-comments u-mr-base"></i>チャットルーム
+            <div class="u-fs-sm u-fw-normal u-mt-xs">コミュニティに関する連絡はこちらのページをご利用ください。</div>
         </h2>
         <div class="chat-container u-px-base u-pt-base">
             @foreach($usersWithoutCreatedUser as $user)

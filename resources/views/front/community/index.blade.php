@@ -5,7 +5,7 @@
 @section('content')
     <div class="community-container">
         <h2 class="page-tit u-mb-xl"><i class="fas fa-search u-mr-base"></i>コミュニティを探す
-            <div class="u-fs-sm u-mt-xs">一緒に学習するコミュニティを探してください。</div>
+            <div class="u-fs-sm u-fw-normal u-mt-xs">一緒に学習するコミュニティを探してください。</div>
         </h2>
         @foreach($communities as $community)
         <div class="community-content">
