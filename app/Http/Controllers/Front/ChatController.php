@@ -13,7 +13,15 @@ class ChatController extends Controller
 {
     public function index()
     {
-        return view('front.chat.index');
+        // ゲストとして参加しているコミュニティIDを取得
+        $allAppliedCommunityId = Member::where('user_id', auth()->user()->id)->pluck('community_id')->toArray();
+        // ホストとして参加しているコミュニティIDを取得
+        $allPlanedCommunityId = Community::where('created_user', auth()->user()->id)->pluck('id')->toArray();
+        // ゲスト・ホスト問わず、参加している全てのコミュニティIDを取得
+        $allJoiningCommunityId = array_merge($allAppliedCommunityId, $allPlanedCommunityId);
+        // 取得したコミュニティIDを参照して、対応するコミュニティデータを取得
+        $communities = Community::whereIn('id', $allJoiningCommunityId)->select('id', 'name', 'created_user', 'start', 'end')->orderBy('start')->get();
+        return view('front.chat.index', ['communities' => $communities]);
     }
 
     public function show(Community $community) 
