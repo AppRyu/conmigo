@@ -1,0 +1,27 @@
+$tagSizeList: sm, normal, lg;
+$tagColorList: red, blue, green;
+
+@each $size in $tagSizeList {
+    .c-tag-#{$size} {
+        display: inline-block;
+        font-weight: fw(normal);
+        border-radius: 5px;
+        @if ($size == 'sm') {
+            font-size: fs(xs);
+            padding: space(xs) space(sm);
+        } @else if ($size == 'normal') {
+            font-size: fs(sm);
+            padding: space(sm) space(base);
+        } @else if ($size == 'lg') {
+            font-size: fs(base);
+            padding: space(base) space(lg);
+        }
+    }
+}
+
+@each $color in $tagColorList {
+    .c-tag-#{'' + $color} {
+        color: clr(c---dark-#{$color});
+        background-color: clr(c---bg--light-#{$color});
+    }
+}

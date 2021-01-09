@@ -1,0 +1,17 @@
+$badgeSizeList: xs, sm, base, lg;
+$badgeColorList: blue, green, red;
+
+@each $size in $badgeSizeList {
+    .c-badge-#{$size} {
+        display: inline-block;
+        padding: space(#{$size});
+        border-radius: 5px;
+    }
+}
+
+@each $color in $badgeColorList {
+    .c-badge-#{'' + $color} {
+        color: clr(c---white);
+        background-color: clr(c---bg--dark-#{$color});
+    }
+}
