@@ -41,7 +41,7 @@
                 @endif
             </div>
         </div>
-        @if(Auth::user()->id === $user->id)
+        @if(Auth::check() && Auth::user()->id === $user->id)
         <div class="prof-btn">
             <a class="btn btn-primary" href="{{ route('user.edit', ['user_name' => $user->user_name]) }}">プロフィールを編集</a>
         </div>
