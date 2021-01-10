@@ -1,6 +1,7 @@
-$marginSizeList: 0, xs, sm, base, lg, xl, xxl;
+$marginSizeList: no, xs, sm, base, lg, xl, xxl;
 $breakpointList: xs, sm, md, lg;
 
+// レスポンシブ対応なし、marginスタイル設定
 @each $size in $marginSizeList {
     .u-mt-#{$size} {
         margin-top: space(#{$size});
@@ -31,6 +32,7 @@ $breakpointList: xs, sm, md, lg;
     }
 }
 
+// レスポンシブ対応あり、marginスタイル設定
 @each $size in $marginSizeList {
     @each $breakpoint in $breakpointList {
         .u-#{$breakpoint}-mt-#{$size} {
