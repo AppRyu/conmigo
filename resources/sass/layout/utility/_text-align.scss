@@ -1,0 +1,7 @@
+$textAlignList: left, center, right;
+
+@each $textAlign in $textAlignList {
+    .u-ta-#{$textAlign} {
+        text-align: #{$textAlign};
+    }
+}
