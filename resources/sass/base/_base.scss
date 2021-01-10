@@ -47,18 +47,6 @@ img {
     width: 100%;
     background-color: clr(c---bg--dark-blue);
     color: clr(c---white);
-    > .container {
-        text-align: center;
-        padding: {
-            top: space(base);
-            bottom: space(base);
-        }
-    }
-}
-
-.copyright {
-    font-size: fs(sm);
-    margin-bottom: space(0);
 }
 
 .emphasis {
