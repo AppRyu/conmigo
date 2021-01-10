@@ -19,7 +19,8 @@
                 </div>
                 <section>
                     <h3 class="u-fs-lg"><a href="{{ route('user.show', ['user_name' => $user->user_name]) }}">{{ $user->user_name }}</a></h3>
-                    <p>最終ログイン：2日前</p>
+                    <!--  TODO 最終ログイン時間を表示させる -->
+                    <!-- <p>最終ログイン：2日前</p> -->
                 </section>
             </div>
             @endforeach
@@ -37,7 +38,7 @@
                         <h3 class="chat-content__usr-name">{{ $chat->users->user_name }}</h3>
                         <p class="chat-content__date">{{ $chat->created_at }}</p>
                     </div>
-                    <p class="chat-content__msg">{{ $chat->message }}</p>
+                    <p class="chat-content__msg">{!! nl2br(e($chat->message)) !!}</p>
                 </section>
             </div>
             @endforeach
