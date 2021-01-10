@@ -20,7 +20,7 @@ class ChatController extends Controller
         // ゲスト・ホスト問わず、参加している全てのコミュニティIDを取得
         $allJoiningCommunityId = array_merge($allAppliedCommunityId, $allPlanedCommunityId);
         // 取得したコミュニティIDを参照して、対応するコミュニティデータを取得
-        $communities = Community::whereIn('id', $allJoiningCommunityId)->select('id', 'name', 'created_user', 'start', 'end')->orderBy('start')->get();
+        $communities = Community::whereIn('id', $allJoiningCommunityId)->select('id', 'name', 'created_user', 'start', 'end')->orderBy('start')->paginate(15);
         return view('front.chat.index', ['communities' => $communities]);
     }
 
