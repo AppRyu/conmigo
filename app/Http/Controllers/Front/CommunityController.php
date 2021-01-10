@@ -23,10 +23,8 @@ class CommunityController extends Controller
      */
     public function index()
     {
-        $communities = Community::paginate(30)->sortByDesc('created_at');
-        return view('front.community.index', [
-            'communities' => $communities
-            ]);
+        $communities = Community::orderBy('created_at', 'desc')->paginate(30);
+        return view('front.community.index', ['communities' => $communities]);
     }
 
     /**

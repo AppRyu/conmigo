@@ -1988,6 +1988,15 @@ textarea {
   color: #536dfe;
 }
 
+.page-item .page-link {
+  color: #536dfe;
+}
+
+.page-item.active > .page-link {
+  background-color: #536dfe;
+  border-color: #536dfe;
+}
+
 .auth-container {
   max-width: 400px;
   margin: 3em auto;
