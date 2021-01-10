@@ -21,6 +21,11 @@ class Community extends Model
         return $this->hasMany('App\Recruit', 'community_id', 'id');
     }
 
+    public function members()
+    {
+        return $this->hasMany('App\Member', 'community_id', 'id');
+    }
+
     /**
      * 
      * @return boolean 
