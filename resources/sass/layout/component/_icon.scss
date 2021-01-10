@@ -1,0 +1,18 @@
+$iconSizeList: xs, sm, base, lg;
+
+@each $size in $iconSizeList {
+    .c-icon-#{$size} {
+        height: auto;
+        border-radius: 50%;
+        overflow: hidden;
+        @if ($size == 'xs') {
+            width: 25px;
+        } @else if ($size == 'sm') {
+            width: 30px;
+        } @else if ($size == 'base') {
+            width: 50px;
+        } @else if ($size == 'lg') {
+            width: 100%;
+        }
+    }
+}
