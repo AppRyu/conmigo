@@ -1,0 +1,42 @@
+.community-content {
+    padding: space(base);
+    border: 1px solid clr(c---bg--gray);
+    border-radius: 5px;
+    &:hover {
+        background-color: lighten(clr(c---bg--light-blue), 40%);
+    }
+    &__right {
+        flex: 1;
+    }
+}
+
+.community-name {
+    color: clr(c---dark-blue);
+}
+
+.community-flg {
+    display: inline-block;
+    background-color: clr(c---bg--dark-blue);
+    color: clr(c---white);
+    padding: space(sm) space(base);
+    border-radius: 5px;
+}
+
+.community-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.community-requested__num {
+    color: clr(c---dark-blue);
+}
+
+.community-created-user__link {
+    color: clr(c---dark-blue);
+    text-decoration: underline;
+    &:hover {
+        color: clr(c---dark-blue);
+        text-decoration: underline;
+    }
+}

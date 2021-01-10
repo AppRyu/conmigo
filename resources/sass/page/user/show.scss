@@ -1,0 +1,39 @@
+.prof-tit {
+    border-left: 3px solid clr(c---black);
+    padding-left: space(base);
+    margin-bottom: space(xl);
+    font-size: fs(xxl);
+    font-weight: fw(bold);
+    &__icon {
+        margin-right: space(base);
+    }
+}
+
+.prof-content {
+    margin-bottom: space(lg);
+    &__head {
+        font-size: fs(base);
+        color: clr(c---dark-gray);
+        padding-bottom: space(base);
+        border-bottom: 1px solid clr(c---dark-gray);
+        margin-bottom: space(base);
+    }
+    &__name {
+        margin-bottom: space(base);
+    }
+    &__contact {
+        margin-bottom: space(base);
+    }
+    &__icon {
+        color: clr(c---dark-gray);
+        &.fa-twitter {
+            color: clr(c---sns--twitter);
+        }
+        &.fa-instagram {
+            color: clr(c---sns--instagram);
+        }
+        &.fa-facebook-f {
+            color: clr(c---sns--facebook);
+        }
+    }
+}
