@@ -12,7 +12,10 @@ $initColor: 'blue';
         font-size: fs(sm);
         padding: space(xs) space(sm);
     }
-
+    @if ($size == 'large') {
+        font-size: fs(base);
+        padding: space(sm) space(base);
+    }
     @if ($color == 'blue') {
         color: clr(c---dark-blue);
         background-color: clr(c---bg--light-blue);

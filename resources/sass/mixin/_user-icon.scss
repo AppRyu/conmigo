@@ -5,12 +5,11 @@ $initSize: 'normal';
     overflow: hidden;
     @if ($size == 'small') {
         width: 30px;
-    }
-    @if ($size == 'normal') {
-        // normalサイズのiconを設定するクリエイトユーザーのサイズ
-        //width: ;
-    }
-    @if ($size == 'large') {
-        // TODO サイドバーの大きさ
+    } @else if ($size == 'xs') {
+        width: 25px;
+    } @else if ($size == 'normal') {
+        width: 50px;
+    } @else if ($size == 'large') {
+        // width: ??px;
     }
 }
