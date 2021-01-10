@@ -1,0 +1,20 @@
+$displayList: block, inline-block, flex, none;
+$breakpointList: xs, sm, md, lg;
+
+// レスポンシブ対応なし、displayスタイル設定
+@each $display in $displayList {
+    .u-d-#{$display} {
+        display: #{$display};
+    }
+}
+
+// レスポンシブ対応あり、displayスタイル設定
+@each $display in $displayList {
+    @each $breakpoint in $breakpointList {
+        .u-#{$breakpoint}-d-#{$display} {
+            @include mq(#{$breakpoint}) {
+                display: #{$display};
+            }
+        }
+    }
+}
