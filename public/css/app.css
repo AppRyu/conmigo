@@ -52,28 +52,25 @@ img {
   color: #536dfe;
 }
 
-.c-badge-xs {
-  display: inline-block;
-  padding: 0.375rem;
-  border-radius: 5px;
-}
-
 .c-badge-sm {
   display: inline-block;
-  padding: 0.75rem;
   border-radius: 5px;
+  text-align: center;
+  padding: 0.375rem 0.75rem;
 }
 
 .c-badge-base {
   display: inline-block;
-  padding: 1rem;
   border-radius: 5px;
+  text-align: center;
+  padding: 0.75rem 1rem;
 }
 
 .c-badge-lg {
   display: inline-block;
-  padding: 1.5rem;
   border-radius: 5px;
+  text-align: center;
+  padding: 1rem 1.5rem;
 }
 
 .c-badge-blue {
@@ -2354,6 +2351,7 @@ textarea {
   padding: 1rem;
   border: 1px solid #e9ebee;
   border-radius: 5px;
+  position: relative;
 }
 
 .community-content:hover {
@@ -2364,26 +2362,77 @@ textarea {
   flex: 1;
 }
 
-.community-name {
-  color: #536dfe;
+.community-badge-sm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-right: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-top-left-radius: 5px;
+  width: 50px;
+  height: 50px;
+  display: block;
 }
 
-.community-flg {
-  display: inline-block;
-  background-color: #536dfe;
+@media screen and (min-width: 544px) {
+  .community-badge-sm {
+    display: none;
+  }
+}
+
+.community-badge-sm__txt {
+  position: absolute;
   color: #fff;
-  padding: 0.75rem 1rem;
-  border-radius: 5px;
+  font-size: 0.5rem;
+  -ms-writing-mode: tb-lr;
+      writing-mode: vertical-lr;
+  transform: rotate(-45deg);
+}
+
+.community-badge-sm--red {
+  border-top: 25px solid #de342f;
+  border-left: 25px solid #de342f;
+}
+
+.community-badge-sm--red > .community-badge-sm__txt {
+  top: -14px;
+  left: -21px;
+}
+
+.community-badge-sm--blue {
+  border-top: 25px solid #536dfe;
+  border-left: 25px solid #536dfe;
+}
+
+.community-badge-sm--blue > .community-badge-sm__txt {
+  top: -14px;
+  left: -21px;
+}
+
+.community-badge-sm--green {
+  border-top: 25px solid #81d14b;
+  border-left: 25px solid #81d14b;
+}
+
+.community-badge-sm--green > .community-badge-sm__txt {
+  top: -12px;
+  left: -29px;
+}
+
+.community-badge {
+  font-size: 0.875rem;
+}
+
+@media screen and (min-width: 544px) {
+  .community-badge {
+    width: 75px;
+  }
 }
 
 .community-row {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-}
-
-.community-requested__num {
-  color: #536dfe;
 }
 
 .community-created-user__link {

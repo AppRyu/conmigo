@@ -2,6 +2,7 @@
     padding: space(base);
     border: 1px solid clr(c---bg--gray);
     border-radius: 5px;
+    position: relative;
     &:hover {
         background-color: lighten(clr(c---bg--light-blue), 40%);
     }
@@ -10,26 +11,63 @@
     }
 }
 
-.community-name {
-    color: clr(c---dark-blue);
+.community-badge-sm {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-right: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-top-left-radius: 5px;
+    width: 50px;
+    height: 50px;
+    display: block;
+    @include mq('xs') {
+        display: none;
+    }
+    &__txt {
+        position: absolute;
+        color: clr(c---white);
+        font-size: fs(xs);
+        writing-mode: vertical-lr;
+        transform: rotate(-45deg);
+    }
+    &--red {
+        border-top: 25px solid clr(c---bg--dark-red);
+        border-left: 25px solid clr(c---bg--dark-red);
+        > .community-badge-sm__txt {
+            top: -14px;
+            left: -21px;
+        }
+    }
+    &--blue {
+        border-top: 25px solid clr(c---bg--dark-blue);
+        border-left: 25px solid clr(c---bg--dark-blue);
+        > .community-badge-sm__txt {
+            top: -14px;
+            left: -21px;
+        }
+    }
+    &--green {
+        border-top: 25px solid clr(c---bg--dark-green);
+        border-left: 25px solid clr(c---bg--dark-green);
+        > .community-badge-sm__txt {
+            top: -12px;
+            left: -29px;
+        }
+    }
 }
 
-.community-flg {
-    display: inline-block;
-    background-color: clr(c---bg--dark-blue);
-    color: clr(c---white);
-    padding: space(sm) space(base);
-    border-radius: 5px;
+.community-badge {
+    font-size: fs(base);
+    @include mq('xs') {
+        width: 75px;
+    }
 }
 
 .community-row {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-}
-
-.community-requested__num {
-    color: clr(c---dark-blue);
 }
 
 .community-created-user__link {

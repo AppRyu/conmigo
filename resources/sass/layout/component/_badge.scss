@@ -1,11 +1,18 @@
-$badgeSizeList: xs, sm, base, lg;
+$badgeSizeList: sm, base, lg;
 $badgeColorList: blue, green, red;
 
 @each $size in $badgeSizeList {
     .c-badge-#{$size} {
         display: inline-block;
-        padding: space(#{$size});
         border-radius: 5px;
+        text-align: center;
+        @if ($size == 'sm') {
+            padding: space(xs) space(sm);
+        } @else if ($size == 'base') {
+            padding: space(sm) space(base);
+        } @else if ($size == 'lg') {
+            padding: space(base) space(lg);
+        }
     }
 }
 
