@@ -1,4 +1,4 @@
-$textAlignList: left, center, right;
+$textAlignList: left, center, right, justify;
 
 @each $textAlign in $textAlignList {
     .u-ta-#{$textAlign} {

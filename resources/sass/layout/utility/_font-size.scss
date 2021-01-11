@@ -1,7 +1,20 @@
 $fontSizeList: xs, sm, base, lg, xl, xxl;
+$breakpointList: xs, sm, md, lg;
 
+// レスポンシブ対応なし、font-sizeスタイル設定
 @each $size in $fontSizeList {
     .u-fs-#{$size} {
         font-size: fs(#{$size});
+    }
+}
+
+// レスポンシブ対応あり、font-sizeスタイル設定
+@each $size in $fontSizeList {
+    @each $breakpoint in $breakpointList {
+        .u-#{$breakpoint}-fs-#{$size} {
+            @include mq(#{$breakpoint}) {
+                font-size: fs(#{$size});
+            }
+        }
     }
 }
