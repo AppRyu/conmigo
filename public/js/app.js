@@ -47552,7 +47552,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "comm-det-rct" }, [
+  return _c("div", { staticClass: "u-ta-center u-mb-lg" }, [
     _c(
       "button",
       {

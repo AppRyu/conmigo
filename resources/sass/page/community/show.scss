@@ -1,15 +1,5 @@
-.comm-det__hd {
-    font-size: fs(xl);
-    margin-bottom: space(lg);
-    &_emphasis {
-        color: clr(c---dark-blue);
-        margin-left: space(sm);
-    }
-}
-
 .comm-det-tb {
     width: 100%;
-    margin-bottom: space(lg);
     &__tr {
         border-bottom: 1px solid clr(c---light-gray);
         &:first-child {
@@ -19,23 +9,26 @@
     &__th {
         font-weight: normal;
         background-color: clr(c---bg--light-gray);
-        text-align: center;
+        text-align: left;
         padding: space(sm) space(base);
-        width: 100px;
+        width: 100%;
+        display: block;
+        @include mq('xs') {
+            display: table-cell;
+            text-align: center;
+            width: 150px;
+        }
     }
     &__td {
         padding: space(sm) space(base);
-        &_d-inline-block {
-            display: inline-block;
-            &:first-child {
-                margin-right: space(sm);
-            }
+        display: block;
+        @include mq('xs') {
+            display: table-cell;
         }
     }
 }
 
 .comm-det-desc {
-    margin-bottom: space(lg);
     &__hd {
         font-size: fs(lg);
         font-weight: bold;
@@ -50,7 +43,6 @@
 }
 
 .comm-det-rct {
-    text-align: center;
     &__btn {
         color: clr(c---white);
         border: none;
@@ -90,28 +82,12 @@
             text-decoration: none;
             color: clr(c---black);
         }
-        &__row {
-            @include mq('xs') {
-                display: flex;
-            }
-        }
         &__img {
-            width: 80px;
-            margin-right: space(sm);
             border: 2px solid clr(c---white);
-            border-radius: 50%;
-            overflow: hidden;
             float: left;
             @include mq('xs') {
                 flex-shrink: 0;
             }
-        }
-        &__name {
-            font-size: fs(lg);
-            font-weight: bold;
-        }
-        &__cmt {
-            text-align: justify;
         }
     }
 }
@@ -132,6 +108,7 @@
     &__thc {
         font-weight: normal;
         padding: space(xs);
+        text-align: center;
         border: 1px solid clr(c---bg--dark-blue);
     }
     &__td {

@@ -1,5 +1,5 @@
 <template>
-    <div class="comm-det-rct">
+    <div class="u-ta-center u-mb-lg">
         <button class="comm-det-rct__btn" :class="buttonColor" :disabled="isApplied" @click="clickApply">
             {{ buttonText }}
         </button>
