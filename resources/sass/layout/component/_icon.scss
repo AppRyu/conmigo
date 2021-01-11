@@ -12,7 +12,7 @@ $iconSizeList: xs, sm, base, lg;
         } @else if ($size == 'base') {
             width: 50px;
         } @else if ($size == 'lg') {
-            width: 100%;
+            width: 100px;
         }
     }
 }
