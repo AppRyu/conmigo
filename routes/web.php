@@ -14,10 +14,6 @@
 
 Auth::routes();
 
-Route::get('/test', function() {
-      return view('test');
-});
-
 Route::namespace('Front')->group(function() {
 
       // トップページ
@@ -39,6 +35,9 @@ Route::namespace('Front')->group(function() {
             Route::get('/chat', 'ChatController@index')->name('chat.index');
             Route::get('/chat/{community}', 'ChatController@show')->name('chat.show');
             Route::post('/chat/{community}', 'ChatController@sendMessage')->name('chat.sendMessage');
+
+            // プロフィール
+            Route::resource('/user', 'UserController')->parameters(['user' => 'user_name'])->except(['index', 'show', 'edit']);
       });
 
       // コミュニティ一覧＆詳細
@@ -46,8 +45,7 @@ Route::namespace('Front')->group(function() {
 
 
       //  プロフィール
-      // TODO : 一覧と詳細はログインしていなくても表示できるようにする
-      Route::resource('/user', 'UserController')->parameters(['user' => 'user_name']);
+      Route::resource('/user', 'UserController')->parameters(['user' => 'user_name'])->only(['index', 'show']);
       
       Route::get('/home', 'HomeController@index')->name('home');
 
