@@ -14,7 +14,7 @@
     </div>
     <div class="profile-data">
         <div class="profile-intro">
-            <a class="profile-data__link" href="{{ route('user.show', ['user_name' => Auth::user()->user_name ]) }}">基本データ</a>
+            <a class="profile-data__link" href="{{ route('user.show', ['user_name' => Auth::user()->user_name ]) }}">プロフィール</a>
         </div>
         <div class="profile-community">
             <a class="profile-data__link" href="{{ route('community.plan.index') }}">コミュニティ管理</a>
