@@ -37,7 +37,7 @@ Route::namespace('Front')->group(function() {
             Route::post('/chat/{community}', 'ChatController@sendMessage')->name('chat.sendMessage');
 
             // プロフィール
-            Route::resource('/user', 'UserController')->parameters(['user' => 'user_name'])->except(['index', 'show', 'edit']);
+            Route::resource('/user', 'UserController')->parameters(['user' => 'user_name'])->except(['index', 'show']);
       });
 
       // コミュニティ一覧＆詳細
