@@ -66,4 +66,9 @@ class UserController extends Controller
         return view('front.user.edit', ['user' => $user]);
     }
 
+    public function destroy(String $user)
+    {
+        User::find($user)->delete();
+    }
+
 }
