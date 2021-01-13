@@ -38,6 +38,9 @@ Route::namespace('Front')->group(function() {
 
             // プロフィール
             Route::resource('/user', 'UserController')->parameters(['user' => 'user_name'])->except(['index', 'show']);
+
+            // 各種設定
+            Route::get('/setting', 'SettingController@index')->name('setting.index');
       });
 
       // コミュニティ一覧＆詳細
