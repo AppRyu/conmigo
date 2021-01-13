@@ -11,14 +11,14 @@
             <h3 class="prof-content__head">プロフィール</h3>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="name">名前 <span class="text-danger">*</span></label>
+                    <label class="u-mb-sm" for="name">名前 <span class="text-danger">*</span></label>
                     @error('name')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                     <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" value="{{ old('name', $user->name) }}" placeholder="名前を入力してください" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="user_name">ユーザーネーム <span class="text-danger">*</span></label>
+                    <label class="u-mb-sm" for="user_name">ユーザーネーム <span class="text-danger">*</span></label>
                     @error('user_name')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
@@ -31,21 +31,21 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="comment">自己紹介</label>
+                <label class="u-mb-sm" for="comment">自己紹介</label>
                 @error('comment')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
                 <textarea class="form-control @error('comment') is-invalid @enderror" name="comment" id="comment" placeholder="自己紹介文を入力してください...">{{ old('comment', $user->comment) }}</textarea>
             </div>
             <div class="form-group">
-                <label for="profile_image">トップ画像</label>
+                <label class="u-mb-sm" for="profile_image">トップ画像</label>
                 <input type="file" class="form-control" name="profile_image" id="profile_image">
             </div>
         </div>
         <div class="prof-content">
             <h3 class="prof-content__head">連絡先情報</h3>
             <div class="form-group">
-                <label for="mysite"><i class="fas fa-globe fa-lg prof-content__icon"></i> WEBサイト</label>
+                <label class="u-mb-sm" for="mysite"><i class="fas fa-globe fa-lg prof-content__icon"></i> WEBサイト</label>
                 @error('mysite')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
@@ -57,7 +57,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="twitter"><i class="fab fa-twitter fa-lg prof-content__icon"></i> Twitterアカウント</label>
+                <label class="u-mb-sm" for="twitter"><i class="fab fa-twitter fa-lg prof-content__icon"></i> Twitterアカウント</label>
                 @error('twitter')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
@@ -69,7 +69,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="instagram"><i class="fab fa-instagram fa-lg prof-content__icon"></i> instagramアカウント</label>
+                <label class="u-mb-sm" for="instagram"><i class="fab fa-instagram fa-lg prof-content__icon"></i> instagramアカウント</label>
                 @error('instagram')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
@@ -81,7 +81,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="facebook"><i class="fab fa-facebook-f fa-lg prof-content__icon"></i> facebookアカウント</label>
+                <label class="u-mb-sm" for="facebook"><i class="fab fa-facebook-f fa-lg prof-content__icon"></i> facebookアカウント</label>
                 @error('facebook')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
