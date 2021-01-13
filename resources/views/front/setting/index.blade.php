@@ -15,15 +15,15 @@
                     <div class="u-fs-base u-fw-bold">{{ Auth::user()->user_name }}</div>
                 </div>
                 <ul class="settings-menu">
-                    <li class="settings-item"><a class="settings-item__link" href="">プロフィール</a></li>
-                    <li class="settings-item"><a class="settings-item__link" href="">アカウント</a></li>
+                    <li class="settings-item"><router-link class="settings-item__link" to="/setting/profile">プロフィール</router-link></li>
+                    <li class="settings-item"><router-link class="settings-item__link" :to="{path: '/setting/account'}">アカウント</router-link></li>
                 </ul>
             </div>
         </aside>
         <article class="col-md-8 col-lg-9 col-12">
-            <section>
-                <h2 class="page-tit u-mb-xl"><i class="fas fa-cog u-mr-sm u-mr-base"></i>各種設定</h2>
-            </section>
+            <router-view user-id="{{ Auth::user()->id }}"
+                            redirect-login="{{ route('login') }}"
+                            redirect-logout="{{ route('logout') }}"></router-view>
         </article>
     </div>
 @endsection

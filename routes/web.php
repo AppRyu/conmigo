@@ -37,10 +37,12 @@ Route::namespace('Front')->group(function() {
             Route::post('/chat/{community}', 'ChatController@sendMessage')->name('chat.sendMessage');
 
             // プロフィール
-            Route::resource('/user', 'UserController')->parameters(['user' => 'user_name'])->except(['index', 'show']);
+            Route::resource('/user', 'UserController')->parameters(['user' => 'user_name'])->except(['index', 'show', 'destroy']);
+            Route::resource('/user', 'UserController')->only('destroy');
 
             // 各種設定
-            Route::get('/setting', 'SettingController@index')->name('setting.index');
+            Route::get('/setting/{any?}', 'SettingController@index')->where('any', '.*')->name('setting');
+
       });
 
       // コミュニティ一覧＆詳細
