@@ -6,7 +6,7 @@
     <form method="post" action="{{ route('user.update', ['user_name' => $user->user_name]) }}" enctype="multipart/form-data">
         @csrf
         @method('put')
-        <h2 class="prof-tit"><i class="fas fa-user-cog prof-tit__icon"></i>プロフィール編集</h2>
+        <h2 class="page-tit u-mb-xl"><i class="fas fa-user-cog u-mr-base"></i>プロフィール編集</h2>
         <div class="prof-content">
             <h3 class="prof-content__head">プロフィール</h3>
             <div class="form-row">
