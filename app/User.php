@@ -5,10 +5,14 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
     use Notifiable;
+
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -44,6 +48,14 @@ class User extends Authenticatable
 
     public function recruits()
     {
-        return $this->hasMany('App\Recruits', 'applied_user', 'id');
+        return $this->hasMany('App\Recruit', 'applied_user', 'id');
+    }
+
+    public static function boot()
+    {
+        parent::boot();
+        self::deleting(function ($user) {
+            $user->communities()->delete();
+        });
     }
 }

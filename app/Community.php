@@ -4,9 +4,12 @@ namespace App;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Community extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = [
         'name', 'created_user', 'start', 'end', 'detail'
     ];
