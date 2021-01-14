@@ -74,7 +74,7 @@
     }
     &-card {
         border: 1px solid clr(c---light-gray);
-        background-color: clr(c---bg--gray);
+        background-color: clr(c---bg--dark-gray);
         padding: space(sm);
         margin-bottom: space(lg);
         overflow: hidden;
@@ -101,7 +101,7 @@
     &__bd {
         > .applied-user-tb__tr {
             &:hover {
-                background-color: clr(c---bg--gray);
+                background-color: clr(c---bg--dark-gray);
             }
         }
     }

@@ -36,7 +36,7 @@ $colors: (
     c---dark-green: #5ca62a,
     c---bg--white: #fff,
     c---bg--light-gray: #fafafa,
-    c---bg--gray: #e9ebee,
+    c---bg--dark-gray: #e9ebee,
     c---bg--light-blue: #39a2f2,
     c---bg--dark-blue: #536dfe,
     c---bg--light-orange: #f1816b,
@@ -49,6 +49,8 @@ $colors: (
     c---sns--instagram: #c6529a,
 );
 
+// sm, md, lg, xl のブレイクポイントへ変更
+// bootstrapと単位がずれるから
 $breakpoints: (
     xs: 'screen and (min-width: 544px)',
     sm: 'screen and (min-width: 768px)',
