@@ -29,6 +29,11 @@ class Community extends Model
         return $this->hasMany('App\Member', 'community_id', 'id');
     }
 
+    public function communityMessages()
+    {
+        return $this->hasMany('App\CommunityMessages', 'community_id', 'id');
+    }
+
     /**
      * 
      * @return boolean 
