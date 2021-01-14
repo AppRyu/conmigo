@@ -18,7 +18,7 @@
 			</tbody>
 		</table>
 		<section class="comm-det-desc u-mb-lg">
-			<h3 class="comm-det-desc__hd"><span class="comm-det-desc__hd_emphasis">コミュニティの詳細</span></h3>
+			<h3 class="comm-det-desc__hd u-mb-base"><span class="comm-det-desc__hd_emphasis">コミュニティの詳細</span></h3>
 			<div class="comm-det-desc__cmt">{!! nl2br(e($community->detail)) !!}</div>
 		</section>
 		{{-- ログインユーザー以外が企画したコミュニティのみ応募ボタンを表示 --}}
@@ -31,7 +31,7 @@
 		</community-recruit-btn>
 		@endif
 		<section class="created-user">
-			<h3 class="created-user__hd"><span class="created-user__hd_emphasis">クリエイトユーザー情報</span></h3>
+			<h3 class="created-user__hd u-mb-base"><span class="created-user__hd_emphasis">クリエイトユーザー情報</span></h3>
 			<a class="created-use-card__link" href="{{ route('user.show', ['user_name' => $community->users->user_name]) }}">
 				<div class="created-user-card">
 					<div class="u-xs-d-flex">
