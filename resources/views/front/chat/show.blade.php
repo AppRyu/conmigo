@@ -19,7 +19,7 @@
                 </div>
                 <section>
                     <h3 class="u-fs-lg"><a href="{{ route('user.show', ['user_name' => $user->user_name]) }}">{{ $user->user_name }}</a></h3>
-                    <!--  TODO 最終ログイン時間を表示させる -->
+                    <!--  TODO 最終ログイン時間を表示させる 下記例 -->
                     <!-- <p>最終ログイン：2日前</p> -->
                 </section>
             </div>
@@ -27,15 +27,15 @@
             @foreach($chats as $chat)
             <div class="chat-content u-py-base">
                 <div class="chat-content__img u-mr-base">
-                    @if($chat->users->profile_image)
-                    <div class="chat-content__prof-icon"><img src="{{ asset('/storage/img/'.$chat->users->profile_image) }}" alt="ユーザープロフィール画像"></div>
+                    @if($chat->userWithTrashed($chat->user_id)->get('profile_image'))
+                    <div class="chat-content__prof-icon"><img src="{{ asset('/storage/img/'.$chat->userWithTrashed($chat->user_id)->get('profile_image')) }}" alt="ユーザープロフィール画像"></div>
                     @else 
                     <div class="chat-content__prof-icon"><img src="{{ asset('/img/default-icon.png') }}" alt="ユーザープロフィール画像"></div>
                     @endif
                 </div>
                 <section class="chat-content__box">
                     <div class="chat-content__row">
-                        <h3 class="chat-content__usr-name">{{ $chat->users->user_name }}</h3>
+                        <h3 class="chat-content__usr-name">{{ $chat->userWithTrashed($chat->user_id)->get('user_name') }}</h3>
                         <p class="chat-content__date">{{ $chat->created_at }}</p>
                     </div>
                     <p class="chat-content__msg">{!! nl2br(e($chat->message)) !!}</p>

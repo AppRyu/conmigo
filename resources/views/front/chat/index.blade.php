@@ -9,7 +9,7 @@
         </h2>
         <div class="u-mb-lg">
             @foreach ($communities as $community)
-            <a href="{{ route('chat.show', ['community' => $community]) }}">
+            <a href="{{ route('chat.show', ['communityWithTrashed' => $community]) }}">
                 <section class="msg-sec u-p-base">
                     <h3 class="msg-sec__tit u-fs-lg u-mb-sm">{{ $community->name }}</h3>
                     <div class="u-md-d-flex">

@@ -16,19 +16,22 @@ class ChatController extends Controller
         // ゲストとして参加しているコミュニティIDを取得
         $allAppliedCommunityId = Member::where('user_id', auth()->user()->id)->pluck('community_id')->toArray();
         // ホストとして参加しているコミュニティIDを取得
-        $allPlanedCommunityId = Community::where('created_user', auth()->user()->id)->pluck('id')->toArray();
+        $allPlanedCommunityId = Community::withTrashed()->where('created_user', auth()->user()->id)->pluck('id')->toArray();
         // ゲスト・ホスト問わず、参加している全てのコミュニティIDを取得
         $allJoiningCommunityId = array_merge($allAppliedCommunityId, $allPlanedCommunityId);
         // 取得したコミュニティIDを参照して、対応するコミュニティデータを取得
-        $communities = Community::whereIn('id', $allJoiningCommunityId)->select('id', 'name', 'created_user', 'start', 'end')->orderBy('start')->paginate(15);
+        $communities = Community::withTrashed()->whereIn('id', $allJoiningCommunityId)->select('id', 'name', 'created_user', 'start', 'end')->orderBy('start')->paginate(15);
         return view('front.chat.index', ['communities' => $communities]);
     }
 
     public function show(Community $community) 
     {
+        // コミュニティに参加しているメンバーを格納
+        $members = [];
         // コミュニティに参加しているユーザーIDを取得(コミュニティを作成したユーザーIDは除く)
         $members = Member::where('community_id', $community->id)->pluck('user_id')->toArray();
-        $usersWithoutCreatedUser = User::whereIn('id', $members)->select('user_name', 'profile_image')->get();
+        // 取得したユーザーIDを参照して、ユーザーデータを取得(コミュニティを作成したユーザーは除く)
+        $usersWithoutCreatedUser = User::withTrashed()->whereIn('id', $members)->select('user_name', 'profile_image')->get();
         // コミュニティを作成したユーザーIDを追加
         $members[] = $community->created_user;
         // ログインユーザーがコミュニティメンバーである場合
