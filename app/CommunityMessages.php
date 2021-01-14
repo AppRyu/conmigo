@@ -22,8 +22,8 @@ class CommunityMessages extends Model
         return $this->belongsTo('App\Community', 'community_id', 'id');
     }
 
-    public function userWithTrashed(Int $value)
+    public function userWithTrashed($value)
     {
-        return \App\User::withTrashed()->where('id', $value)->get();
+        return \App\User::withTrashed()->where('id', $value)->first();
     }
 }

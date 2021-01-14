@@ -26,6 +26,12 @@ class ChatController extends Controller
 
     public function show(Community $community) 
     {
+        $communityStatus = '';
+        if(!is_null($community->deleted_at)) {
+            $communityStatus = 'deleted';
+        } elseif(!$community->communityMessages->count()) {
+            $communityStatus = 'noMsg';
+        }
         // コミュニティに参加しているメンバーを格納
         $members = [];
         // コミュニティに参加しているユーザーIDを取得(コミュニティを作成したユーザーIDは除く)
@@ -37,7 +43,7 @@ class ChatController extends Controller
         // ログインユーザーがコミュニティメンバーである場合
         if(in_array(auth()->user()->id, $members)) {
             $chats = CommunityMessages::where('community_id', $community->id)->select('user_id', 'message', 'created_at')->get();
-            return view('front.chat.show', ['community' => $community, 'chats' => $chats, 'usersWithoutCreatedUser' => $usersWithoutCreatedUser]);
+            return view('front.chat.show', ['community' => $community, 'communityStatus' => $communityStatus, 'chats' => $chats, 'usersWithoutCreatedUser' => $usersWithoutCreatedUser]);
         } else {
             return redirect()->route('chat.index');
         }
@@ -48,6 +54,6 @@ class ChatController extends Controller
         $communityMessage = new CommunityMessages();
         $communityMessage->fill(['user_id' => auth()->user()->id, 'community_id' => $community->id, 'message' => $request->message]);
         $communityMessage->save();
-        return redirect()->route('chat.show', ['community' => $community]);
+        return redirect()->route('chat.show', ['communityWithTrashed' => $community]);
     }
 }

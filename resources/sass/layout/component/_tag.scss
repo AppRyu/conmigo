@@ -1,5 +1,5 @@
-$tagSizeList: sm, normal, lg;
-$tagColorList: red, blue, green;
+$tagSizeList: 'sm', 'normal', 'lg';
+$tagColorList: 'red', 'blue', 'green';
 
 @each $size in $tagSizeList {
     .c-tag-#{$size} {
@@ -20,7 +20,7 @@ $tagColorList: red, blue, green;
 }
 
 @each $color in $tagColorList {
-    .c-tag-#{'' + $color} {
+    .c-tag-#{$color} {
         color: clr(c---dark-#{$color});
         background-color: clr(c---bg--light-#{$color});
     }
