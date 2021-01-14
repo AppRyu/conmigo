@@ -1,0 +1,13 @@
+// TODO yellowを追加する & blueの背景カラー濃すぎる
+$alertColorList: red, blue, green;
+
+@each $color in $alertColorList {
+    .c-alert-#{$color} {
+        display: block;
+        border-radius: 5px;
+        padding: space(sm) space(base);
+        color: clr(c---dark-#{$color});
+        background-color: clr(c---bg--light-#{$color});
+        border: 1px solid clr(c---bg--dark-#{$color});
+    }
+}
