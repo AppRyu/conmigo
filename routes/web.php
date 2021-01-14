@@ -31,9 +31,10 @@ Route::namespace('Front')->group(function() {
             // 応募したコミュニティ
             Route::get('/community/applied', 'CommunityApplyController@index')->name('community.applied');
 
-            // チャットルーム
+            // チャットルーム：一覧
             Route::get('/chat', 'ChatController@index')->name('chat.index');
-            Route::get('/chat/{community}', 'ChatController@show')->name('chat.show');
+            // チャットルーム：個別（対象コミュニティが削除後もチャット履歴は残す）
+            Route::get('/chat/{communityWithTrashed}', 'ChatController@show')->name('chat.show');
             Route::post('/chat/{community}', 'ChatController@sendMessage')->name('chat.sendMessage');
 
             // プロフィール

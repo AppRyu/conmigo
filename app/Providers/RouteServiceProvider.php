@@ -23,9 +23,11 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-
         parent::boot();
+
+        Route::bind('communityWithTrashed', function($value) {
+            return \App\Community::withTrashed()->where('id', $value)->firstOrFail();
+        });
     }
 
     /**
