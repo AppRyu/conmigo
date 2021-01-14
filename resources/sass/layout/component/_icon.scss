@@ -1,4 +1,4 @@
-$iconSizeList: xs, sm, base, lg;
+$iconSizeList: xs, sm, md, lg;
 
 @each $size in $iconSizeList {
     .c-icon-#{$size} {
@@ -9,7 +9,7 @@ $iconSizeList: xs, sm, base, lg;
             width: 25px;
         } @else if ($size == 'sm') {
             width: 30px;
-        } @else if ($size == 'base') {
+        } @else if ($size == 'md') {
             width: 50px;
         } @else if ($size == 'lg') {
             width: 100px;
