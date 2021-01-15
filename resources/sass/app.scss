@@ -1,6 +1,9 @@
 @import './setting/variables';
 @import './setting/function';
 
+@import './foundation/reset';
+@import './foundation/base';
+
 @import './mixin/breakpoint';
 @import './mixin/btn';
 @import './mixin/heading';
@@ -9,9 +12,7 @@
 @import './mixin/page-tit';
 
 @import './module/page-tit';
-
-@import './foundation/reset';
-@import './foundation/base';
+@import './module/timeTable';
 
 @import './layout/component/alert';
 @import './layout/component/badge';
