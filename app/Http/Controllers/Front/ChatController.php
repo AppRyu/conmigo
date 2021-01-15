@@ -27,18 +27,25 @@ class ChatController extends Controller
     public function show(Community $community) 
     {
         $communityStatus = '';
+        // 論理削除されているか判定
         if(!is_null($community->deleted_at)) {
             $communityStatus = 'deleted';
-        } elseif(!$community->communityMessages->count()) {
+        }
+        // メンバーを確定しているか判定
+        elseif(!$community->members->count()) {
+            $communityStatus = 'noMember';
+        }
+        // メッセージが存在するか判定
+        elseif(!$community->communityMessages->count()) {
             $communityStatus = 'noMsg';
         }
         // コミュニティに参加しているメンバーを格納
         $members = [];
-        // コミュニティに参加しているユーザーIDを取得(コミュニティを作成したユーザーIDは除く)
+        // コミュニティに参加しているユーザーIDを取得(コミュニティを作成したユーザーIDは取得されない)
         $members = Member::where('community_id', $community->id)->pluck('user_id')->toArray();
         // コミュニティを作成したユーザーIDを追加
         $members[] = $community->created_user;
-        // コミュニティメンバーのデータを取得
+        // 取得したユーザーIDを参照して、コミュニティメンバー全員のデータを取得
         $AllCommunityMember = User::withTrashed()->whereIn('id', $members)->select('id', 'user_name', 'profile_image')->get();
         // ログインユーザーがコミュニティメンバーである場合
         if(in_array(auth()->user()->id, $members)) {
