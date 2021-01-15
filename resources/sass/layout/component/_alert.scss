@@ -1,5 +1,5 @@
-// TODO yellowを追加する & blueの背景カラー濃すぎる
-$alertColorList: 'red', 'blue', 'green', 'gray';
+// TODO blueの背景カラー濃すぎるから修正
+$alertColorList: 'red', 'blue', 'green', 'yellow', 'gray';
 
 @each $color in $alertColorList {
     .c-alert-#{$color} {
