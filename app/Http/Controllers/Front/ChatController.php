@@ -36,14 +36,14 @@ class ChatController extends Controller
         $members = [];
         // コミュニティに参加しているユーザーIDを取得(コミュニティを作成したユーザーIDは除く)
         $members = Member::where('community_id', $community->id)->pluck('user_id')->toArray();
-        // 取得したユーザーIDを参照して、ユーザーデータを取得(コミュニティを作成したユーザーは除く)
-        $usersWithoutCreatedUser = User::withTrashed()->whereIn('id', $members)->select('user_name', 'profile_image')->get();
         // コミュニティを作成したユーザーIDを追加
         $members[] = $community->created_user;
+        // コミュニティメンバーのデータを取得
+        $AllCommunityMember = User::withTrashed()->whereIn('id', $members)->select('id', 'user_name', 'profile_image')->get();
         // ログインユーザーがコミュニティメンバーである場合
         if(in_array(auth()->user()->id, $members)) {
             $chats = CommunityMessages::where('community_id', $community->id)->select('user_id', 'message', 'created_at')->get();
-            return view('front.chat.show', ['community' => $community, 'communityStatus' => $communityStatus, 'chats' => $chats, 'usersWithoutCreatedUser' => $usersWithoutCreatedUser]);
+            return view('front.chat.show', ['community' => $community, 'communityStatus' => $communityStatus, 'chats' => $chats, 'AllCommunityMember' => $AllCommunityMember]);
         } else {
             return redirect()->route('chat.index');
         }

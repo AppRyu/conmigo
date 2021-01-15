@@ -18,7 +18,8 @@
                 <p class="c-alert-gray u-mb-base">一緒に勉強する時間や方法（slack,zoom等）を話し合ってください。</p>
         @endswitch
         <div class="chat-container u-px-base u-pt-base">
-            @foreach($usersWithoutCreatedUser as $user)
+            @foreach($AllCommunityMember as $user)
+            @continue(Auth::user()->id === $user->id)
             <div class="chat-content u-py-base">
                 <div class="chat-content__img u-mr-base">
                     @if($user->profile_image)
