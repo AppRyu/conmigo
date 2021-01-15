@@ -25,6 +25,10 @@
     border: 1px solid clr(c---bg--dark-gray);
 }
 
+.chat-content__form-sec {
+    width: 100%;
+}
+
 .chat-form {
     width: 100%;
     &__textarea {
@@ -40,8 +44,5 @@
         @include _btn('inline-block', 'green');
         padding-left: space(xxl);
         padding-right: space(xxl);
-        &_outer {
-            text-align: center;
-        }
     }
 }
