@@ -56,6 +56,7 @@ $colors: (
 // sm, md, lg, xl のブレイクポイントへ変更
 // bootstrapと単位がずれるから
 $breakpoints: (
+    xxs: 'screen and (min-width: 425px)',
     xs: 'screen and (min-width: 544px)',
     sm: 'screen and (min-width: 768px)',
     md: 'screen and (min-width: 992px)',
