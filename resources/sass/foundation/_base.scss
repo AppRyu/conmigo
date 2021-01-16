@@ -35,15 +35,6 @@ img {
     padding-bottom: 53px; // ←フッターの高さを指定
 }
 
-.main {
-    &.container {
-        padding: {
-            top: 30px;
-            bottom: 30px;
-        }
-    }
-}
-
 .footer {
     position: absolute;
     bottom: 0;
