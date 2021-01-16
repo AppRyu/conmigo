@@ -32,7 +32,7 @@
             @include('./components/navbar')
             @include('./components/subnavbar')
         </header>
-        <main class="main container">
+        <main class="main container u-py-lg u-md-py-xxl">
         @hasSection('sidebar')
             <div class="row">
                 <article class="col-md-9">
