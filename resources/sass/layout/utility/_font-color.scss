@@ -1,0 +1,7 @@
+$fontColorList: 'red', 'blue';
+
+@each $color in $fontColorList {
+    .u-fc-#{$color} {
+        color: clr(c---dark-#{$color});
+    }
+}
