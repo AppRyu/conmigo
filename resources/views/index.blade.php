@@ -2,16 +2,20 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-between align-items-center">
-        <div class="col-lg-6">
-            <h1 class="display-4">パートナーと<br>学習を<span class="emphasis">習慣化</span>する</h1>
-            <p class="lead">専門技術や資格・語学取得などを目標に掲げる学習者を対象とし、お互いに高め合える仲間を繋げる学習プラットフォームを提供します</p>
+    <div class="row justify-content-between">
+        <div class="col-md-6 col-12">
+            <h1 class="main-tit u-py-base u-md-py-lg">仲間と一緒に<br>学習を<span class="u-fc-blue">習慣化</span></h1>
+            <p class="u-fs-lg">プログラミング・Webデザイン学習者を対象とし、学習を継続し習慣化するためのプラットフォームを提供します</p>
             <hr class="my-4">
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-            <a class="btn btn-primary btn-lg btn-block" href="#" role="button">詳細を見る</a>
-            <a class="btn btn-outline-primary btn-lg btn-block" href="#" role="button">新規登録</a>
+            @guest
+            <a class="main-btn u-mb-base" href="{{ route('register') }}" role="button"><span class="main-btn__txt">新規登録</span></a>
+            <a class="main-btn--outline u-mb-base" href="{{ route('login') }}" role="button"><span class="main-btn--outline__txt">ログイン</span></a>
+            @else
+            <a class="main-btn u-mb-base" href="{{ route('register') }}" role="button"><span class="main-btn__txt">学習コミュニティを探す</span></a>
+            <a class="main-btn--outline u-mb-base" href="#" role="button"><span class="main-btn--outline__txt">学習コミュニティを作成</span></a>
+            @endguest
         </div>
-        <div class="col-lg-6">
+        <div class="col-md-6 col-12 u-d-flex align-items-center">
             <img src="./img/hero.svg" alt="">
         </div>
     </div>

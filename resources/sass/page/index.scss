@@ -1,0 +1,101 @@
+// .main-bg-img {
+//     background-image: url('/img/hero.svg');
+//     background-size: cover;
+//     opacity: 0.2;
+// }
+
+.main-tit {
+    font-size: 2.5rem;
+    text-align: center;
+    @include mq('xxs') {
+        font-size: 3rem;
+    }
+    @include mq('md') {
+        font-size: 3.5rem;
+        text-align: left;
+    }
+}
+
+.main-btn {
+    background: linear-gradient(
+        to right,
+        clr(c---bg--dark-blue),
+        clr(c---bg--light-blue)
+    ); /* ホバー後のグラデーション */
+    position: relative;
+    padding: 0.75rem 0.75rem;
+    user-select: none;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    &__txt {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        z-index: 2;
+        margin: 0 auto;
+    }
+    &::after {
+        content: '';
+        background: linear-gradient(
+            to right,
+            clr(c---bg--light-blue),
+            clr(c---bg--dark-blue)
+        ); /* ホバー前のグラデーション */
+        border-radius: 0.25rem;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        transition: all 0.3s; /* グラデーションの変化の速さ */
+    }
+    &:hover {
+        &::after {
+            opacity: 0;
+        }
+    }
+}
+
+.main-btn--outline {
+    background: linear-gradient(
+        to right,
+        clr(c---bg--dark-blue),
+        clr(c---bg--light-blue)
+    ); /* ホバー後のグラデーション */
+    position: relative;
+    padding: 0.75rem 0.75rem;
+    user-select: none;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    &__txt {
+        color: clr(c---dark-blue);
+        font-size: 14px;
+        font-weight: 500;
+        z-index: 2;
+        margin: 0 auto;
+    }
+    &::after {
+        content: '';
+        border: 1px solid clr(c---dark-blue);
+        border-radius: 0.25rem;
+        background-color: clr(c---white);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        transition: all 0.3s; /* グラデーションの変化の速さ */
+    }
+    &:hover {
+        &::after {
+            opacity: 0;
+        }
+        .main-btn--outline__txt {
+            color: clr(c---white);
+        }
+    }
+}
