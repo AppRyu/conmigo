@@ -1,5 +1,5 @@
 $marginSizeList: no, xs, sm, base, lg, xl, xxl;
-$breakpointList: xs, sm, md, lg;
+$breakpointList: xxs, xs, sm, md, lg;
 
 // レスポンシブ対応なし、marginスタイル設定
 @each $size in $marginSizeList {

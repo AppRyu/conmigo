@@ -1,4 +1,5 @@
 $paddingSizeList: 0, xs, sm, base, lg, xl, xxl;
+$breakpointList: xxs, xs, sm, md, lg;
 
 @each $size in $paddingSizeList {
     .u-pt-#{$size} {
@@ -27,5 +28,52 @@ $paddingSizeList: 0, xs, sm, base, lg, xl, xxl;
     }
     .u-p-#{$size} {
         padding: space(#{$size});
+    }
+}
+
+// レスポンシブ対応あり、paddingスタイル設定
+@each $size in $paddingSizeList {
+    @each $breakpoint in $breakpointList {
+        .u-#{$breakpoint}-pt-#{$size} {
+            @include mq(#{$breakpoint}) {
+                padding-top: space(#{$size});
+            }
+        }
+        .u-#{$breakpoint}-pb-#{$size} {
+            @include mq(#{$breakpoint}) {
+                padding-bottom: space(#{$size});
+            }
+        }
+        .u-#{$breakpoint}-pr-#{$size} {
+            @include mq(#{$breakpoint}) {
+                padding-right: space(#{$size});
+            }
+        }
+        .u-#{$breakpoint}-pl-#{$size} {
+            @include mq(#{$breakpoint}) {
+                padding-left: space(#{$size});
+            }
+        }
+        .u-#{$breakpoint}-py-#{$size} {
+            @include mq(#{$breakpoint}) {
+                padding: {
+                    top: space(#{$size});
+                    bottom: space(#{$size});
+                }
+            }
+        }
+        .u-#{$breakpoint}-px-#{$size} {
+            @include mq(#{$breakpoint}) {
+                padding: {
+                    right: space(#{$size});
+                    left: space(#{$size});
+                }
+            }
+        }
+        .u-#{$breakpoint}-p-#{$size} {
+            @include mq(#{$breakpoint}) {
+                padding: space(#{$size});
+            }
+        }
     }
 }
