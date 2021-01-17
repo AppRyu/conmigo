@@ -1,10 +1,10 @@
 <template>
     <section>
-        <h2 class="page-tit u-mb-xl"><i class="fas fa-cog u-mr-sm u-mr-base"></i>アカウント設定</h2>
+        <h2 class="page-tit u-sm-mb-xl u-mb-lg"><i class="fas fa-cog u-mr-sm u-mr-base"></i>アカウント設定</h2>
         <div>
             <h3 class="u-fs-xl u-mb-base settings-account-subTit settings-account-subTit--danger">アカウント削除</h3>
             <p class="u-mb-base">アカウントを削除します。本当に削除する場合は、下記のボタンをクリックしてください。</p>
-            <div><button class="settings-account-btn" @click="deleteAccount">アカウントを削除</button></div>
+            <div class="u-mb-base"><button class="settings-account-btn" @click="deleteAccount">アカウントを削除</button></div>
             <p v-if="message">{{ message }}</p>
         </div>
     </section>
@@ -14,7 +14,7 @@
 export default {
     name: 'router-view',
     props: {
-        userId: {
+        accountDeleteUrl: {
             type: String,
         },
         redirectLogin: {
@@ -42,8 +42,8 @@ export default {
                 this.message = 'エラーが発生しました。しばらく経ってから再度お試しください。';
             });
         },
-        async deleteAccount(userId) {
-            await axios.delete('/user/' + this.userId)
+        async deleteAccount() {
+            await axios.delete(this.accountDeleteUrl)
             .then(response => {
                 this.Logout();
                 this.redirectToLoginPage();
