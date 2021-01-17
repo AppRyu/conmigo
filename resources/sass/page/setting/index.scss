@@ -1,13 +1,13 @@
 .settings-sidebar {
     border-radius: 5px;
-    border: 1px solid clr(c---bg--gray);
+    border: 1px solid clr(c---bg--dark-gray);
 }
 
 .settings-prof {
     padding: space(sm) space(base);
     display: flex;
     align-items: center;
-    border-bottom: 1px solid clr(c---bg--gray);
+    border-bottom: 1px solid clr(c---bg--dark-gray);
     &__img {
         flex-shrink: 0;
     }
@@ -18,17 +18,82 @@
 }
 
 .settings-item {
-    border-bottom: 1px solid clr(c---bg--gray);
+    border-bottom: 1px solid clr(c---bg--dark-gray);
     &:last-of-type {
         border-bottom: none;
     }
     &__link {
         display: block;
         padding: space(sm) space(base);
+        border-left: 2px solid transparent;
         height: 100%;
         width: 100%;
         &:hover {
             background-color: clr(c---bg--light-gray);
         }
+        &.router-link-active {
+            border-left: 2px solid clr(c---bg--light-orange);
+        }
+    }
+}
+
+.settings-account-subTit {
+    padding-bottom: space(sm);
+    border-bottom: 1px solid clr(c---bg--dark-gray);
+    &--danger {
+        color: clr(c---dark-red);
+    }
+}
+
+.settings-account-btn {
+    display: inline-block;
+    padding: 0.375rem 1rem;
+    text-align: center;
+    user-select: none;
+    border-radius: 0.25rem;
+    border: 1px solid clr(c---bg--dark-gray);
+    color: clr(c---dark-red);
+    background-color: clr(c---bg--light-gray);
+    &:hover {
+        color: clr(c---white);
+        background-color: clr(c---bg--dark-red);
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+.settings-prof-img {
+    &__box {
+        position: relative;
+    }
+    &__input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+        z-index: 3;
+    }
+    &__edit-icon {
+        position: absolute;
+        left: 5px;
+        bottom: 25px;
+        display: inline-block;
+        background-color: clr(c---white);
+        border: 1px solid clr(c---bg--dark-gray);
+        border-radius: 5px;
+        z-index: 2;
+        padding: 5px 10px;
+    }
+    &__user-icon {
+        height: auto;
+        border-radius: 50%;
+        overflow: hidden;
+        width: 100%;
     }
 }
