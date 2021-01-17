@@ -16,12 +16,14 @@
 
 @import './layout/component/alert';
 @import './layout/component/badge';
+@import './layout/component/btn';
 @import './layout/component/icon';
 @import './layout/component/link';
 @import './layout/component/tag';
 
 @import './layout/utility/color';
 @import './layout/utility/display';
+@import './layout/utility/font-color';
 @import './layout/utility/font-size';
 @import './layout/utility/font-weight';
 @import './layout/utility/margin';
@@ -36,6 +38,7 @@
 @import './auth/login';
 @import './auth/register';
 
+@import './page/index';
 @import './page/community/index';
 @import './page/community/show';
 @import './page/community/plan/index';
