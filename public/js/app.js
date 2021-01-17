@@ -2224,7 +2224,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'router-view',
   props: {
-    userId: {
+    accountDeleteUrl: {
       type: String
     },
     redirectLogin: {
@@ -2252,7 +2252,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         _this.message = 'エラーが発生しました。しばらく経ってから再度お試しください。';
       });
     },
-    deleteAccount: function deleteAccount(userId) {
+    deleteAccount: function deleteAccount() {
       var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
@@ -2261,7 +2261,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios["delete"]('/user/' + _this2.userId).then(function (response) {
+                return axios["delete"](_this2.accountDeleteUrl).then(function (response) {
                   _this2.Logout();
 
                   _this2.redirectToLoginPage();
@@ -2272,6 +2272,200 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 });
 
               case 2:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SettingProfile.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SettingProfile.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    csrf: {
+      type: String,
+      required: true
+    },
+    postToUserUpdate: {
+      type: String,
+      required: true
+    },
+    userData: {
+      type: Object,
+      required: true
+    },
+    userProfileImagePath: {
+      type: String
+    }
+  },
+  data: function data() {
+    return {
+      user: {
+        name: this.userData.name,
+        user_name: this.userData.user_name,
+        comment: this.userData.comment,
+        profile_image: this.userData.profile_image,
+        mysite: this.userData.mysite,
+        twitter: this.userData.twitter,
+        instagram: this.userData.instagram,
+        facebook: this.userData.facebook
+      },
+      url: ''
+    };
+  },
+  mounted: function mounted() {
+    var imageWidth = this.$refs.image.clientWidth + 'px';
+    console.log(imageWidth);
+    this.$refs.image.style.height = imageWidth;
+  },
+  watch: {},
+  methods: {
+    uploadFile: function uploadFile(e) {
+      var file = this.user.profile_image = this.$refs.preview.files[0];
+      this.url = URL.createObjectURL(file);
+      this.$refs.preview.value = "";
+    },
+    submit: function submit() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var formData, config;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                formData = new FormData();
+                config = {
+                  headers: {
+                    'content-type': 'multipart/form-data',
+                    'X-HTTP-Method-Override': 'PUT'
+                  }
+                };
+                formData.append('name', _this.user.name);
+                formData.append('user_name', _this.user.user_name);
+                formData.append('comment', _this.user.comment);
+                formData.append('profile_image', _this.user.profile_image);
+                formData.append('mysite', _this.user.mysite);
+                formData.append('twitter', _this.user.twitter);
+                formData.append('instagram', _this.user.instagram);
+                formData.append('facebook', _this.user.facebook);
+                console.log(formData);
+                _context.next = 13;
+                return axios.post(_this.postToUserUpdate, formData, config).then(function (response) {
+                  console.log('成功しました');
+                  console.log(response);
+                  location.reload(); // アラートを表示する
+                })["catch"](function (err) {
+                  console.log('失敗しました');
+                  console.log(error.response);
+                });
+
+              case 13:
               case "end":
                 return _context.stop();
             }
@@ -47913,7 +48107,7 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c("div", [
+      _c("div", { staticClass: "u-mb-base" }, [
         _c(
           "button",
           {
@@ -47933,7 +48127,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("h2", { staticClass: "page-tit u-mb-xl" }, [
+    return _c("h2", { staticClass: "page-tit u-sm-mb-xl u-mb-lg" }, [
       _c("i", { staticClass: "fas fa-cog u-mr-sm u-mr-base" }),
       _vm._v("アカウント設定")
     ])
@@ -47960,19 +48154,420 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("section", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        attrs: {
+          method: "post",
+          action: _vm.postToUserUpdate,
+          enctype: "multipart/form-data"
+        },
+        on: {
+          submit: function($event) {
+            $event.preventDefault()
+            return _vm.submit($event)
+          }
+        }
+      },
+      [
+        _c("input", {
+          attrs: { type: "hidden", name: "_token" },
+          domProps: { value: _vm.csrf }
+        }),
+        _vm._v(" "),
+        _c("input", {
+          attrs: { type: "hidden", name: "_method", value: "put" }
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "u-d-flex" }, [
+          _c("div", { staticClass: "col-8" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { staticClass: "u-mb-xs", attrs: { for: "name" } }, [
+                _vm._v("お名前")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.user.name,
+                    expression: "user.name"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "text", id: "name", required: "" },
+                domProps: { value: _vm.user.name },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.user, "name", $event.target.value)
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c(
+                "label",
+                { staticClass: "u-mb-xs", attrs: { for: "user_name" } },
+                [_vm._v("ユーザー名")]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "input-group" }, [
+                _vm._m(1),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.user.user_name,
+                      expression: "user.user_name"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", required: "" },
+                  domProps: { value: _vm.user.user_name },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.user, "user_name", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c(
+                "label",
+                { staticClass: "u-mb-xs", attrs: { for: "comment" } },
+                [_vm._v("プロフィールコメント")]
+              ),
+              _vm._v(" "),
+              _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.user.comment,
+                    expression: "user.comment"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { id: "comment" },
+                domProps: { value: _vm.user.comment },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.user, "comment", $event.target.value)
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _vm._m(2),
+              _vm._v(" "),
+              _c("div", { staticClass: "input-group" }, [
+                _vm._m(3),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.user.mysite,
+                      expression: "user.mysite"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", id: "mysite" },
+                  domProps: { value: _vm.user.mysite },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.user, "mysite", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _vm._m(4),
+              _vm._v(" "),
+              _c("div", { staticClass: "input-group" }, [
+                _vm._m(5),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.user.twitter,
+                      expression: "user.twitter"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", id: "twitter" },
+                  domProps: { value: _vm.user.twitter },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.user, "twitter", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _vm._m(6),
+              _vm._v(" "),
+              _c("div", { staticClass: "input-group" }, [
+                _vm._m(7),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.user.instagram,
+                      expression: "user.instagram"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", id: "instagram" },
+                  domProps: { value: _vm.user.instagram },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.user, "instagram", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _vm._m(8),
+              _vm._v(" "),
+              _c("div", { staticClass: "input-group" }, [
+                _vm._m(9),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.user.facebook,
+                      expression: "user.facebook"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", id: "facebook" },
+                  domProps: { value: _vm.user.facebook },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.user, "facebook", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._m(10)
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-4" }, [
+            _c("div", { staticClass: "form-group settings-prof-img" }, [
+              _c(
+                "label",
+                { staticClass: "u-mb-xs", attrs: { for: "profile_image" } },
+                [_vm._v("プロフィール画像")]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "settings-prof-img__box" }, [
+                _c("input", {
+                  ref: "preview",
+                  staticClass: "form-control settings-prof-img__input",
+                  attrs: {
+                    type: "file",
+                    id: "profile_image",
+                    accept: "image/*"
+                  },
+                  on: { change: _vm.uploadFile }
+                }),
+                _vm._v(" "),
+                _vm._m(11),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { ref: "image", staticClass: "settings-prof-img__user-icon" },
+                  [
+                    _vm.url
+                      ? _c("img", {
+                          attrs: { src: _vm.url, alt: "プロフィール画像" }
+                        })
+                      : _c("img", {
+                          attrs: {
+                            src: _vm.userProfileImagePath,
+                            alt: "プロフィール画像"
+                          }
+                        })
+                  ]
+                )
+              ])
+            ])
+          ])
+        ])
+      ]
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", [
-      _c("h2", { staticClass: "page-tit u-mb-xl" }, [
-        _c("i", { staticClass: "fas fa-cog u-mr-sm u-mr-base" }),
-        _vm._v("プロフィール編集")
+    return _c("h2", { staticClass: "page-tit u-sm-mb-xl u-mb-xl" }, [
+      _c("i", { staticClass: "fas fa-cog u-mr-sm u-mr-base" }),
+      _vm._v("プロフィール編集")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c("div", { staticClass: "input-group-text" }, [_vm._v("@")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { staticClass: "u-mb-xs", attrs: { for: "mysite" } }, [
+      _c("i", { staticClass: "fas fa-globe fa-lg prof-content__icon u-mr-sm" }),
+      _vm._v("WEBサイト")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c("div", { staticClass: "input-group-text" }, [_vm._v("https://")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { staticClass: "u-mb-xs", attrs: { for: "twitter" } }, [
+      _c("i", {
+        staticClass: "fab fa-twitter fa-lg prof-content__icon u-mr-sm"
+      }),
+      _vm._v("Twitterアカウント")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c("div", { staticClass: "input-group-text" }, [
+        _vm._v("https://twitter.com/")
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "u-mb-xs", attrs: { for: "instagram" } },
+      [
+        _c("i", {
+          staticClass: "fab fa-instagram fa-lg prof-content__icon u-mr-sm"
+        }),
+        _vm._v("instagramアカウント")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c("div", { staticClass: "input-group-text" }, [
+        _vm._v("https://www.instagram.com/")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { staticClass: "u-mb-xs", attrs: { for: "facebook" } }, [
+      _c("i", {
+        staticClass: "fab fa-facebook-f fa-lg prof-content__icon u-mr-sm"
+      }),
+      _vm._v("facebookアカウント")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c("div", { staticClass: "input-group-text" }, [
+        _vm._v("https://www.facebook.com/")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c(
+        "button",
+        { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+        [_vm._v("編集を更新する")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "span",
+      { staticClass: "settings-prof-img__edit-icon u-fw-bold" },
+      [_c("i", { staticClass: "fas fa-pencil-alt u-mr-xs" }), _vm._v("Edit")]
+    )
   }
 ]
 render._withStripped = true
@@ -63266,26 +63861,16 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
 
 window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /**
- * We'll load jQuery and the Bootstrap jQuery plugin which provides support
- * for JavaScript based Bootstrap features such as modals and tabs. This
- * code may be modified to fit the specific needs of your application.
- */
-
-/* try {
-    window.Popper = require("popper.js").default;
-    window.$ = window.jQuery = require("jquery");
-
-    require("bootstrap");
-} catch (e) {} */
-
-/**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
+window.axios.defaults.headers.common = {
+  'X-Requested-With': 'XMLHttpRequest',
+  'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+};
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
@@ -63588,15 +64173,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SettingProfile_vue_vue_type_template_id_491d0038___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SettingProfile.vue?vue&type=template&id=491d0038& */ "./resources/js/components/SettingProfile.vue?vue&type=template&id=491d0038&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _SettingProfile_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SettingProfile.vue?vue&type=script&lang=js& */ "./resources/js/components/SettingProfile.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SettingProfile_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _SettingProfile_vue_vue_type_template_id_491d0038___WEBPACK_IMPORTED_MODULE_0__["render"],
   _SettingProfile_vue_vue_type_template_id_491d0038___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -63610,6 +64197,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/components/SettingProfile.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/SettingProfile.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/SettingProfile.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SettingProfile_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./SettingProfile.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SettingProfile.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SettingProfile_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
