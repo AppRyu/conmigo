@@ -33,6 +33,8 @@ img {
     min-height: 100vh;
     position: relative;
     padding-bottom: 53px; // ←フッターの高さを指定
+    width: 100%;
+    overflow: hidden;
 }
 
 .footer {
