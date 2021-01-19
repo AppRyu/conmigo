@@ -56,8 +56,6 @@ class UserController extends Controller
         } 
 
         $user->fill($request->except('profile_image'))->save();
-
-        return redirect()->route('user.show', ['user_name' => $user->user_name]);
     }
 
     public function edit(String $user_name)
