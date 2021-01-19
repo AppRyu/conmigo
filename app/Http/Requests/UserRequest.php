@@ -26,11 +26,11 @@ class UserRequest extends FormRequest
         return [
             'name'      => 'required|string|max:50',
             'user_name' => 'required|string|max:15|alpha_dash|unique:users,user_name,' . $this->user()->id,
-            'comment'   => 'nullable|string|max:500',
-            'mysite'    => 'nullable|max:255',
-            'twitter'   => 'nullable|max:255',
-            'instagram' => 'nullable|max:255',
-            'facebook'  => 'nullable|max:255',
+            'comment'   => 'string|max:500',
+            'mysite'    => 'max:255',
+            'twitter'   => 'max:255',
+            'instagram' => 'max:255',
+            'facebook'  => 'max:255',
         ];
     }
 

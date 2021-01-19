@@ -11,18 +11,18 @@
 		<div class="auth-form__group">
 			<label for="email" class="auth-form__label">メールアドレス</label>
 			@error('email')
-				<span class="auth-form__invalid" role="alert">
+				<p class="auth-form__invalid" role="alert">
 					<strong>{{ $message }}</strong>
-				</span>
+				</p>
 			@enderror
 			<input id="email" type="email" class="auth-form__input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 		</div>
 		<div class="auth-form__group">
 			<label for="password" class="auth-form__label">パスワード</label>
 			@error('password')
-				<span class="auth-form__invalid" role="alert">
+				<p class="auth-form__invalid" role="alert">
 					<strong>{{ $message }}</strong>
-				</span>
+				</p>
 			@enderror
 			<input id="password" type="password" class="auth-form__input @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 		</div>
