@@ -46,7 +46,7 @@ class UserController extends Controller
             $fileNameToStore = $filename.'_'.time().'.'.$extension;
 
             // 保存先までのパス
-            $storage_path = public_path('storage/img/'.$fileNameToStore);
+            $storage_path = storage_path('app/public/img/'.$fileNameToStore);
 
             // 画像を保存
             InterventionImage::make($file)->fit(300, 300)->save($storage_path);
