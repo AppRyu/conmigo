@@ -27,7 +27,7 @@
                         redirect-logout="{{ route('logout') }}"
                         post-to-user-update="{{ route('user.update', ['user_name' => Auth::user()->user_name]) }}"
                         :user-data="{{ Auth::user() }}"
-                        user-profile-image-path="{{ asset('/storage/img/'.Auth::user()->profile_image) }}"
+                        user-profile-image-path="{{ Auth::user()->profile_image ? asset('/storage/img/'.Auth::user()->profile_image) : asset('./img/default-icon.png') }}"
                         :csrf="{{ json_encode(csrf_token()) }}"
                         >
             </router-view>
