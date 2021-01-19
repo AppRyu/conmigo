@@ -50,7 +50,7 @@ class UserController extends Controller
 
             // 画像を保存
             InterventionImage::make($file)->fit(300, 300)->save($storage_path);
-            
+
             // データベースに画像名を追加
             $user->profile_image = $fileNameToStore;
         } 
