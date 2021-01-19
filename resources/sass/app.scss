@@ -1,9 +1,24 @@
+/*
+*******************************
+** setting
+*******************************
+*/
 @import './setting/variables';
 @import './setting/function';
 
+/*
+*******************************
+** foundation
+*******************************
+*/
 @import './foundation/reset';
 @import './foundation/base';
 
+/*
+*******************************
+** mixin
+*******************************
+*/
 @import './mixin/breakpoint';
 @import './mixin/btn';
 @import './mixin/heading';
@@ -11,9 +26,19 @@
 @import './mixin/user-icon';
 @import './mixin/page-tit';
 
+/*
+*******************************
+** module
+*******************************
+*/
 @import './module/page-tit';
 @import './module/timeTable';
 
+/*
+*******************************
+** component
+*******************************
+*/
 @import './layout/component/alert';
 @import './layout/component/badge';
 @import './layout/component/btn';
@@ -21,6 +46,11 @@
 @import './layout/component/link';
 @import './layout/component/tag';
 
+/*
+*******************************
+** utility
+*******************************
+*/
 @import './layout/utility/color';
 @import './layout/utility/display';
 @import './layout/utility/font-color';
@@ -31,13 +61,22 @@
 @import './layout/utility/text-align';
 @import './layout/utility/width';
 
+/*
+*******************************
+** override
+*******************************
+*/
 @import './override/bootstrap/btn';
 @import './override/bootstrap/form';
 @import './override/bootstrap/navbar';
 @import './override/bootstrap/pagination';
 
-@import './auth/login';
-@import './auth/register';
+/*
+*******************************
+** 個別ページ
+*******************************
+*/
+@import './auth/style';
 
 @import './page/index';
 @import './page/community/index';

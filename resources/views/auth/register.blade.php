@@ -11,7 +11,7 @@
 		<div class="auth-form__group">
 			<label for="name" class="auth-form__label">名前</label>
 			@error('name')
-				<span class="invalid-feedback" role="alert">
+				<span class="auth-form__invalid" role="alert">
 					<strong>{{ $message }}</strong>
 				</span>
 			@enderror
@@ -20,7 +20,7 @@
 		<div class="auth-form__group">
 			<label for="user_name" class="auth-form__label">ユーザー名</label>
 			@error('user_name')
-				<span class="invalid-feedback" role="alert">
+				<span class="auth-form__invalid" role="alert">
 					<strong>{{ $message }}</strong>
 				</span>
 			@enderror
@@ -29,7 +29,7 @@
 		<div class="auth-form__group">
 			<label for="email" class="auth-form__label">メールアドレス</label>
 			@error('email')
-				<span class="invalid-feedback" role="alert">
+				<span class="auth-form__invalid" role="alert">
 					<strong>{{ $message }}</strong>
 				</span>
 			@enderror
@@ -38,7 +38,7 @@
 		<div class="auth-form__group">
 			<label for="password" class="auth-form__label">パスワード</label>
 			@error('password')
-				<span class="invalid-feedback" role="alert">
+				<span class="auth-form__invalid" role="alert">
 					<strong>{{ $message }}</strong>
 				</span>
 			@enderror

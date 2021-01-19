@@ -31,6 +31,10 @@
             vertical-align: center;
         }
     }
+    &__invalid {
+        font-size: fs(sm);
+        color: clr(c---dark-red);
+    }
     &__input {
         display: block;
         width: 100%;
@@ -53,6 +57,9 @@
         padding: space(sm) space(xl);
         font-size: fs(base);
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+        &:focus {
+            outline: none;
+        }
     }
 }
 

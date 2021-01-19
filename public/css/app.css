@@ -1,5 +1,17 @@
 @charset "UTF-8";
 
+/*
+*******************************
+** setting
+*******************************
+*/
+
+/*
+*******************************
+** foundation
+*******************************
+*/
+
 /*!html5doctor.com Reset Stylesheet v1.6.1Last Updated: 2010-09-17Author: Richard Clark - http://richclarkdesign.comTwitter: @rich_clark*/
 
 html,
@@ -212,6 +224,18 @@ img {
   color: #536dfe;
 }
 
+/*
+*******************************
+** mixin
+*******************************
+*/
+
+/*
+*******************************
+** module
+*******************************
+*/
+
 .page-tit {
   border-left: 3px solid #4b4f56;
   padding-left: 1rem;
@@ -270,6 +294,12 @@ img {
     display: table-cell;
   }
 }
+
+/*
+*******************************
+** component
+*******************************
+*/
 
 .c-alert-red {
   display: block;
@@ -494,6 +524,12 @@ img {
   color: #5ca62a;
   background-color: #eaf7dc;
 }
+
+/*
+*******************************
+** utility
+*******************************
+*/
 
 .u-c---black {
   color: #4b4f56;
@@ -4285,6 +4321,12 @@ img {
   }
 }
 
+/*
+*******************************
+** override
+*******************************
+*/
+
 .btn-primary {
   color: #fff;
   background: #536dfe;
@@ -4346,6 +4388,12 @@ textarea {
   border-color: #536dfe;
 }
 
+/*
+*******************************
+** 個別ページ
+*******************************
+*/
+
 .auth-container {
   max-width: 400px;
   margin: 3em auto;
@@ -4383,6 +4431,11 @@ textarea {
   vertical-align: center;
 }
 
+.auth-form__invalid {
+  font-size: 0.75rem;
+  color: #bf3059;
+}
+
 .auth-form__input {
   display: block;
   width: 100%;
@@ -4407,6 +4460,10 @@ textarea {
   padding: 0.75rem 2.5rem;
   font-size: 0.875rem;
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+.auth-form__btn:focus {
+  outline: none;
 }
 
 .auth-link__forgot {
