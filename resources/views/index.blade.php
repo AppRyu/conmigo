@@ -11,8 +11,8 @@
             <a class="main-btn u-mb-base" href="{{ route('register') }}" role="button"><span class="main-btn__txt">新規登録</span></a>
             <a class="main-btn--outline u-mb-base" href="{{ route('login') }}" role="button"><span class="main-btn--outline__txt">ログイン</span></a>
             @else
-            <a class="main-btn u-mb-base" href="{{ route('register') }}" role="button"><span class="main-btn__txt">学習コミュニティを探す</span></a>
-            <a class="main-btn--outline u-mb-base" href="#" role="button"><span class="main-btn--outline__txt">学習コミュニティを作成</span></a>
+            <a class="main-btn u-mb-base" href="{{ route('community.index') }}" role="button"><span class="main-btn__txt">学習コミュニティを探す</span></a>
+            <a class="main-btn--outline u-mb-base" href="{{ route('community.create') }}" role="button"><span class="main-btn--outline__txt">学習コミュニティを作成</span></a>
             @endguest
         </div>
         <div class="col-md-6 col-12 u-d-flex align-items-center">
