@@ -1,0 +1,32 @@
+$widthSizeList: '100', 'auto';
+$breakpointList: xxs, xs, sm, md, lg;
+
+// レスポンシブ対応なし、width設定
+@each $width in $widthSizeList {
+    .u-w-#{$width} {
+        @if ($width == 'auto') {
+            width: auto !important;
+        } @else {
+            width: #{$width} + '%' !important;
+        }
+    }
+}
+
+// レスポンシブ対応あり、width設定
+@each $width in $widthSizeList {
+    @each $breakpoint in $breakpointList {
+        .u-#{$breakpoint}-w-#{$width} {
+            @include mq(#{$breakpoint}) {
+                @if ($width == 'auto') {
+                    width: auto !important;
+                } @else {
+                    width: #{$width} + '%' !important;
+                }
+            }
+        }
+    }
+}
+
+// @include mq(#{$breakpoint}) {
+//     padding-left: space(#{$size});
+// }
