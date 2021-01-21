@@ -1,9 +1,7 @@
 <template>
     <section>
         <h2 class="page-tit u-sm-mb-xl u-mb-xl"><i class="fas fa-cog u-mr-sm u-mr-base"></i>プロフィール編集</h2>
-        <form method="post" :action="postToUserUpdate" enctype="multipart/form-data" @submit.prevent="submit">
-            <input type="hidden" name="_token" :value="csrf">
-            <input type="hidden" name="_method" value="put">
+        <div>
             <div class="u-d-flex flex-lg-row flex-column">
                 <div class="col-lg-8 col-12">
                     <div class="form-group">
@@ -70,9 +68,9 @@
                 </div>
             </div>
             <div class="settings-prof-btn--outline">
-                <button type="submit" class="settings-prof-btn">編集を更新する</button>
+                <button @click.prevent="submit" class="settings-prof-btn">編集を更新する</button>
             </div>
-        </form>
+        </div>
     </section>
 </template>
 
@@ -149,9 +147,15 @@ export default {
                     'X-HTTP-Method-Override': 'PUT',
                 },
             };
-            formData.append('name', this.user.name)
+            console.log('csrfトークンです；' + this.csrf);
+            console.log('this.user.nameの値；' + this.user.name);
+            console.log('this.user.user_nameの値：' + this.user.user_name);
+            console.log('this.user.commentの値：' + this.user.comment);
+            console.log('this.user.commentの型：' + typeof(this.user.comment));
+
+            formData.append('name', this.user.name);
             formData.append('user_name', this.user.user_name);
-            formData.append('comment', this.user.comment !== null ? this.user.comment : '');
+            if(this.user.comment) formData.append('comment', this.user.comment);
             formData.append('profile_image', this.upimage.blob);
             formData.append('mysite', this.user.mysite !== null ? this.user.mysite : '');
             formData.append('twitter', this.user.twitter !== null ? this.user.twitter : '');

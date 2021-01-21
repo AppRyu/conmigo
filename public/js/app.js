@@ -2385,12 +2385,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_ImageUtil__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../lib/ImageUtil */ "./resources/js/lib/ImageUtil.js");
 
 
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-//
-//
 //
 //
 //
@@ -2582,15 +2582,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     'X-HTTP-Method-Override': 'PUT'
                   }
                 };
+                console.log('csrfトークンです；' + _this2.csrf);
+                console.log('this.user.nameの値；' + _this2.user.name);
+                console.log('this.user.user_nameの値：' + _this2.user.user_name);
+                console.log('this.user.commentの値：' + _this2.user.comment);
+                console.log('this.user.commentの型：' + _typeof(_this2.user.comment));
                 formData.append('name', _this2.user.name);
                 formData.append('user_name', _this2.user.user_name);
-                formData.append('comment', _this2.user.comment !== null ? _this2.user.comment : '');
+                if (_this2.user.comment) formData.append('comment', _this2.user.comment);
                 formData.append('profile_image', _this2.upimage.blob);
                 formData.append('mysite', _this2.user.mysite !== null ? _this2.user.mysite : '');
                 formData.append('twitter', _this2.user.twitter !== null ? _this2.user.twitter : '');
                 formData.append('instagram', _this2.user.instagram !== null ? _this2.user.instagram : '');
                 formData.append('facebook', _this2.user.facebook !== null ? _this2.user.facebook : '');
-                _context2.next = 12;
+                _context2.next = 17;
                 return axios.post(_this2.postToUserUpdate, formData, config).then(function (response) {
                   console.log(response);
                   location.reload(); // TODO アラートを表示する機能
@@ -2598,7 +2603,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   console.log(error.response);
                 });
 
-              case 12:
+              case 17:
               case "end":
                 return _context2.stop();
             }
@@ -48373,304 +48378,275 @@ var render = function() {
   return _c("section", [
     _vm._m(0),
     _vm._v(" "),
-    _c(
-      "form",
-      {
-        attrs: {
-          method: "post",
-          action: _vm.postToUserUpdate,
-          enctype: "multipart/form-data"
-        },
-        on: {
-          submit: function($event) {
-            $event.preventDefault()
-            return _vm.submit($event)
-          }
-        }
-      },
-      [
-        _c("input", {
-          attrs: { type: "hidden", name: "_token" },
-          domProps: { value: _vm.csrf }
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: { type: "hidden", name: "_method", value: "put" }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "u-d-flex flex-lg-row flex-column" }, [
-          _c("div", { staticClass: "col-lg-8 col-12" }, [
-            _c("div", { staticClass: "form-group" }, [
-              _c("label", { staticClass: "u-mb-xs", attrs: { for: "name" } }, [
-                _vm._v("お名前")
-              ]),
+    _c("div", [
+      _c("div", { staticClass: "u-d-flex flex-lg-row flex-column" }, [
+        _c("div", { staticClass: "col-lg-8 col-12" }, [
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { staticClass: "u-mb-xs", attrs: { for: "name" } }, [
+              _vm._v("お名前")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.user.name,
+                  expression: "user.name"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text", id: "name", required: "" },
+              domProps: { value: _vm.user.name },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.user, "name", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c(
+              "label",
+              { staticClass: "u-mb-xs", attrs: { for: "user_name" } },
+              [_vm._v("ユーザー名")]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "input-group" }, [
+              _vm._m(1),
               _vm._v(" "),
               _c("input", {
                 directives: [
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.user.name,
-                    expression: "user.name"
+                    value: _vm.user.user_name,
+                    expression: "user.user_name"
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "text", id: "name", required: "" },
-                domProps: { value: _vm.user.name },
+                attrs: { type: "text", required: "" },
+                domProps: { value: _vm.user.user_name },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(_vm.user, "name", $event.target.value)
+                    _vm.$set(_vm.user, "user_name", $event.target.value)
                   }
                 }
               })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group" }, [
-              _c(
-                "label",
-                { staticClass: "u-mb-xs", attrs: { for: "user_name" } },
-                [_vm._v("ユーザー名")]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "input-group" }, [
-                _vm._m(1),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.user.user_name,
-                      expression: "user.user_name"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: { type: "text", required: "" },
-                  domProps: { value: _vm.user.user_name },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.user, "user_name", $event.target.value)
-                    }
-                  }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group" }, [
-              _c(
-                "label",
-                { staticClass: "u-mb-xs", attrs: { for: "comment" } },
-                [_vm._v("プロフィールコメント")]
-              ),
-              _vm._v(" "),
-              _c("textarea", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.user.comment,
-                    expression: "user.comment"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: { id: "comment" },
-                domProps: { value: _vm.user.comment },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.user, "comment", $event.target.value)
-                  }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group" }, [
-              _vm._m(2),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.user.mysite,
-                    expression: "user.mysite"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: {
-                  type: "text",
-                  id: "mysite",
-                  placeholder: "sample@example.com"
-                },
-                domProps: { value: _vm.user.mysite },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.user, "mysite", $event.target.value)
-                  }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group" }, [
-              _vm._m(3),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "input-group flex-sm-row flex-column" },
-                [
-                  _vm._m(4),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.user.twitter,
-                        expression: "user.twitter"
-                      }
-                    ],
-                    staticClass: "form-control form-control-sns",
-                    attrs: { type: "text", id: "twitter" },
-                    domProps: { value: _vm.user.twitter },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.user, "twitter", $event.target.value)
-                      }
-                    }
-                  })
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group" }, [
-              _vm._m(5),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "input-group flex-sm-row flex-column" },
-                [
-                  _vm._m(6),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.user.instagram,
-                        expression: "user.instagram"
-                      }
-                    ],
-                    staticClass: "form-control form-control-sns",
-                    attrs: { type: "text", id: "instagram" },
-                    domProps: { value: _vm.user.instagram },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.user, "instagram", $event.target.value)
-                      }
-                    }
-                  })
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group" }, [
-              _vm._m(7),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "input-group flex-sm-row flex-column" },
-                [
-                  _vm._m(8),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.user.facebook,
-                        expression: "user.facebook"
-                      }
-                    ],
-                    staticClass: "form-control form-control-sns",
-                    attrs: { type: "text", id: "facebook" },
-                    domProps: { value: _vm.user.facebook },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.user, "facebook", $event.target.value)
-                      }
-                    }
-                  })
-                ]
-              )
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-lg-4 col-12" }, [
-            _c("div", { staticClass: "form-group settings-prof-img" }, [
-              _c(
-                "label",
-                { staticClass: "u-mb-xs", attrs: { for: "profile_image" } },
-                [_vm._v("プロフィール画像")]
-              ),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { staticClass: "u-mb-xs", attrs: { for: "comment" } }, [
+              _vm._v("プロフィールコメント")
+            ]),
+            _vm._v(" "),
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.user.comment,
+                  expression: "user.comment"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { id: "comment" },
+              domProps: { value: _vm.user.comment },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.user, "comment", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _vm._m(2),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.user.mysite,
+                  expression: "user.mysite"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: {
+                type: "text",
+                id: "mysite",
+                placeholder: "sample@example.com"
+              },
+              domProps: { value: _vm.user.mysite },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.user, "mysite", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _vm._m(3),
+            _vm._v(" "),
+            _c("div", { staticClass: "input-group flex-sm-row flex-column" }, [
+              _vm._m(4),
               _vm._v(" "),
-              _c("div", { staticClass: "settings-prof-img__box" }, [
-                _c("input", {
-                  ref: "preview",
-                  staticClass: "form-control settings-prof-img__input",
-                  attrs: {
-                    type: "file",
-                    id: "profile_image",
-                    accept: "image/*"
-                  },
-                  on: { change: _vm.selectedFile }
-                }),
-                _vm._v(" "),
-                _vm._m(9),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { ref: "image", staticClass: "settings-prof-img__user-icon" },
-                  [
-                    _vm.upimage.fileUrl
-                      ? _c("img", {
-                          attrs: { src: _vm.upimage.fileUrl, alt: "" }
-                        })
-                      : _c("img", {
-                          attrs: {
-                            src: _vm.userProfileImagePath,
-                            alt: "プロフィール画像"
-                          }
-                        })
-                  ]
-                )
-              ])
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.user.twitter,
+                    expression: "user.twitter"
+                  }
+                ],
+                staticClass: "form-control form-control-sns",
+                attrs: { type: "text", id: "twitter" },
+                domProps: { value: _vm.user.twitter },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.user, "twitter", $event.target.value)
+                  }
+                }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _vm._m(5),
+            _vm._v(" "),
+            _c("div", { staticClass: "input-group flex-sm-row flex-column" }, [
+              _vm._m(6),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.user.instagram,
+                    expression: "user.instagram"
+                  }
+                ],
+                staticClass: "form-control form-control-sns",
+                attrs: { type: "text", id: "instagram" },
+                domProps: { value: _vm.user.instagram },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.user, "instagram", $event.target.value)
+                  }
+                }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _vm._m(7),
+            _vm._v(" "),
+            _c("div", { staticClass: "input-group flex-sm-row flex-column" }, [
+              _vm._m(8),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.user.facebook,
+                    expression: "user.facebook"
+                  }
+                ],
+                staticClass: "form-control form-control-sns",
+                attrs: { type: "text", id: "facebook" },
+                domProps: { value: _vm.user.facebook },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.user, "facebook", $event.target.value)
+                  }
+                }
+              })
             ])
           ])
         ]),
         _vm._v(" "),
-        _vm._m(10)
-      ]
-    )
+        _c("div", { staticClass: "col-lg-4 col-12" }, [
+          _c("div", { staticClass: "form-group settings-prof-img" }, [
+            _c(
+              "label",
+              { staticClass: "u-mb-xs", attrs: { for: "profile_image" } },
+              [_vm._v("プロフィール画像")]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "settings-prof-img__box" }, [
+              _c("input", {
+                ref: "preview",
+                staticClass: "form-control settings-prof-img__input",
+                attrs: { type: "file", id: "profile_image", accept: "image/*" },
+                on: { change: _vm.selectedFile }
+              }),
+              _vm._v(" "),
+              _vm._m(9),
+              _vm._v(" "),
+              _c(
+                "div",
+                { ref: "image", staticClass: "settings-prof-img__user-icon" },
+                [
+                  _vm.upimage.fileUrl
+                    ? _c("img", {
+                        attrs: { src: _vm.upimage.fileUrl, alt: "" }
+                      })
+                    : _c("img", {
+                        attrs: {
+                          src: _vm.userProfileImagePath,
+                          alt: "プロフィール画像"
+                        }
+                      })
+                ]
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "settings-prof-btn--outline" }, [
+        _c(
+          "button",
+          {
+            staticClass: "settings-prof-btn",
+            on: {
+              click: function($event) {
+                $event.preventDefault()
+                return _vm.submit($event)
+              }
+            }
+          },
+          [_vm._v("編集を更新する")]
+        )
+      ])
+    ])
   ])
 }
 var staticRenderFns = [
@@ -48776,18 +48752,6 @@ var staticRenderFns = [
       { staticClass: "settings-prof-img__edit-icon u-fw-bold" },
       [_c("i", { staticClass: "fas fa-pencil-alt u-mr-xs" }), _vm._v("Edit")]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "settings-prof-btn--outline" }, [
-      _c(
-        "button",
-        { staticClass: "settings-prof-btn", attrs: { type: "submit" } },
-        [_vm._v("編集を更新する")]
-      )
-    ])
   }
 ]
 render._withStripped = true
@@ -64471,14 +64435,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!****************************************************!*\
   !*** ./resources/js/components/SettingProfile.vue ***!
   \****************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SettingProfile_vue_vue_type_template_id_491d0038___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SettingProfile.vue?vue&type=template&id=491d0038& */ "./resources/js/components/SettingProfile.vue?vue&type=template&id=491d0038&");
 /* harmony import */ var _SettingProfile_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SettingProfile.vue?vue&type=script&lang=js& */ "./resources/js/components/SettingProfile.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _SettingProfile_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _SettingProfile_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -64508,7 +64473,7 @@ component.options.__file = "resources/js/components/SettingProfile.vue"
 /*!*****************************************************************************!*\
   !*** ./resources/js/components/SettingProfile.vue?vue&type=script&lang=js& ***!
   \*****************************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

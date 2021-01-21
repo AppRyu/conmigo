@@ -26,6 +26,10 @@ class UserController extends Controller
     {
         $user = User::where('user_name', $user_name)->first();
         
+        if(!$request->has('comment')) {
+            $user->comment = NULL;
+        }
+
         if($request->hasFile('profile_image')) {
             // 過去の画像を削除
             Storage::delete('public/img/'.$user->profile_image);
