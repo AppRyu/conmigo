@@ -9,7 +9,7 @@
     <form class="auth-form" method="post" action="{{ route('register') }}">
 		@csrf
 		<div class="auth-form__group">
-			<label for="name" class="auth-form__label">名前</label>
+			<label for="name" class="auth-form__label">名前（表示される名前です）</label>
 			@error('name')
 				<p class="auth-form__invalid" role="alert">
 					<strong>{{ $message }}</strong>
@@ -18,7 +18,7 @@
 			<input id="name" type="text" class="auth-form__input @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 		</div>
 		<div class="auth-form__group">
-			<label for="user_name" class="auth-form__label">ユーザー名</label>
+			<label for="user_name" class="auth-form__label">ユーザー名（＠に続く名前です）<span class="d-inline-block">半角英数字とアンダーバーのみ</span></label>
 			@error('user_name')
 				<p class="auth-form__invalid" role="alert">
 					<strong>{{ $message }}</strong>

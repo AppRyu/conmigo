@@ -25,7 +25,7 @@ class alpha_num_check implements Rule
      */
     public function passes($attribute, $value)
     {
-        return preg_match('/^[a-zA-Z0-9]+$/', $value);
+        return preg_match('/^[a-zA-Z0-9_]+$/', $value);
     }
 
     /**
