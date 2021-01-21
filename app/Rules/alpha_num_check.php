@@ -35,6 +35,6 @@ class alpha_num_check implements Rule
      */
     public function message()
     {
-        return trans('validation.alpha_num_check');
+        return trans('半角英数字とアンダーバーのみ使用可能です。');
     }
 }
