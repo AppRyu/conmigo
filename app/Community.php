@@ -34,6 +34,11 @@ class Community extends Model
         return $this->hasMany('App\CommunityMessages', 'community_id', 'id');
     }
 
+    public function likes()
+    {
+        return $this->hasMany('App\Like', 'community_id', 'id');
+    }
+
     /**
      * 
      * @return boolean 
@@ -142,5 +147,16 @@ class Community extends Model
     public function getTime(string $value): string
     {
         return $this->formatTime($value);
+    }
+
+    /**
+     * いいねしているか判定
+     * 
+     * @param $user
+     * @return boolean
+     */
+    public function isLikedBy(User $user): bool
+    {
+        return (bool)$this->likes->where('user_id', $user->id)->count();
     }
 }

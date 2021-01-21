@@ -28,7 +28,13 @@ Route::namespace('Front')->group(function() {
             Route::get('/community/plan/{community}', 'CommunityPlanedController@show')->name('community.plan.show');
             Route::post('/community/plan/{community}', 'CommunityPlanedController@determineUser')->name('community.plan.determineUser');
             
-            // 応募したコミュニティ
+            // コミュニティに対してのいいね機能
+            Route::prefix('communities')->group(function() {
+                  Route::put('{community}/like', 'CommunityController@like')->name('communities.like');
+                  Route::delete('{community}/like', 'CommunityController@unlike')->name('communities.unlike');
+            });
+
+            // 応募したコミュニティ：一覧
             Route::get('/community/applied', 'CommunityApplyController@index')->name('community.applied');
 
             // チャットルーム：一覧

@@ -78,3 +78,29 @@
         text-decoration: underline;
     }
 }
+
+.community-like {
+    font-size: fs(sm);
+    float: right;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    &__vue-star {
+        position: absolute;
+        top: -44px;
+        left: -58px;
+    }
+    &__star {
+        color: clr(c---dark-gray);
+        &--active {
+            color: clr(c---star-yellow);
+        }
+    }
+    &__txt {
+        display: none;
+        color: clr(c---dark-gray);
+        @include mq('xxs') {
+            display: block;
+        }
+    }
+}

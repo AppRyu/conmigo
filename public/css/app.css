@@ -615,6 +615,10 @@ img {
   color: #81d14b;
 }
 
+.u-c---star-yellow {
+  color: #fcda4b;
+}
+
 .u-c---sns--twitter {
   color: #55acee;
 }
@@ -4672,6 +4676,39 @@ textarea {
 .community-created-user__link:hover {
   color: #536dfe;
   text-decoration: underline;
+}
+
+.community-like {
+  font-size: 0.75rem;
+  float: right;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+.community-like__vue-star {
+  position: absolute;
+  top: -44px;
+  left: -58px;
+}
+
+.community-like__star {
+  color: #ced4da;
+}
+
+.community-like__star--active {
+  color: #fcda4b;
+}
+
+.community-like__txt {
+  display: none;
+  color: #ced4da;
+}
+
+@media screen and (min-width: 425px) {
+  .community-like__txt {
+    display: block;
+  }
 }
 
 .comm-det-desc__hd {

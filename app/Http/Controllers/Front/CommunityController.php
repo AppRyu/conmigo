@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Community;
 use App\Recruit;
 use App\User;
+use App\Like;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Community\CommunityStoreRequest;
@@ -105,5 +106,18 @@ class CommunityController extends Controller
             'applied_user' => $request->user()->id,
         ]);
         return response("OK", 200);
+    }
+
+    public function like(Request $request, Community $community)
+    {
+        Like::where(['user_id' => $request->user()->id, 'community_id' => $community->id])->delete();
+        Like::create(['user_id' => $request->user()->id, 'community_id' => $community->id]);
+        return;
+    }
+
+    public function unlike(Request $request, Community $community)
+    {
+        Like::where(['user_id' => $request->user()->id, 'community_id' => $community->id])->delete();
+        return;
     }
 }

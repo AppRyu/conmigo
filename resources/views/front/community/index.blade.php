@@ -28,7 +28,16 @@
                     <div class="community-badge-sm community-badge-sm--green u-d-block u-xs-d-none"><span class="community-badge-sm__txt">募集中</span></div>
                     @endif
                     <section class="community-content__right">
-                        <h3 class="u-c---dark-blue u-fs-lg u-ml-base u-xs-ml-no u-mb-sm">{{ $community->name }}</h3>
+                        <h3 class="u-c---dark-blue u-fs-lg u-ml-base u-xs-ml-no u-mb-sm">{{ $community->name }}
+                            @if(Auth::check())
+                            <community-like
+                            :initial-is-liked-by='@json($community->isLikedBy(Auth::user()))'
+                            :authorized='@json(Auth::check())'
+                            endpoint="{{ route('communities.like', ['community' => $community]) }}"
+                            >
+                            </community-like>
+                            @endif
+                        </h3>
                         <div class="u-md-d-flex">
                             <div class="u-fw-bold u-mb-xs u-md-mr-base u-md-mb-no"><span class="c-tag-sm c-tag-red u-mr-sm">開始日時</span><span class="d-inline-block u-fs-sm">{{ $community->getDate($community->start) }} {{ $community->getTime($community->start) }}</span></div>
                             <div class="u-fw-bold"><span class="c-tag-sm c-tag-green u-mr-sm">終了日時</span><span class="d-inline-block u-fs-sm">{{ $community->getDate($community->end) }} {{ $community->getTime($community->end) }}</span></div>
