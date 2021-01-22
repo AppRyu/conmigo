@@ -28,11 +28,14 @@ Route::namespace('Front')->group(function() {
             Route::get('/community/plan/{community}', 'CommunityPlanedController@show')->name('community.plan.show');
             Route::post('/community/plan/{community}', 'CommunityPlanedController@determineUser')->name('community.plan.determineUser');
             
-            // コミュニティに対してのいいね機能
+            // コミュニティに対してのお気に入り機能
             Route::prefix('communities')->group(function() {
                   Route::put('{community}/like', 'CommunityController@like')->name('communities.like');
                   Route::delete('{community}/like', 'CommunityController@unlike')->name('communities.unlike');
+                  // お気に入りコミュニティ一覧
+                  Route::get('like', 'CommunityController@likes')->name('communities.likes');
             });
+            
 
             // 応募したコミュニティ：一覧
             Route::get('/community/applied', 'CommunityApplyController@index')->name('community.applied');

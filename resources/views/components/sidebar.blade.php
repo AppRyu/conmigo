@@ -20,7 +20,10 @@
             <a class="profile-data__link" href="{{ route('community.plan.index') }}">コミュニティ管理</a>
         </div>
         <div class="profile-community">
-            <a class="profile-data__link" href="{{ route('chat.index') }}">メッセージ</a>
+            <a class="profile-data__link" href="{{ route('chat.index') }}">トークルーム</a>
+        </div>
+        <div class="profile-community">
+            <a class="profile-data__link" href="{{ route('communities.likes') }}">お気に入り</a>
         </div>
     </div>
 </div>

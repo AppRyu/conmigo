@@ -9,7 +9,6 @@ use App\Like;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Community\CommunityStoreRequest;
-use Illuminate\Support\Facades\DB;
 
 class CommunityController extends Controller
 {
@@ -137,5 +136,13 @@ class CommunityController extends Controller
     {
         Like::where(['user_id' => $request->user()->id, 'community_id' => $community->id])->delete();
         return;
+    }
+
+    public function likes(Request $request) {
+        // likesテーブルでuser_id(ログインID)からcommunity_idを取得
+        $likedCommunityId = Like::where('user_id', $request->user()->id)->pluck('community_id')->toArray();
+        // 上記で取得したcommunity_idから対応するコミュニティデータを取得
+        $communities = Community::whereIn('id', $likedCommunityId)->orderBy('created_at', 'desc')->paginate(30);
+        return view('front.community.likes', ['communities' => $communities]);
     }
 }
