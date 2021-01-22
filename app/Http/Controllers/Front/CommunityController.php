@@ -9,6 +9,7 @@ use App\Like;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Community\CommunityStoreRequest;
+use Illuminate\Support\Facades\DB;
 
 class CommunityController extends Controller
 {
@@ -22,9 +23,26 @@ class CommunityController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $communities = Community::orderBy('created_at', 'desc')->paginate(30);
+
+        $query = Community::query();
+        $search = $request->input('search');
+        // もし検索キーワードがあったら
+        if($search !== null) {
+            // 全額スペースを半角に
+            $search_split = mb_convert_kana($search,'s');
+            // 空欄で区切る
+            $search_split2 = preg_split('/[\s]+/', $search_split,-1,PREG_SPLIT_NO_EMPTY);
+            // 単語をループで回す
+            foreach($search_split2 as $value)
+            {
+            $query->where('name','like','%'.$value.'%');
+            }
+        }
+        $query->orderBy('created_at', 'desc');
+        $communities = $query->paginate(30);
+
         return view('front.community.index', ['communities' => $communities]);
     }
 

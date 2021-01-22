@@ -8,6 +8,12 @@
             <div class="u-fs-sm u-fw-normal u-mt-xs">一緒に学習するコミュニティを探してください。</div>
         </h2>
         <div class="u-mb-lg">
+            <div class="community-search">
+                <form class="community-search-form" action="{{ route('community.index') }}" method="get">
+                    <input class="mr-sm-2 community-search-form__input" name="search" type="search" placeholder="キーワードで検索">
+                    <button class="c-btn-outline-green community-search-form__btn" type="submit">Search</button>
+                </form>
+            </div>
             @foreach($communities as $community)
             <a class="community-content__link" href="{{ route('community.show', ['community' => $community]) }}">
                 <div class="community-content u-xs-d-flex">
