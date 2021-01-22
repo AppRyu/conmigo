@@ -5,9 +5,9 @@
 @section('content')
 <section>
     <h2 class="page-tit u-mb-xl"><i class="fas fa-school u-mr-base"></i>企画済コミュニティ</h2>
-    <div class="ca-navTabs">
-        <a class="ca-navTabs__item ca-navTabs__item_active" href="{{ route('community.plan.index') }}">企画した</a>
-        <a class="ca-navTabs__item" href="{{ route('community.applied') }}">応募した</a>
+    <div class="community-admin-navTabs">
+        <a class="community-admin-navTabs__item community-admin-navTabs__item_active" href="{{ route('community.plan.index') }}">企画した</a>
+        <a class="community-admin-navTabs__item" href="{{ route('community.applied') }}">応募した</a>
     </div>
     <div class="u-mb-lg">
         @if(!$communities->count())
