@@ -2360,7 +2360,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
+                if (confirm('本当にアカウントを削除しますか？')) {
+                  _context.next = 4;
+                  break;
+                }
+
+                return _context.abrupt("return", false);
+
+              case 4:
+                _context.next = 6;
                 return axios["delete"](_this2.accountDeleteUrl).then(function (response) {
                   _this2.Logout();
 
@@ -2371,7 +2379,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   _this2.message = 'エラーが発生しました。しばらく経ってから再度お試しください。';
                 });
 
-              case 2:
+              case 6:
               case "end":
                 return _context.stop();
             }

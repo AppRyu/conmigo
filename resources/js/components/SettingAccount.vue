@@ -43,15 +43,19 @@ export default {
             });
         },
         async deleteAccount() {
-            await axios.delete(this.accountDeleteUrl)
-            .then(response => {
-                this.Logout();
-                this.redirectToLoginPage();
-                this.message = '正常にアカウントは削除されました。まもなくログインページへ遷移します。';
-            })
-            .catch(err => {
-                this.message = 'エラーが発生しました。しばらく経ってから再度お試しください。'
-            });
+            if(!confirm('本当にアカウントを削除しますか？')) {
+                return false;
+            } else {
+                await axios.delete(this.accountDeleteUrl)
+                .then(response => {
+                    this.Logout();
+                    this.redirectToLoginPage();
+                    this.message = '正常にアカウントは削除されました。まもなくログインページへ遷移します。';
+                })
+                .catch(err => {
+                    this.message = 'エラーが発生しました。しばらく経ってから再度お試しください。'
+                });
+            }
         }
     }
 }
