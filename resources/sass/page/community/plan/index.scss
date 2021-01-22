@@ -69,3 +69,21 @@
         }
     }
 }
+
+.community-plan-settings {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.community-destroy-form {
+    &__input {
+        background-color: transparent;
+        border: none;
+        vertical-align: baseline;
+        padding: 0;
+        &:focus {
+            outline: none;
+        }
+    }
+}

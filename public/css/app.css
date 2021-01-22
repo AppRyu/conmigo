@@ -545,6 +545,16 @@ img {
   width: 100px;
 }
 
+.c-link-red {
+  color: #bf3059;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c-link-red:hover {
+  color: #d86485;
+}
+
 .c-link-blue {
   color: #536dfe;
   text-decoration: none;
@@ -553,6 +563,16 @@ img {
 
 .c-link-blue:hover {
   color: #9faefe;
+}
+
+.c-link-green {
+  color: #5ca62a;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c-link-green:hover {
+  color: #81d14b;
 }
 
 .c-tag-sm {
@@ -5016,6 +5036,23 @@ textarea {
 
 .ca-tb__btn:hover {
   background-color: #e87471;
+}
+
+.community-plan-settings {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.community-destroy-form__input {
+  background-color: transparent;
+  border: none;
+  vertical-align: baseline;
+  padding: 0;
+}
+
+.community-destroy-form__input:focus {
+  outline: none;
 }
 
 .select-user__hd {

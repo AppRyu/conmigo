@@ -44,7 +44,7 @@
                         <div class="u-fw-bold u-mb-xs u-md-mr-base u-md-mb-no"><span class="c-tag-sm c-tag-red u-mr-sm">開始日時</span><span class="d-inline-block u-fs-sm">{{ $community->getDate($community->start) }} {{ $community->getTime($community->start) }}</span></div>
                         <div class="u-fw-bold"><span class="c-tag-sm c-tag-green u-mr-sm">終了日時</span><span class="d-inline-block u-fs-sm">{{ $community->getDate($community->end) }} {{ $community->getTime($community->end) }}</span></div>
                     </div>
-                    <div class="community-row">
+                    <div class="community-row u-mb-xs">
                         <div class="u-fs-sm">応募数<span class="u-c---dark-blue u-fs-xl u-mx-sm">{{ $community->getTotalRecruitment() }}</span>件</div>
                         <div class="u-d-flex">
                             @if ($community->users->profile_image)
@@ -55,8 +55,14 @@
                             <a class="community-created-user__link" href="{{ route('user.show', ['user_name' => $community->users->user_name]) }}">{{ $community->users->user_name }}</a>
                         </div>
                     </div>
-                    <div>
-                        <div><a class="c-link-blue" href="{{ route('community.edit', ['community' => $community]) }}">編集する</a></div>
+                    <div class="community-plan-settings">
+                        <div class="u-mr-sm"><a class="c-link-blue" href="{{ route('community.plan.show', ['community' => $community]) }}">仲間を選択する</a></div>
+                        <div class="u-mr-sm"><a class="c-link-green" href="{{ route('community.edit', ['community' => $community]) }}">編集する</a></div>
+                        <form class="community-destroy-form" action="{{ route('community.destroy', ['community' => $community]) }}" method="post">
+                            @csrf
+                            @method('delete')
+                            <input class="community-destroy-form__input c-link-red" type="submit" value="削除する" onclick="return confirm('削除しますか？')">
+                        </form>
                     </div>
                 </section>
             </div>

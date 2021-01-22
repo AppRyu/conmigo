@@ -1,12 +1,12 @@
-$linkColorList: 'blue';
+$linkColorList: 'red', 'blue', 'green';
 
 @each $color in $linkColorList {
     .c-link-#{$color} {
-        color: clr(c---dark-blue);
+        color: clr(c---dark-#{$color});
         text-decoration: none;
         cursor: pointer;
         &:hover {
-            color: lighten(clr(c---dark-blue), 15%);
+            color: lighten(clr(c---dark-#{$color}), 15%);
         }
     }
 }
