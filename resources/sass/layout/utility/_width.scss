@@ -27,6 +27,13 @@ $breakpointList: xxs, xs, sm, md, lg;
     }
 }
 
-// @include mq(#{$breakpoint}) {
-//     padding-left: space(#{$size});
-// }
+// レスポンシブ対応なし、max-width設定
+@each $width in $widthSizeList {
+    .u-mw-#{$width} {
+        @if ($width == 'auto') {
+            max-width: auto !important;
+        } @else {
+            max-width: #{$width} + '%' !important;
+        }
+    }
+}

@@ -1,5 +1,6 @@
 $btnColorList: 'red', 'blue', 'green';
 
+// ノーマルボタン
 @each $color in $btnColorList {
     .c-btn-#{$color} {
         color: clr(c---white);
@@ -8,10 +9,31 @@ $btnColorList: 'red', 'blue', 'green';
         user-select: none;
         border-radius: 0.25rem;
         background-color: clr(c---bg--dark-#{$color});
-        border: clr(c---bg--dark-#{$color});
+        border: 1px solid clr(c---bg--dark-#{$color});
         &:hover {
             background-color: lighten(clr(c---bg--dark-#{$color}), 5%);
-            border: lighten(clr(c---bg--dark-#{$color}), 5%);
+            border: 1px solid lighten(clr(c---bg--dark-#{$color}), 5%);
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+// ゴーストボタン
+@each $color in $btnColorList {
+    .c-btn-outline-#{$color} {
+        color: clr(c---dark-#{$color});
+        padding: 0.375rem 0.75rem;
+        text-align: center;
+        user-select: none;
+        border-radius: 0.25rem;
+        background-color: clr(c---white);
+        border: 1px solid clr(c---bg--dark-#{$color});
+        &:hover {
+            color: clr(c---white);
+            background-color: clr(c---bg--dark-#{$color});
+            border: 1px solid clr(c---bg--dark-#{$color});
         }
         &:focus {
             outline: none;
