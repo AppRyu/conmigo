@@ -53,8 +53,8 @@ class CommunityStoreRequest extends FormRequest
     {
         return [
             'name.max'      => ':max文字以内で入力してください',
-            'start.after'  => '現在より前の日時を指定してください',
-            'end.after'     => ':attributeより後の日時をしていしてください',
+            'start.after'  => '現在の日時以降を指定してください',
+            'end.after'     => '指定した開始日時以降を指定してください',
             'detail.max'    => ':max文字以内で入力してください',
         ];
     }
