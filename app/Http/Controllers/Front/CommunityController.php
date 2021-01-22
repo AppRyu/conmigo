@@ -87,9 +87,9 @@ class CommunityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Community $community)
     {
-        //
+        return view('front.community.edit', ['community' => $community]);
     }
 
     /**
@@ -99,9 +99,10 @@ class CommunityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(CommunityStoreRequest $request, Community $community)
+    {   
+        $community->fill($request->all())->save();
+        return redirect()->route('community.plan.index');
     }
 
     /**

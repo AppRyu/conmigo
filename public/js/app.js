@@ -2260,19 +2260,32 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     data: {
       id: {
-        type: String
+        type: String,
+        required: true
       },
       name: {
-        type: String
+        type: String,
+        required: true
       },
       placeholder: {
-        type: String
+        type: String,
+        required: true
       }
+    },
+    initialStartDateTime: {
+      type: String
+    },
+    initialEndDateTime: {
+      type: String
     }
+  },
+  mounted: function mounted() {
+    if (this.initialStartDateTime) this.value = this.initialStartDateTime;
+    if (this.initialEndDateTime) this.value = this.initialEndDateTime;
   },
   data: function data() {
     return {
-      value: ""
+      value: ''
     };
   }
 });

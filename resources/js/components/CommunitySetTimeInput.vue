@@ -25,19 +25,32 @@ export default {
     props: {
         data: {
             id: {
-                type: String
+                type: String,
+                required: true,
             },
             name: {
-                type: String
+                type: String,
+                required: true,
             },
             placeholder: {
-                type: String
-            }
+                type: String,
+                required: true,
+            },
+        },
+        initialStartDateTime: {
+            type: String
+        },
+        initialEndDateTime: {
+            type: String
         }
+    },
+    mounted(){
+        if(this.initialStartDateTime) this.value = this.initialStartDateTime;
+        if(this.initialEndDateTime) this.value = this.initialEndDateTime;
     },
     data() {
         return {
-            value: ""
+            value: ''
         };
     }
 };

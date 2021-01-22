@@ -10,9 +10,8 @@ use Illuminate\Http\Request;
 
 class CommunityPlanedController extends Controller
 {
-    public function index() {
-        $user = User::where('user_name', auth()->user()->user_name)->first();
-        $communities = $user->communities()->where('created_user', $user->id)->get(['id','name', 'created_user', 'start', 'end']);
+    public function index(Request $request) {
+        $communities = Community::where('created_user', $request->user()->id)->orderBy('created_at', 'desc')->paginate(30);
         return view('front.community.plan.index', ['communities' => $communities]);
     }
 

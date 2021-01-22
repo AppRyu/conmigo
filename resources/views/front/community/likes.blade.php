@@ -4,7 +4,7 @@
 
 @section('content')
 <section>
-        <h2 class="page-tit u-mb-xl"><i class="far fa-star u-mr-base"></i>お気に入り一覧</h2>
+    <h2 class="page-tit u-mb-xl"><i class="far fa-star u-mr-base"></i>お気に入り一覧</h2>
     <div class="u-mb-lg">
         @foreach($communities as $community)
         <a class="community-content__link" href="{{ route('community.show', ['community' => $community]) }}">
