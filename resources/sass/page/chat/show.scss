@@ -1,3 +1,11 @@
+.chat-alert__link {
+    text-decoration: underline;
+    color: clr(c---dark-yellow);
+    &:hover {
+        color: clr(c---dark-yellow);
+    }
+}
+
 .chat-container {
     border: 1px solid clr(c---bg--dark-gray);
     border-radius: 5px;

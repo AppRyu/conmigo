@@ -5111,6 +5111,15 @@ textarea {
   color: #536dfe;
 }
 
+.chat-alert__link {
+  text-decoration: underline;
+  color: #856404;
+}
+
+.chat-alert__link:hover {
+  color: #856404;
+}
+
 .chat-container {
   border: 1px solid #e9ebee;
   border-radius: 5px;

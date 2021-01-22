@@ -18,7 +18,7 @@
                 <div class="c-alert-red u-mb-base">このコミュニティは既に削除されました。</div>
             @break
             @case('noMember')
-                <div class="c-alert-yellow u-mb-base">コミュニティ管理画面からメンバーを確定しよう。</div>
+                <div class="c-alert-yellow u-mb-base"><a class="chat-alert__link" href="{{ route('community.plan.index') }}">コミュニティ管理画面</a>からメンバーを確定しよう。</div>
             @break
             @case('noMsg')
                 <div class="c-alert-green u-mb-base">メンバーに挨拶メッセージを送ろう。</div>
