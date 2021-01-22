@@ -2385,8 +2385,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_ImageUtil__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../lib/ImageUtil */ "./resources/js/lib/ImageUtil.js");
 
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -2467,13 +2465,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    csrf: {
-      type: String,
-      required: true
-    },
     postToUserUpdate: {
       type: String,
       required: true
@@ -2501,9 +2513,24 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       upimage: {
         fileUrl: '',
         blob: null
-      } // 画像ファイル
-
+      },
+      // 画像ファイル
+      errors: {
+        // バリデーションエラーメッセージを格納
+        name: [],
+        user_name: [],
+        comment: [],
+        twitter: [],
+        instagram: [],
+        facebook: []
+      }
     };
+  },
+  computed: {
+    isDisabled: function isDisabled() {
+      // エラーメッセージが入っていた場合、「編集を更新する」ボタン => disabled
+      return this.errors.name.length || this.errors.user_name.length || this.errors.comment.length || this.errors.twitter.length || this.errors.instagram.length || this.errors.facebook.length ? true : false;
+    }
   },
   mounted: function mounted() {
     var imageWidth = this.$refs.image.clientWidth + 'px';
@@ -2517,6 +2544,35 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     resize: function resize() {
       var imageWidth = this.$refs.image.clientWidth + 'px';
       this.$refs.image.style.height = imageWidth;
+    },
+    checkForm: function checkForm() {
+      this.errors.name = [];
+      if (!this.user.name) this.errors.name.push('入力必須項目です');
+      if (15 <= this.user.name.length) this.errors.name.push('15文字以内で入力してください');
+      this.errors.user_name = [];
+      if (!this.user.user_name) this.errors.user_name.push('入力必須項目です');
+      if (15 <= this.user.user_name.length) this.errors.user_name.push('15文字以内で入力してください');
+      if (this.user.user_name.match(/[^A-Za-z0-9_]+/)) this.errors.user_name.push('半角英数字・アンダーバー(_)のみ使用可能です');
+
+      if (this.user.comment && 500 <= this.user.comment.length) {
+        this.errors.comment = [];
+        this.errors.comment.push('500文字以内で入力してください');
+      }
+
+      if (this.user.twitter && 2 <= this.user.twitter.length) {
+        this.errors.twitter = [];
+        this.errors.twitter.push('255文字以内で入力してください');
+      }
+
+      if (this.user.instagram && 2 <= this.user.instagram.length) {
+        this.errors.instagram = [];
+        this.errors.instagram.push('255文字以内で入力してください');
+      }
+
+      if (this.user.facebook && 2 <= this.user.facebook.length) {
+        this.errors.facebook = [];
+        this.errors.facebook.push('255文字以内で入力してください');
+      }
     },
     selectedFile: function selectedFile(e) {
       var _this = this;
@@ -2582,28 +2638,23 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     'X-HTTP-Method-Override': 'PUT'
                   }
                 };
-                console.log('csrfトークンです；' + _this2.csrf);
-                console.log('this.user.nameの値；' + _this2.user.name);
-                console.log('this.user.user_nameの値：' + _this2.user.user_name);
-                console.log('this.user.commentの値：' + _this2.user.comment);
-                console.log('this.user.commentの型：' + _typeof(_this2.user.comment));
                 formData.append('name', _this2.user.name);
                 formData.append('user_name', _this2.user.user_name);
                 if (_this2.user.comment) formData.append('comment', _this2.user.comment);
-                formData.append('profile_image', _this2.upimage.blob);
-                formData.append('mysite', _this2.user.mysite !== null ? _this2.user.mysite : '');
-                formData.append('twitter', _this2.user.twitter !== null ? _this2.user.twitter : '');
-                formData.append('instagram', _this2.user.instagram !== null ? _this2.user.instagram : '');
-                formData.append('facebook', _this2.user.facebook !== null ? _this2.user.facebook : '');
-                _context2.next = 17;
+                if (_this2.upimage.blob) formData.append('profile_image', _this2.upimage.blob);
+                formData.append('mysite', _this2.user.mysite ? _this2.user.mysite : '');
+                formData.append('twitter', _this2.user.twitter ? _this2.user.twitter : '');
+                formData.append('instagram', _this2.user.instagram ? _this2.user.instagram : '');
+                formData.append('facebook', _this2.user.facebook ? _this2.user.facebook : '');
+                _context2.next = 12;
                 return axios.post(_this2.postToUserUpdate, formData, config).then(function (response) {
-                  console.log(response);
+                  //console.log(response);
                   location.reload(); // TODO アラートを表示する機能
-                })["catch"](function (error) {
-                  console.log(error.response);
+                })["catch"](function (error) {//console.log(error.response);
+                  // TODO アラートを表示する機能
                 });
 
-              case 17:
+              case 12:
               case "end":
                 return _context2.stop();
             }
@@ -48386,6 +48437,20 @@ var render = function() {
               _vm._v("お名前")
             ]),
             _vm._v(" "),
+            _vm.errors.name.length
+              ? _c(
+                  "div",
+                  _vm._l(_vm.errors.name, function(error) {
+                    return _c(
+                      "p",
+                      { key: error.id, staticClass: "text-danger" },
+                      [_vm._v(_vm._s(error))]
+                    )
+                  }),
+                  0
+                )
+              : _vm._e(),
+            _vm._v(" "),
             _c("input", {
               directives: [
                 {
@@ -48399,6 +48464,7 @@ var render = function() {
               attrs: { type: "text", id: "name", required: "" },
               domProps: { value: _vm.user.name },
               on: {
+                change: _vm.checkForm,
                 input: function($event) {
                   if ($event.target.composing) {
                     return
@@ -48416,6 +48482,20 @@ var render = function() {
               [_vm._v("ユーザー名")]
             ),
             _vm._v(" "),
+            _vm.errors.user_name.length
+              ? _c(
+                  "div",
+                  _vm._l(_vm.errors.user_name, function(error) {
+                    return _c(
+                      "p",
+                      { key: error.id, staticClass: "text-danger" },
+                      [_vm._v(_vm._s(error))]
+                    )
+                  }),
+                  0
+                )
+              : _vm._e(),
+            _vm._v(" "),
             _c("div", { staticClass: "input-group" }, [
               _vm._m(1),
               _vm._v(" "),
@@ -48432,6 +48512,7 @@ var render = function() {
                 attrs: { type: "text", required: "" },
                 domProps: { value: _vm.user.user_name },
                 on: {
+                  change: _vm.checkForm,
                   input: function($event) {
                     if ($event.target.composing) {
                       return
@@ -48448,6 +48529,20 @@ var render = function() {
               _vm._v("プロフィールコメント")
             ]),
             _vm._v(" "),
+            _vm.errors.comment.length
+              ? _c(
+                  "div",
+                  _vm._l(_vm.errors.comment, function(error) {
+                    return _c(
+                      "p",
+                      { key: error.id, staticClass: "text-danger" },
+                      [_vm._v(_vm._s(error))]
+                    )
+                  }),
+                  0
+                )
+              : _vm._e(),
+            _vm._v(" "),
             _c("textarea", {
               directives: [
                 {
@@ -48458,9 +48553,10 @@ var render = function() {
                 }
               ],
               staticClass: "form-control",
-              attrs: { id: "comment" },
+              attrs: { id: "comment", maxlength: "500" },
               domProps: { value: _vm.user.comment },
               on: {
+                change: _vm.checkForm,
                 input: function($event) {
                   if ($event.target.composing) {
                     return
@@ -48504,6 +48600,20 @@ var render = function() {
           _c("div", { staticClass: "form-group" }, [
             _vm._m(3),
             _vm._v(" "),
+            _vm.errors.twitter.length
+              ? _c(
+                  "div",
+                  _vm._l(_vm.errors.twitter, function(error) {
+                    return _c(
+                      "p",
+                      { key: error.id, staticClass: "text-danger" },
+                      [_vm._v(_vm._s(error))]
+                    )
+                  }),
+                  0
+                )
+              : _vm._e(),
+            _vm._v(" "),
             _c("div", { staticClass: "input-group flex-sm-row flex-column" }, [
               _vm._m(4),
               _vm._v(" "),
@@ -48520,6 +48630,7 @@ var render = function() {
                 attrs: { type: "text", id: "twitter" },
                 domProps: { value: _vm.user.twitter },
                 on: {
+                  change: _vm.checkForm,
                   input: function($event) {
                     if ($event.target.composing) {
                       return
@@ -48533,6 +48644,20 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "form-group" }, [
             _vm._m(5),
+            _vm._v(" "),
+            _vm.errors.instagram.length
+              ? _c(
+                  "div",
+                  _vm._l(_vm.errors.instagram, function(error) {
+                    return _c(
+                      "p",
+                      { key: error.id, staticClass: "text-danger" },
+                      [_vm._v(_vm._s(error))]
+                    )
+                  }),
+                  0
+                )
+              : _vm._e(),
             _vm._v(" "),
             _c("div", { staticClass: "input-group flex-sm-row flex-column" }, [
               _vm._m(6),
@@ -48550,6 +48675,7 @@ var render = function() {
                 attrs: { type: "text", id: "instagram" },
                 domProps: { value: _vm.user.instagram },
                 on: {
+                  change: _vm.checkForm,
                   input: function($event) {
                     if ($event.target.composing) {
                       return
@@ -48563,6 +48689,20 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "form-group" }, [
             _vm._m(7),
+            _vm._v(" "),
+            _vm.errors.facebook.length
+              ? _c(
+                  "div",
+                  _vm._l(_vm.errors.facebook, function(error) {
+                    return _c(
+                      "p",
+                      { key: error.id, staticClass: "text-danger" },
+                      [_vm._v(_vm._s(error))]
+                    )
+                  }),
+                  0
+                )
+              : _vm._e(),
             _vm._v(" "),
             _c("div", { staticClass: "input-group flex-sm-row flex-column" }, [
               _vm._m(8),
@@ -48580,6 +48720,7 @@ var render = function() {
                 attrs: { type: "text", id: "facebook" },
                 domProps: { value: _vm.user.facebook },
                 on: {
+                  change: _vm.checkForm,
                   input: function($event) {
                     if ($event.target.composing) {
                       return
@@ -48636,6 +48777,7 @@ var render = function() {
           "button",
           {
             staticClass: "settings-prof-btn",
+            attrs: { disabled: _vm.isDisabled },
             on: {
               click: function($event) {
                 $event.preventDefault()

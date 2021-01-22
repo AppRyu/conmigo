@@ -6,20 +6,29 @@
                 <div class="col-lg-8 col-12">
                     <div class="form-group">
                         <label class="u-mb-xs" for="name">お名前</label>
-                        <input type="text" class="form-control" v-model="user.name" id="name" required>
+                        <div v-if="errors.name.length">
+                            <p class="text-danger" v-for="error in errors.name" :key="error.id">{{ error }}</p>
+                        </div>
+                        <input type="text" class="form-control" v-model="user.name" id="name" @change="checkForm" required>
                     </div>
                     <div class="form-group">
                         <label class="u-mb-xs" for="user_name">ユーザー名</label>
+                        <div v-if="errors.user_name.length">
+                            <p class="text-danger" v-for="error in errors.user_name" :key="error.id">{{ error }}</p>
+                        </div>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <div class="input-group-text">@</div>
                             </div>
-                            <input class="form-control" type="text" v-model="user.user_name" required>
+                            <input class="form-control" type="text" v-model="user.user_name" @change="checkForm" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="u-mb-xs" for="comment">プロフィールコメント</label>
-                        <textarea class="form-control" v-model="user.comment" id="comment"></textarea>
+                        <div v-if="errors.comment.length">
+                            <p class="text-danger" v-for="error in errors.comment" :key="error.id">{{ error }}</p>
+                        </div>
+                        <textarea class="form-control" v-model="user.comment" id="comment" maxlength="500" @change="checkForm"></textarea>
                     </div>
                     <div class="form-group">
                         <label class="u-mb-xs" for="mysite"><i class="fas fa-globe fa-lg prof-content__icon u-mr-sm"></i>WEBサイト</label>
@@ -27,29 +36,38 @@
                     </div>
                     <div class="form-group">
                         <label class="u-mb-xs" for="twitter"><i class="fab fa-twitter fa-lg prof-content__icon u-mr-sm"></i>Twitterアカウント</label>
+                        <div v-if="errors.twitter.length">
+                            <p class="text-danger" v-for="error in errors.twitter" :key="error.id">{{ error }}</p>
+                        </div>
                         <div class="input-group flex-sm-row flex-column">
                             <div class="input-group-prepend">
                                 <div class="input-group-text input-group-text--sns">https://twitter.com/</div>
                             </div>
-                            <input class="form-control form-control-sns" type="text" v-model="user.twitter" id="twitter">
+                            <input class="form-control form-control-sns" type="text" v-model="user.twitter" id="twitter" @change="checkForm">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="u-mb-xs" for="instagram"><i class="fab fa-instagram fa-lg prof-content__icon u-mr-sm"></i>instagramアカウント</label>
+                        <div v-if="errors.instagram.length">
+                            <p class="text-danger" v-for="error in errors.instagram" :key="error.id">{{ error }}</p>
+                        </div>
                         <div class="input-group flex-sm-row flex-column">
                             <div class="input-group-prepend">
                                 <div class="input-group-text input-group-text--sns">https://www.instagram.com/</div>
                             </div>
-                            <input class="form-control form-control-sns" type="text" v-model="user.instagram" id="instagram">
+                            <input class="form-control form-control-sns" type="text" v-model="user.instagram" id="instagram" @change="checkForm">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="u-mb-xs" for="facebook"><i class="fab fa-facebook-f fa-lg prof-content__icon u-mr-sm"></i>facebookアカウント</label>
+                        <div v-if="errors.facebook.length">
+                            <p class="text-danger" v-for="error in errors.facebook" :key="error.id">{{ error }}</p>
+                        </div>
                         <div class="input-group flex-sm-row flex-column">
                             <div class="input-group-prepend">
                                 <div class="input-group-text input-group-text--sns">https://www.facebook.com/</div>
                             </div>
-                            <input class="form-control form-control-sns" type="text" v-model="user.facebook" id="facebook">
+                            <input class="form-control form-control-sns" type="text" v-model="user.facebook" id="facebook" @change="checkForm">
                         </div>
                     </div>
                 </div>
@@ -68,7 +86,7 @@
                 </div>
             </div>
             <div class="settings-prof-btn--outline">
-                <button @click.prevent="submit" class="settings-prof-btn">編集を更新する</button>
+                <button @click.prevent="submit" class="settings-prof-btn" :disabled="isDisabled">編集を更新する</button>
             </div>
         </div>
     </section>
@@ -80,10 +98,6 @@ import ImageUtil from '../lib/ImageUtil';
 
 export default {
     props: {
-        csrf: {
-            type: String,
-            required: true,
-        },
         postToUserUpdate: {
             type: String,
             required: true,
@@ -108,7 +122,16 @@ export default {
                 instagram: this.userData.instagram,
                 facebook: this.userData.facebook,
             },
-            upimage: { fileUrl: '', blob: null } // 画像ファイル
+            upimage: { fileUrl: '', blob: null }, // 画像ファイル
+            errors: { // バリデーションエラーメッセージを格納
+                name: [], user_name: [], comment: [], twitter: [], instagram: [], facebook: []
+            },
+        }
+    },
+    computed: {
+        isDisabled() {
+            // エラーメッセージが入っていた場合、「編集を更新する」ボタン => disabled
+            return this.errors.name.length || this.errors.user_name.length || this.errors.comment.length || this.errors.twitter.length || this.errors.instagram.length || this.errors.facebook.length ? true : false;
         }
     },
     mounted() {
@@ -123,6 +146,36 @@ export default {
         resize() {
             let imageWidth = this.$refs.image.clientWidth + 'px';
             this.$refs.image.style.height = imageWidth;
+        },
+        checkForm() {
+            this.errors.name = [];
+            if(!this.user.name) this.errors.name.push('入力必須項目です');
+            if(15 <= this.user.name.length) this.errors.name.push('15文字以内で入力してください');
+
+            this.errors.user_name = [];
+            if(!this.user.user_name) this.errors.user_name.push('入力必須項目です');
+            if(15 <= this.user.user_name.length) this.errors.user_name.push('15文字以内で入力してください');
+            if(this.user.user_name.match(/[^A-Za-z0-9_]+/)) this.errors.user_name.push('半角英数字・アンダーバー(_)のみ使用可能です');
+
+            if(this.user.comment && 500 <= this.user.comment.length) {
+                this.errors.comment = [];
+                this.errors.comment.push('500文字以内で入力してください');
+            }
+            
+            if(this.user.twitter && 2 <= this.user.twitter.length) {
+                this.errors.twitter = [];
+                this.errors.twitter.push('255文字以内で入力してください');
+            }
+
+            if(this.user.instagram && 2 <= this.user.instagram.length) {
+                this.errors.instagram = [];
+                this.errors.instagram.push('255文字以内で入力してください');
+            }
+
+            if(this.user.facebook && 2 <= this.user.facebook.length) {
+                this.errors.facebook = [];
+                this.errors.facebook.push('255文字以内で入力してください');
+            }
         },
         async selectedFile(e) {
             const imageFile = e.target.files[0];
@@ -147,31 +200,27 @@ export default {
                     'X-HTTP-Method-Override': 'PUT',
                 },
             };
-            console.log('csrfトークンです；' + this.csrf);
-            console.log('this.user.nameの値；' + this.user.name);
-            console.log('this.user.user_nameの値：' + this.user.user_name);
-            console.log('this.user.commentの値：' + this.user.comment);
-            console.log('this.user.commentの型：' + typeof(this.user.comment));
-
             formData.append('name', this.user.name);
             formData.append('user_name', this.user.user_name);
             if(this.user.comment) formData.append('comment', this.user.comment);
-            formData.append('profile_image', this.upimage.blob);
-            formData.append('mysite', this.user.mysite !== null ? this.user.mysite : '');
-            formData.append('twitter', this.user.twitter !== null ? this.user.twitter : '');
-            formData.append('instagram', this.user.instagram !== null ? this.user.instagram : '');
-            formData.append('facebook', this.user.facebook !== null ? this.user.facebook : '');
+            if(this.upimage.blob) formData.append('profile_image', this.upimage.blob);
+            formData.append('mysite', this.user.mysite ? this.user.mysite : '');
+            formData.append('twitter', this.user.twitter ? this.user.twitter : '');
+            formData.append('instagram', this.user.instagram ? this.user.instagram : '');
+            formData.append('facebook', this.user.facebook ? this.user.facebook : '');
             await axios.post(this.postToUserUpdate, formData, config)
             .then(response => {
-                console.log(response);
+                //console.log(response);
                 location.reload();
                 // TODO アラートを表示する機能
                 
             })
             .catch(error => {
-                console.log(error.response);
+                //console.log(error.response);
+                // TODO アラートを表示する機能
             });
         }
     }
+    
 }
 </script>

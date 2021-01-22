@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\alpha_num_check;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UserRequest extends FormRequest
@@ -24,8 +25,9 @@ class UserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'      => 'required|string|max:50',
-            'user_name' => 'required|string|max:15|alpha_dash|unique:users,user_name,' . $this->user()->id,
+            'name'      => 'required|string|max:15',
+            'user_name' => 'required|string|max:15|unique:users,user_name,' . $this->user()->id,
+            'user_name' => [new alpha_num_check],
             'comment'   => 'string|max:500',
             'mysite'    => 'max:255',
             'twitter'   => 'max:255',
