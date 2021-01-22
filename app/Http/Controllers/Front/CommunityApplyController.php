@@ -10,8 +10,8 @@ use Illuminate\Http\Request;
 class CommunityApplyController extends Controller
 {
     public function index() {
-        $appliedId = Recruit::where('applied_user', auth()->user()->id)->get('community_id')->toArray();
-        $appliedCommunities = Community::withTrashed()->whereIn('id', $appliedId)->paginate(15);
-        return view('front.community.apply.index', ['appliedCommunities' => $appliedCommunities]);
+        $appliedId = Recruit::where('applied_user', auth()->user()->id)->pluck('community_id')->toArray();
+        $communities = Community::whereIn('id', $appliedId)->paginate(30);
+        return view('front.community.apply.index', ['communities' => $communities]);
     }
 }

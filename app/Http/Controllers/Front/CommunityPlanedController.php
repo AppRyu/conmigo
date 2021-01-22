@@ -31,6 +31,6 @@ class CommunityPlanedController extends Controller
                 $member->save();
             } 
         }
-        return redirect()->route('chat.show', ['community' => $community]);
+        return redirect()->route('chat.show', ['communityWithTrashed' => $community]);
     }
 }

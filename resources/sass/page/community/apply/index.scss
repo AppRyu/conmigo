@@ -1,0 +1,13 @@
+.community-search__tit {
+    font-size: fs(lg);
+    color: clr(c---dark-gray);
+    &--nowrap {
+        display: inline-block;
+        white-space: nowrap;
+    }
+}
+
+.community-search__img {
+    max-width: 400px;
+    margin: 0 auto;
+}

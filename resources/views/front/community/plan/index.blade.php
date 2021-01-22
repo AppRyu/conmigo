@@ -3,13 +3,22 @@
 @section('title', '企画したコミュニティ一覧')
 
 @section('content')
-<section class="ca-tabs">
-    <h2 class="page-tit u-mb-xl"><i class="fas fa-school u-mr-base"></i>企画したコミュニティ</h2>
+<section>
+    <h2 class="page-tit u-mb-xl"><i class="fas fa-school u-mr-base"></i>企画済コミュニティ</h2>
     <div class="ca-navTabs">
         <a class="ca-navTabs__item ca-navTabs__item_active" href="{{ route('community.plan.index') }}">企画した</a>
         <a class="ca-navTabs__item" href="{{ route('community.applied') }}">応募した</a>
     </div>
     <div class="u-mb-lg">
+        @if(!$communities->count())
+        <div class="container">
+            <div class="community-search__tit u-mb-base">
+                <span class="community-search__tit--nowrap">企画したコミュニティはありません。</span>
+                <span class="community-search__tit--nowrap">コミュニティを作成は<a class="c-link-blue" href="{{ route('community.create') }}">こちら</a></span>
+            </div>
+            <div class="community-search__img"><img src="{{ asset('./img/create-community.svg') }}" alt=""></div>
+        </div>
+        @endif
         @foreach($communities as $community)
             <div class="community-content u-xs-d-flex">
                 <div class="community-content__left u-d-none u-xs-d-block u-xs-mr-base">
