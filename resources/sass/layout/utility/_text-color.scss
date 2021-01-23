@@ -1,0 +1,10 @@
+$textColorList: 'red', 'blue', 'green';
+
+@each $color in $textColorList {
+    .u-tcl-#{$color} {
+        color: clr(c---light-#{$color});
+    }
+    .u-tcd-#{$color} {
+        color: clr(c---dark-#{$color});
+    }
+}
