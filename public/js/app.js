@@ -2168,6 +2168,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     appliedUsers: {
@@ -48223,80 +48224,83 @@ var render = function() {
       "ul",
       { staticClass: "select-user-list" },
       _vm._l(_vm.users, function(user, index) {
-        return _c("li", { key: index, staticClass: "select-user-list__name" }, [
-          _c(
-            "label",
-            { staticClass: "select-user-list__label", attrs: { for: index } },
-            [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: user.checked,
-                    expression: "user.checked"
-                  }
-                ],
-                ref: "selectUserCheckbox",
-                refInFor: true,
-                staticClass: "select-user-list__input",
-                attrs: { type: "checkbox", name: "users[]", id: index },
-                domProps: {
-                  value: user.id,
-                  checked: Array.isArray(user.checked)
-                    ? _vm._i(user.checked, user.id) > -1
-                    : user.checked
-                },
-                on: {
-                  change: [
-                    function($event) {
-                      var $$a = user.checked,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = user.id,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 &&
-                            _vm.$set(user, "checked", $$a.concat([$$v]))
+        return _c(
+          "li",
+          { key: index, staticClass: "select-user-list__name u-mb-base" },
+          [
+            _c(
+              "label",
+              { staticClass: "select-user-list__label", attrs: { for: index } },
+              [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: user.checked,
+                      expression: "user.checked"
+                    }
+                  ],
+                  ref: "selectUserCheckbox",
+                  refInFor: true,
+                  staticClass: "select-user-list__input",
+                  attrs: { type: "checkbox", name: "users[]", id: index },
+                  domProps: {
+                    value: user.id,
+                    checked: Array.isArray(user.checked)
+                      ? _vm._i(user.checked, user.id) > -1
+                      : user.checked
+                  },
+                  on: {
+                    change: [
+                      function($event) {
+                        var $$a = user.checked,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = user.id,
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 &&
+                              _vm.$set(user, "checked", $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              _vm.$set(
+                                user,
+                                "checked",
+                                $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                              )
+                          }
                         } else {
-                          $$i > -1 &&
-                            _vm.$set(
-                              user,
-                              "checked",
-                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                            )
+                          _vm.$set(user, "checked", $$c)
                         }
-                      } else {
-                        _vm.$set(user, "checked", $$c)
+                      },
+                      _vm.changeDisabled
+                    ]
+                  }
+                }),
+                _vm._v(" "),
+                user.profile_image
+                  ? _c("img", {
+                      staticClass: "applied-user-tb__img",
+                      attrs: {
+                        src: "/storage/img/" + user.profile_image,
+                        alt: "応募したユーザーのプロフィール画像"
                       }
-                    },
-                    _vm.changeDisabled
-                  ]
-                }
-              }),
-              _vm._v(" "),
-              user.profile_image
-                ? _c("img", {
-                    staticClass: "applied-user-tb__img",
-                    attrs: {
-                      src: "/storage/img/" + user.profile_image,
-                      alt: "応募したユーザーのプロフィール画像"
-                    }
-                  })
-                : _c("img", {
-                    staticClass: "applied-user-tb__img",
-                    attrs: {
-                      src: "/img/default-icon.png",
-                      alt: "応募したユーザーのプロフィール画像"
-                    }
-                  }),
-              _vm._v(
-                "\n                " + _vm._s(user.user_name) + "\n            "
-              )
-            ]
-          )
-        ])
+                    })
+                  : _c("img", {
+                      staticClass: "applied-user-tb__img",
+                      attrs: {
+                        src: "/img/default-icon.png",
+                        alt: "応募したユーザーのプロフィール画像"
+                      }
+                    }),
+                _vm._v(" "),
+                _c("span", [_vm._v(_vm._s(user.user_name))])
+              ]
+            )
+          ]
+        )
       }),
       0
     ),

@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul class="select-user-list">
-            <li class="select-user-list__name" v-for="(user, index) in users" :key="index">
+            <li class="select-user-list__name u-mb-base" v-for="(user, index) in users" :key="index">
                 <label class="select-user-list__label" :for="index">
                     <input class="select-user-list__input" 
                             type="checkbox" 
@@ -13,7 +13,8 @@
                             @change="changeDisabled">
                     <img v-if="user.profile_image" class="applied-user-tb__img" :src="'/storage/img/' + user.profile_image" alt="応募したユーザーのプロフィール画像">
                     <img v-else class="applied-user-tb__img" src="/img/default-icon.png" alt="応募したユーザーのプロフィール画像">
-                    {{ user.user_name }}
+                    <span>{{ user.user_name }}</span>
+                    
                 </label>
             </li>
         </ul>

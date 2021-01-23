@@ -3,9 +3,17 @@
 @section('title', '企画したコミュニティ詳細')
 
 @section('content')
-    <section class="select-user">
-        <h2 class="select-user__hd">{{ $community->name }}</h2>
-        <p>学習する仲間を<span>1人</span>選択してください。</p>
+    <section>
+        <h2 class="page-tit u-mb-xl"><i class="fas fa-users u-mr-base"></i>ユーザー選択</h2>
+        <h3 class="u-fs-xl u-fw-bold u-mb-lg">{{ $community->name }}</h3>
+        <div class="u-mb-lg">
+            @include('./modules/timeTable', ['startDate' => $community->getDate($community->start), 'startTime' => $community->getTime($community->start), 'endDate' => $community->getDate($community->end), 'endTime' => $community->getTime($community->end)])
+        </div>
+        <section class="comm-det-desc u-mb-lg">
+            <h4 class="comm-det-desc__hd u-mb-base"><span class="comm-det-desc__hd_emphasis">コミュニティの詳細</span></h4>
+            <div class="comm-det-desc__cmt">{!! nl2br(e($community->detail)) !!}</div>
+        </section>
+        <p class="u-mb-base">学習する仲間を<span class="max-select-user u-mx-xs">1</span>人選択してください。</p>
         <form action="{{ route('community.plan.determineUser', ['community' => $community]) }}" method="post">
             @csrf
             <community-select-user :applied-users={{ $appliedUsers }}

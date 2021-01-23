@@ -1,6 +1,7 @@
-.select-user__hd {
-    @include _heading('large', 'bold');
-    margin-bottom: space(lg);
+.max-select-user {
+    color: clr(c---dark-blue);
+    font-size: fs(xl);
+    font-weight: fw(bold);
 }
 
 .select-user-list {
@@ -12,6 +13,7 @@
     &__input {
         position: relative;
         margin-right: space(base);
+        border: none;
         cursor: pointer;
         &:before {
             position: absolute;
@@ -37,7 +39,7 @@
             height: 1rem;
             content: '';
             cursor: pointer;
-            border: 2px solid #f2f2f2;
+            border: 2px solid clr(c---dark-gray);
             background: #fff;
         }
         &:checked:before {
