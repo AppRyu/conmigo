@@ -62,12 +62,6 @@ class UserController extends Controller
         $user->fill($request->except('profile_image'))->save();
     }
 
-    public function edit(String $user_name)
-    {
-        $user = User::where('user_name', $user_name)->first();
-        return view('front.user.edit', ['user' => $user]);
-    }
-
     public function destroy(String $user)
     {
         User::find($user)->delete();
