@@ -1,4 +1,4 @@
-$textColorList: 'red', 'blue', 'green';
+$textColorList: 'red', 'blue', 'green', 'gray';
 
 @each $color in $textColorList {
     .u-tcl-#{$color} {
