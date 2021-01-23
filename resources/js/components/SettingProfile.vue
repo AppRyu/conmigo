@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="u-mb-xs" for="comment">プロフィールコメント</label>
+                        <label class="u-mb-xs" for="comment">自己紹介</label>
                         <div v-if="errors.comment.length">
                             <p class="text-danger" v-for="error in errors.comment" :key="error.id">{{ error }}</p>
                         </div>
