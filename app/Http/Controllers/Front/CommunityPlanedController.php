@@ -7,11 +7,13 @@ use App\Community;
 use App\Member;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class CommunityPlanedController extends Controller
 {
     public function index(Request $request) {
-        $communities = Community::where('created_user', $request->user()->id)->orderBy('created_at', 'desc')->paginate(30);
+        $now = Carbon::now();
+        $communities = Community::where('created_user', $request->user()->id)->where('end', '>=', $now)->orderBy('created_at', 'desc')->paginate(30);
         return view('front.community.plan.index', ['communities' => $communities]);
     }
 

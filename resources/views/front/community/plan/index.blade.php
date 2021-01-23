@@ -65,7 +65,11 @@
                         </div>
                     </div>
                     <div class="community-plan-settings">
+                        @if($community->members->count())
+                        <div class="u-mr-sm"><a class="c-link-blue" href="{{ route('chat.show', ['communityWithTrashed' => $community]) }}">トークルームへ</a></div>
+                        @else
                         <div class="u-mr-sm"><a class="c-link-blue" href="{{ route('community.plan.show', ['community' => $community]) }}">仲間を選択する</a></div>
+                        @endif
                         <div class="u-mr-sm"><a class="c-link-green" href="{{ route('community.edit', ['community' => $community]) }}">編集する</a></div>
                         <form class="community-destroy-form" action="{{ route('community.destroy', ['community' => $community]) }}" method="post">
                             @csrf
