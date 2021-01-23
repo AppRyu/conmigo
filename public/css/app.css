@@ -4982,7 +4982,7 @@ textarea {
   float: left;
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 425px) {
   .created-user-card__img--outer {
     flex-shrink: 0;
   }
