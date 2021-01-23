@@ -11,6 +11,8 @@
             color="#536dfe"
             input-size="lg"
             no-label
+            no-header
+            overlay
         ></vue-ctk-date-time-picker>
     </div>
 </template>
