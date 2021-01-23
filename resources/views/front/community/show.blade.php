@@ -28,13 +28,15 @@
 		<h4 class="created-user__hd u-mb-base"><span class="created-user__hd_emphasis">クリエイトユーザー情報</span></h4>
 		<a class="created-use-card__link" href="{{ route('user.show', ['user_name' => $community->users->user_name]) }}">
 			<div class="created-user-card">
-				<div class="u-xs-d-flex">
-					<div class="created-user-card__img c-icon-lg u-mr-sm">
-						@if($community->users->profile_image)
-						<img src="{{ asset('/storage/img/'.$community->users->profile_image) }}" alt="企画したユーザープロフィール画像">
-						@else
-						<img src="{{ asset('./img/default-icon.png') }}" alt="企画したユーザープロフィール画像">
-						@endif
+				<div class="u-xxs-d-flex">
+					<div class="created-user-card__img--outer u-mr-sm">
+						<div class="created-user-card__img c-icon-lg">
+							@if($community->users->profile_image)
+							<img src="{{ asset('/storage/img/'.$community->users->profile_image) }}" alt="企画したユーザープロフィール画像">
+							@else
+							<img src="{{ asset('./img/default-icon.png') }}" alt="企画したユーザープロフィール画像">
+							@endif
+						</div>
 					</div>
 					<section>
 						<h4 class="u-fs-lg u-fw-bold">{{ $community->users->name }}</h4>

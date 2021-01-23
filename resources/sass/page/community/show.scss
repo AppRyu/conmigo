@@ -54,9 +54,11 @@
         }
         &__img {
             border: 2px solid clr(c---white);
-            float: left;
-            @include mq('xs') {
-                flex-shrink: 0;
+            &--outer {
+                float: left;
+                @include mq('xss') {
+                    flex-shrink: 0;
+                }
             }
         }
     }
