@@ -2574,24 +2574,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       if (!this.user.user_name) this.errors.user_name.push('入力必須項目です');
       if (15 <= this.user.user_name.length) this.errors.user_name.push('15文字以内で入力してください');
       if (this.user.user_name.match(/[^A-Za-z0-9_]+/)) this.errors.user_name.push('半角英数字・アンダーバー(_)のみ使用可能です');
+      this.errors.comment = [];
 
       if (this.user.comment && 500 <= this.user.comment.length) {
-        this.errors.comment = [];
         this.errors.comment.push('500文字以内で入力してください');
       }
 
-      if (this.user.twitter && 2 <= this.user.twitter.length) {
-        this.errors.twitter = [];
+      this.errors.twitter = [];
+
+      if (this.user.twitter && 255 <= this.user.twitter.length) {
         this.errors.twitter.push('255文字以内で入力してください');
       }
 
-      if (this.user.instagram && 2 <= this.user.instagram.length) {
-        this.errors.instagram = [];
+      this.errors.instagram = [];
+
+      if (this.user.instagram && 255 <= this.user.instagram.length) {
         this.errors.instagram.push('255文字以内で入力してください');
       }
 
-      if (this.user.facebook && 2 <= this.user.facebook.length) {
-        this.errors.facebook = [];
+      this.errors.facebook = [];
+
+      if (this.user.facebook && 255 <= this.user.facebook.length) {
         this.errors.facebook.push('255文字以内で入力してください');
       }
     },
@@ -48547,7 +48550,7 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "form-group" }, [
             _c("label", { staticClass: "u-mb-xs", attrs: { for: "comment" } }, [
-              _vm._v("プロフィールコメント")
+              _vm._v("自己紹介")
             ]),
             _vm._v(" "),
             _vm.errors.comment.length

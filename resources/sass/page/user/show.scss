@@ -1,21 +1,233 @@
-.prof-content {
-    &__head {
-        font-size: fs(base);
-        color: clr(c---dark-gray);
-        padding-bottom: space(base);
-        border-bottom: 1px solid clr(c---dark-gray);
-        margin-bottom: space(base);
+.user-prof__img {
+    background-color: #fff;
+    border: 1px solid clr(c---bg--dark-gray);
+    border-radius: 50%;
+    overflow: hidden;
+    &--sp {
+        max-width: 300px;
+        margin: 0 auto space(lg);
     }
-    &__icon {
-        color: clr(c---dark-gray);
-        &.fa-twitter {
+}
+
+.user-prof__btn-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 350px;
+    margin: 0 auto;
+    @include mq('xs') {
+        display: none;
+    }
+}
+
+.user-prof__btn {
+    display: block;
+    padding: 0.375rem 0.75rem;
+    text-align: center;
+    user-select: none;
+    border-radius: 0.25rem;
+    &:focus {
+        outline: none;
+    }
+    &--web {
+        background-color: clr(c---black);
+        border: 1px solid clr(c---black);
+        color: clr(c---white);
+        &:hover {
+            color: clr(c---black);
+            background-color: clr(c---white);
+        }
+    }
+    &--twitter {
+        background-color: clr(c---sns--twitter);
+        border: 1px solid clr(c---sns--twitter);
+        color: clr(c---white);
+        &:hover {
             color: clr(c---sns--twitter);
-        }
-        &.fa-instagram {
-            color: clr(c---sns--instagram);
-        }
-        &.fa-facebook-f {
-            color: clr(c---sns--facebook);
+            background-color: clr(c---white);
         }
     }
+    &--instagram {
+        background-color: clr(c---sns--instagram);
+        border: 1px solid clr(c---sns--instagram);
+        color: clr(c---white);
+        &:hover {
+            color: clr(c---sns--instagram);
+            background-color: clr(c---white);
+        }
+    }
+    &--facebook {
+        background-color: clr(c---sns--facebook);
+        border: 1px solid clr(c---sns--facebook);
+        color: clr(c---white);
+        &:hover {
+            color: clr(c---sns--facebook);
+            background-color: clr(c---white);
+        }
+    }
+}
+
+.user-prof__btn-outline {
+    display: block;
+    padding: 0.375rem 0.75rem;
+    text-align: center;
+    user-select: none;
+    border-radius: 0.25rem;
+    width: 100%;
+    &:hover {
+        cursor: default;
+    }
+    &:focus {
+        outline: none;
+    }
+    &--web {
+        background-color: clr(c---white);
+        border: 1px solid clr(c---black);
+        color: clr(c---black);
+        &:hover {
+            background-color: clr(c---black);
+            color: clr(c---white);
+        }
+    }
+    &--twitter {
+        background-color: clr(c---white);
+        border: 1px solid clr(c---sns--twitter);
+        color: clr(c---sns--twitter);
+        &:hover {
+            background-color: clr(c---sns--twitter);
+            color: clr(c---white);
+        }
+    }
+    &--instagram {
+        background-color: clr(c---white);
+        border: 1px solid clr(c---sns--instagram);
+        color: clr(c---sns--instagram);
+        &:hover {
+            background-color: clr(c---sns--instagram);
+            color: clr(c---white);
+        }
+    }
+    &--facebook {
+        background-color: clr(c---white);
+        border: 1px solid clr(c---sns--facebook);
+        color: clr(c---sns--facebook);
+        &:hover {
+            background-color: clr(c---sns--facebook);
+            color: clr(c---white);
+        }
+    }
+}
+
+.user-prof__btn--sp {
+    display: block;
+    text-align: center;
+    user-select: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: relative;
+    > .user-prof__btn-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &:focus {
+        outline: none;
+    }
+    &--web {
+        background-color: clr(c---black);
+        border: 1px solid clr(c---black);
+        color: clr(c---white);
+        &:hover {
+            color: clr(c---black);
+            background-color: clr(c---white);
+        }
+    }
+    &--twitter {
+        background-color: clr(c---sns--twitter);
+        border: 1px solid clr(c---sns--twitter);
+        color: clr(c---white);
+        &:hover {
+            color: clr(c---sns--twitter);
+            background-color: clr(c---white);
+        }
+    }
+    &--instagram {
+        background-color: clr(c---sns--instagram);
+        border: 1px solid clr(c---sns--instagram);
+        color: clr(c---white);
+        &:hover {
+            color: clr(c---sns--instagram);
+            background-color: clr(c---white);
+        }
+    }
+    &--facebook {
+        background-color: clr(c---sns--facebook);
+        border: 1px solid clr(c---sns--facebook);
+        color: clr(c---white);
+        &:hover {
+            color: clr(c---sns--facebook);
+            background-color: clr(c---white);
+        }
+    }
+}
+
+.user-prof__btn-outline--sp {
+    display: block;
+    text-align: center;
+    user-select: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: relative;
+    > .user-prof__btn-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &:focus {
+        outline: none;
+    }
+    &--web {
+        background-color: clr(c---white);
+        border: 1px solid clr(c---black);
+        color: clr(c---black);
+        &:hover {
+            color: clr(c---white);
+            background-color: clr(c---black);
+        }
+    }
+    &--twitter {
+        background-color: clr(c---white);
+        border: 1px solid clr(c---sns--twitter);
+        color: clr(c---sns--twitter);
+        &:hover {
+            color: clr(c---white);
+            background-color: clr(c---sns--twitter);
+        }
+    }
+    &--instagram {
+        background-color: clr(c---white);
+        border: 1px solid clr(c---sns--instagram);
+        color: clr(c---sns--instagram);
+        &:hover {
+            color: clr(c---white);
+            background-color: clr(c---sns--instagram);
+        }
+    }
+    &--facebook {
+        background-color: clr(c---white);
+        border: 1px solid clr(c---sns--facebook);
+        color: clr(c---sns--facebook);
+        &:hover {
+            color: clr(c---white);
+            background-color: lr(c---sns--facebook);
+        }
+    }
+}
+
+.user-prof__comment {
+    line-height: 2;
 }

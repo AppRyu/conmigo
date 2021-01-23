@@ -5,40 +5,85 @@
 @section('content')
 <section>
     <h2 class="page-tit u-mb-xl"><i class="fas fa-user u-mr-base"></i>プロフィール</h2>
-    <section class="prof-content u-mb-lg">
-        <h3 class="prof-content__head">プロフィール</h3>
-        <div class="u-mb-base">{{ $user->name }}</div>
-        @if($user->comment)
-            <p class="prof-content__comment">{!! nl2br(e($user->comment)) !!}</p>
-        @else
-            <p class="prof-content__comment">コメントは設定されていません。</p>
-        @endif
-    </section>
-    <div class="prof-content">
-        <h3 class="prof-content__head">連絡先情報</h3>
-        <div class="u-mb-base">
-            <i class="fas fa-globe fa-lg prof-content__icon"></i>
-            @if($user->mysite)
-            <a href="https://{{ $user->mysite }}" target="_blank" rel="noopener noreferrer">{{ $user->mysite }}</a>
-            @endif
-        </div>
-        <div class="u-mb-base">
-            <i class="fab fa-twitter fa-lg prof-content__icon"></i>
-            @if($user->twitter)
-            <a href="https://twitter.com/{{ $user->twitter }}" target="_blank" rel="noopener noreferrer">{{ $user->twitter }}</a>
-            @endif
-        </div>
-        <div class="u-mb-base">
-            <i class="fab fa-instagram fa-lg prof-content__icon"></i>
-            @if($user->instagram)
-            <a href="https://www.instagram.com/{{ $user->instagram }}" target="_blank" rel="noopener noreferrer">{{ $user->instagram }}</a>
-            @endif
-        </div>
-        <div class="u-mb-base">
-            <i class="fab fa-facebook-f fa-lg prof-content__icon"></i>
-            @if($user->facebook)
-            <a href="https://www.facebook.com/{{ $user->facebook }}" target="_blank" rel="noopener noreferrer">{{ $user->facebook }}</a>
-            @endif
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-4 u-xs-d-block u-d-none">
+                <div class="u-mb-sm user-prof__img">
+                    @if($user->profile_image)
+                    <img src="{{ asset('/storage/img/'.$user->profile_image) }}" alt="プロフィール画像">
+                    @else
+                    <img src="{{ asset('./img/default-icon.png') }}" alt="プロフィール画像">
+                    @endif
+                </div>
+
+                @if($user->mysite)
+                <a href="https://{{ $user->mysite }}" target="_blank" rel="noopener noreferrer" class="user-prof__btn user-prof__btn--web u-mb-sm"><i class="fas fa-link u-mr-xs"></i>Web Site</a>
+                @else
+                <button class="user-prof__btn-outline user-prof__btn-outline--web u-mb-sm"><i class="fas fa-link u-mr-xs"></i>Web Site</button>
+                @endif
+
+                @if($user->twitter)
+                <a href="https://twitter.com/{{ $user->twitter }}" target="_blank" rel="noopener noreferrer" class="user-prof__btn user-prof__btn--twitter u-mb-sm"><i class="fab fa-twitter u-mr-xs"></i>twitter</a>
+                @else
+                <button class="user-prof__btn-outline user-prof__btn-outline--twitter u-mb-sm"><i class="fab fa-twitter u-mr-xs"></i>twitter</button>
+                @endif
+
+                @if($user->instagram)
+                <a href="https://www.instagram.com/{{ $user->instagram }}" target="_blank" rel="noopener noreferrer" class="user-prof__btn user-prof__btn--instagram u-mb-sm"><i class="fab fa-instagram u-mr-xs"></i>instagram</a>
+                @else
+                <button class="user-prof__btn-outline user-prof__btn-outline--instagram u-mb-sm"><i class="fab fa-instagram u-mr-xs"></i>instagram</button>
+                @endif
+
+                @if($user->facebook)
+                <a href="https://www.facebook.com/{{ $user->facebook }}" target="_blank" rel="noopener noreferrer" class="user-prof__btn user-prof__btn--facebook u-mb-sm"><i class="fab fa-facebook u-mr-xs"></i>facebook</a>
+                @else
+                <button class="user-prof__btn-outline user-prof__btn-outline--facebook u-mb-sm"><i class="fab fa-facebook u-mr-xs"></i>facebook</button>
+                @endif
+
+            </div>
+            <div class="col-lg-9 col-sm-8 col-12">
+                <h3 class="u-fs-xl u-fw-bold u-mb-lg">{{ $user->name }}
+                    <div class="u-fs-sm u-fw-normal"><span>@</span>{{ $user->user_name }}<div>
+                </h3>
+                <div class="user-prof__img user-prof__img--sp u-xs-d-none u-d-block">
+                    @if($user->profile_image)
+                    <img src="{{ asset('/storage/img/'.$user->profile_image) }}" alt="プロフィール画像">
+                    @else
+                    <img src="{{ asset('./img/default-icon.png') }}" alt="プロフィール画像">
+                    @endif
+                </div>
+                <section class="u-mb-lg">
+                    <h4 class="u-fs-lg u-fw-bold u-mb-sm">自己紹介</h4>
+                    <div class="user-prof__comment">{!! nl2br(e($user->comment)) !!}</div>
+                </section>
+                <div class="user-prof__btn-row">
+
+                    @if($user->mysite)
+                    <a href="https://{{ $user->mysite }}" target="_blank" rel="noopener noreferrer" class="user-prof__btn--sp user-prof__btn--web"><i class="fas fa-link user-prof__btn-icon"></i></a>
+                    @else
+                    <button class="user-prof__btn-outline--sp user-prof__btn-outline--web"><i class="fas fa-link user-prof__btn-icon"></i></button>
+                    @endif
+
+                    @if($user->twitter)
+                    <a href="https://twitter.com/{{ $user->twitter }}" target="_blank" rel="noopener noreferrer" class="user-prof__btn--sp user-prof__btn--twitter"><i class="fab fa-twitter user-prof__btn-icon"></i></a>
+                    @else
+                    <button class="user-prof__btn-outline--sp user-prof__btn-outline--twitter"><i class="fab fa-twitter user-prof__btn-icon"></i></button>
+                    @endif
+
+                    @if($user->instagram)
+                    <a href="https://www.instagram.com/{{ $user->instagram }}" target="_blank" rel="noopener noreferrer" class="user-prof__btn--sp user-prof__btn--instagram"><i class="fab fa-instagram user-prof__btn-icon"></i></a>
+                    @else
+                    <button class="user-prof__btn-outline--sp user-prof__btn-outline--instagram"><i class="fab fa-instagram user-prof__btn-icon"></i></button>
+                    @endif
+
+                    @if($user->facebook)
+                    <a href="https://www.facebook.com/{{ $user->facebook }}" target="_blank" rel="noopener noreferrer" class="user-prof__btn--sp user-prof__btn--facebook"><i class="fab fa-facebook user-prof__btn-icon"></i></a>
+                    @else
+                    <button class="user-prof__btn-outline--sp user-prof__btn-outline--facebook"><i class="fab fa-facebook user-prof__btn-icon"></i></button>
+                    @endif
+                    
+                </div>
+            </div>
         </div>
     </div>
 </section>
