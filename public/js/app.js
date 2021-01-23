@@ -48793,11 +48793,11 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "settings-prof-btn--outline" }, [
+      _c("div", { staticClass: "u-mx-base" }, [
         _c(
           "button",
           {
-            staticClass: "settings-prof-btn",
+            staticClass: "c-btn-green u-w-100 u-md-w-auto",
             attrs: { disabled: _vm.isDisabled },
             on: {
               click: function($event) {

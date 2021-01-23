@@ -85,8 +85,8 @@
                     </div>
                 </div>
             </div>
-            <div class="settings-prof-btn--outline">
-                <button @click.prevent="submit" class="settings-prof-btn" :disabled="isDisabled">編集を更新する</button>
+            <div class="u-mx-base">
+                <button @click.prevent="submit" class="c-btn-green u-w-100 u-md-w-auto" :disabled="isDisabled">編集を更新する</button>
             </div>
         </div>
     </section>

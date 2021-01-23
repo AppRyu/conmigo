@@ -40,8 +40,8 @@
             <label class="u-mb-sm" for="detail">コミュニティ詳細<span class="text-danger u-mx-xs">*</span>@error('detail')<span class="d-inline-block text-danger">{{ $message }}</span>@enderror</label>
             <textarea type="text" class="form-control" name="detail" id="detail" required>{{ old('detail') ? old('detail') : $community->detail }}</textarea>
         </div>
-        <div class="prof-btn">
-            <button class="btn btn-primary">コミュニティ更新</button>
+        <div>
+            <button type="submit" class="c-btn-green u-w-100 u-sm-w-auto">コミュニティを作成</button>
         </div>
     </form>
 </section>
