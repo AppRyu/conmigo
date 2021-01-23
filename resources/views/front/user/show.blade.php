@@ -59,7 +59,7 @@
                 <div class="user-prof__btn-row">
 
                     @if($user->mysite)
-                    <a href="https://{{ $user->mysite }}" target="_blank" rel="noopener noreferrer" class="user-prof__btn--sp user-prof__btn--web"><i class="fas fa-link user-prof__btn-icon"></i></a>
+                    <a href="{{ $user->mysite }}" target="_blank" rel="noopener noreferrer" class="user-prof__btn--sp user-prof__btn--web"><i class="fas fa-link user-prof__btn-icon"></i></a>
                     @else
                     <button class="user-prof__btn-outline--sp user-prof__btn-outline--web"><i class="fas fa-link user-prof__btn-icon"></i></button>
                     @endif
