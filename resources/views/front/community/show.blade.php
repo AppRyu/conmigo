@@ -56,21 +56,57 @@
 				</tr>
 			</thead>
 			<tbody class="applied-user-tb__bd">
-				@foreach($appliedUsers as $appliedUser)
+			@if(count($winningUsers))
+				{{-- 当選したユーザーをループ --}}
+				@foreach($winningUsers as $winningUser)
 				<tr class="applied-user-tb__tr">
 					<td class="applied-user-tb__td">
-						<a class="u-d-block" href="{{ route('user.show', ['user_name' => $appliedUser->users->user_name]) }}">
-							@if($appliedUser->users->profile_image)
-							<img class="applied-user-tb__img" src="{{ asset('/storage/img/'.$appliedUser->users->profile_image) }}" alt="応募したユーザーのプロフィール画像">
+						<a class="u-d-block" href="{{ route('user.show', ['user_name' => $winningUser->users->user_name]) }}">
+							@if($winningUser->users->profile_image)
+							<img class="applied-user-tb__img" src="{{ asset('/storage/img/'.$winningUser->users->profile_image) }}" alt="応募したユーザーのプロフィール画像">
 							@else
 							<img class="applied-user-tb__img" src="{{ asset('./img/default-icon.png') }}" alt="応募したユーザーのプロフィール画像">
 							@endif
-							<span class="c-link-blue">{{ $appliedUser->users->user_name }}</span>
+							<span class="c-link-blue"><i class="fas fa-crown u-mr-xs"></i>{{ $winningUser->users->user_name }}</span>
 						</a>
 					</td>
-					<td class="applied-user-tb__td u-d-none u-xs-d-table-cell">{{ $appliedUser->created_at }}</td>
+					<td class="applied-user-tb__td u-d-none u-xs-d-table-cell">{{ $winningUser->created_at }}</td>
 				</tr>
 				@endforeach
+				{{-- 落選したユーザーをループ --}}
+				@foreach($losingUsers as $losingUser)
+				<tr class="applied-user-tb__tr">
+					<td class="applied-user-tb__td">
+						<a class="u-d-block" href="{{ route('user.show', ['user_name' => $losingUser->users->user_name]) }}">
+							@if($losingUser->users->profile_image)
+							<img class="applied-user-tb__img" src="{{ asset('/storage/img/'.$losingUser->users->profile_image) }}" alt="応募したユーザーのプロフィール画像">
+							@else
+							<img class="applied-user-tb__img" src="{{ asset('./img/default-icon.png') }}" alt="応募したユーザーのプロフィール画像">
+							@endif
+							<span class="c-link-blue">{{ $losingUser->users->user_name }}</span>
+						</a>
+					</td>
+					<td class="applied-user-tb__td u-d-none u-xs-d-table-cell">{{ $losingUser->created_at }}</td>
+				</tr>
+				@endforeach
+			@else
+				{{-- 選考中のユーザーをループ --}}
+				@foreach($appliedUsers as $appliedUser)
+					<tr class="applied-user-tb__tr">
+						<td class="applied-user-tb__td">
+							<a class="u-d-block" href="{{ route('user.show', ['user_name' => $appliedUser->users->user_name]) }}">
+								@if($appliedUser->users->profile_image)
+								<img class="applied-user-tb__img" src="{{ asset('/storage/img/'.$appliedUser->users->profile_image) }}" alt="応募したユーザーのプロフィール画像">
+								@else
+								<img class="applied-user-tb__img" src="{{ asset('./img/default-icon.png') }}" alt="応募したユーザーのプロフィール画像">
+								@endif
+								<span class="c-link-blue">{{ $appliedUser->users->user_name }}</span>
+							</a>
+						</td>
+						<td class="applied-user-tb__td u-d-none u-xs-d-table-cell">{{ $appliedUser->created_at }}</td>
+					</tr>
+				@endforeach
+			@endif
 			</tbody>
 		</table>
 	</section>

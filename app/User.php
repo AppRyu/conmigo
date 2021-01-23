@@ -51,6 +51,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Recruit', 'applied_user', 'id');
     }
 
+    public function members()
+    {
+        return $this->hasMany('App\Member', 'user_id', 'id');
+    }
+
     public function likes() 
     {
         return $this->hasMany('App\Like', 'user_id', 'id');

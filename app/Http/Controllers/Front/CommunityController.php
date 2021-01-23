@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Community;
 use App\Recruit;
+use App\Member;
 use App\User;
 use App\Like;
 use App\Http\Controllers\Controller;
@@ -77,8 +78,23 @@ class CommunityController extends Controller
      */
     public function show(Community $community)
     {
+        // 応募しているユーザーIDすべて取得
+        $appliedUsersId = Recruit::where('community_id', $community->id)->pluck('applied_user')->toArray();
+        // 当選しているユーザーIDをすべて取得
+        $winningUsersId = Member::where('community_id', $community->id)->whereIn('user_id', $appliedUsersId)->pluck('user_id')->toArray();
+        // 応募しているユーザーすべて取得
         $appliedUsers = Recruit::where('community_id', $community->id)->get();
-        return view('front.community.show', ['community' => $community, 'appliedUsers' => $appliedUsers]);
+        // 当選しているユーザーすべて取得
+        $winningUsers = Member::where('community_id', $community->id)->whereIn('user_id', $appliedUsersId)->get();
+        // 落選しているユーザーすべて取得
+        $losingUsers = Recruit::where('community_id', $community->id)->whereNotIn('applied_user', $winningUsersId)->get();
+
+        return view('front.community.show', [
+            'community' => $community, 
+            'appliedUsers' => $appliedUsers, 
+            'winningUsers' => $winningUsers, 
+            'losingUsers' => $losingUsers
+            ]);
     }
 
     /**

@@ -5022,6 +5022,12 @@ textarea {
   margin-right: 0.75rem;
 }
 
+.fa-crown {
+  color: #fcda4b;
+  position: relative;
+  bottom: 1px;
+}
+
 .community-search__tit {
   font-size: 1rem;
   color: #ced4da;
