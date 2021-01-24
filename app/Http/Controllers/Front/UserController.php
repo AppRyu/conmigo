@@ -67,4 +67,33 @@ class UserController extends Controller
         User::find($user)->delete();
     }
 
+    public function follow(Request $request, String $user_name)
+    {
+        $user = User::where('user_name', $user_name)->first();
+
+        if($user->id === $request->user()->id)
+        {
+            return abort('404', '自分自身をフォローする事は出来ません。');
+        }
+
+        $request->user()->followings()->detach($user);
+        $request->user()->followings()->attach($user);
+
+        return ['user_name' => $user_name];
+    }
+
+    public function unfollow(Request $request, String $user_name)
+    {
+        $user = User::where('user_name', $user_name)->first();
+
+        if($user->id === $request->user()->id)
+        {
+            return abort('404', '自分自身をフォローする事は出来ません。');
+        }
+
+        $request->user()->followings()->detach($user);
+
+        return ['user_name' => $user_name];
+    }
+
 }

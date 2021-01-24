@@ -6,6 +6,7 @@ import CommunityRecruitBtn from './components/CommunityRecruitBtn.vue';
 import CommunitySelectUser from './components/CommunitySelectUser.vue';
 import CommunityLike from './components/CommunityLike.vue';
 import VueBurgerMenu from './components/VueBurgerMenu.vue';
+import FollowButton from './components/FollowButton.vue';
 
 const app = new Vue({
     el: '#app',
@@ -16,5 +17,6 @@ const app = new Vue({
         CommunitySelectUser,
         CommunityLike,
         VueBurgerMenu,
+        FollowButton,
     },
 });

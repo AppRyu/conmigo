@@ -42,9 +42,23 @@
 
             </div>
             <div class="col-lg-9 col-sm-8 col-12">
-                <h3 class="u-fs-xl u-fw-bold u-mb-lg">{{ $user->name }}
-                    <div class="u-fs-sm u-fw-normal"><span>@</span>{{ $user->user_name }}<div>
-                </h3>
+                <div class="u-d-flex align-items-center justify-content-between u-mb-xs">
+                    <div>
+                        <h3 class="u-fs-xl u-fw-bold">{{ $user->name }}</h3>
+                        <div class="u-fs-sm u-fw-normal"><span>@</span>{{ $user->user_name }}</div>
+                    </div>
+                    @if(Auth::id() !== $user->id)
+                    <follow-button :initial-is-followed-by='@json($user->isFollowedBy(Auth::user()))'
+                                    :authorized='@json(Auth::check())'
+                                    endpoint="{{ route('users.follow', ['user_name' => $user->user_name]) }}"
+                    >
+                    </follow-button>
+                    @endif
+                </div>
+                <div class="u-mb-lg">
+                    <a class="u-mr-sm" href=""><span class="u-mx-xs">{{ $user->count_followings }}</span>フォロー</a>
+                    <a href=""><span class="u-mx-xs">{{ $user->count_followers }}</span>フォロワー</a>
+                </div>
                 <div class="user-prof__img user-prof__img--sp u-xs-d-none u-d-block">
                     @if($user->profile_image)
                     <img src="{{ asset('/storage/img/'.$user->profile_image) }}" alt="プロフィール画像">

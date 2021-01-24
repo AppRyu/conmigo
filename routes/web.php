@@ -35,8 +35,13 @@ Route::namespace('Front')->group(function() {
                   // お気に入りコミュニティ一覧
                   Route::get('like', 'CommunityController@likes')->name('communities.likes');
             });
-            
 
+            // フォロー機能
+            Route::prefix('users')->name('users.')->group(function() {
+                  Route::put('/{user_name}/follow', 'UserController@follow')->name('follow');
+                  Route::delete('/{user_name}/follow', 'UserController@unfollow')->name('unfollow');
+            });
+            
             // 応募したコミュニティ：一覧
             Route::get('/community/applied', 'CommunityApplyController@index')->name('community.applied');
 
