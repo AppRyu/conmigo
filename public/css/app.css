@@ -4594,6 +4594,18 @@ textarea {
   top: -8px;
 }
 
+.burger-slide__txt {
+  opacity: 0;
+  transition: 1s;
+  white-space: nowrap;
+}
+
+.burger-slide__txt--active {
+  opacity: 1;
+  transition: 1s;
+  white-space: nowrap;
+}
+
 .bm-burger-button {
   cursor: pointer;
   height: 25px !important;
@@ -4616,7 +4628,7 @@ textarea {
 
 .cross-style {
   position: absolute;
-  top: 12px;
+  top: 18px !important;
   right: 2px !important;
   cursor: pointer;
 }
@@ -4647,7 +4659,7 @@ textarea {
   /* Disable horizontal scroll */
   padding-top: 60px;
   /* Place content 60px from the top */
-  transition: 0.1s !important;
+  transition: 0.3s !important;
   /*0.5 second transition effect to slide in the sidenav*/
 }
 

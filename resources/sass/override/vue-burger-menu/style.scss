@@ -2,6 +2,16 @@
     position: absolute;
     right: 0;
     top: -8px;
+    &__txt {
+        opacity: 0;
+        transition: 1s;
+        white-space: nowrap;
+        &--active {
+            opacity: 1;
+            transition: 1s;
+            white-space: nowrap;
+        }
+    }
 }
 
 .bm-burger-button {
@@ -23,7 +33,7 @@
 }
 .cross-style {
     position: absolute;
-    top: 12px;
+    top: 18px !important;
     right: 2px !important;
     cursor: pointer;
 }
@@ -44,7 +54,7 @@
     background-color: clr(c---bg--dark-gray) !important; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.1s !important; /*0.5 second transition effect to slide in the sidenav*/
+    transition: 0.3s !important; /*0.5 second transition effect to slide in the sidenav*/
 }
 
 .bm-overlay {
