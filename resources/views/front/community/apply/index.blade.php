@@ -46,16 +46,16 @@
                 @endif
 
                 <section class="community-content__right">
-                    <h3 class="u-c---dark-blue u-fs-lg u-ml-base u-xs-ml-no u-mb-sm">
+                    <h3 class="u-tc-blue u-fs-lg u-ml-base u-xs-ml-no u-mb-sm">
                         <a class="c-link-blue" href="{{ route('community.show', ['community' => $community]) }}">{{ $community->name }}</a>
-                        @if(Auth::check())
-                        <community-like
-                        :initial-is-liked-by='@json($community->isLikedBy(Auth::user()))'
-                        :authorized='@json(Auth::check())'
-                        endpoint="{{ route('communities.like', ['community' => $community]) }}"
-                        >
-                        </community-like>
-                        @endif
+                        <span class="u-md-d-inline u-d-none">
+                            <community-like
+                            :initial-is-liked-by='@json($community->isLikedBy(Auth::user()))'
+                            :authorized='@json(Auth::check())'
+                            endpoint="{{ route('communities.like', ['community' => $community]) }}"
+                            >
+                            </community-like>
+                        </span>
                     </h3>
                     <div class="u-md-d-flex">
                         <div class="u-fw-bold u-mb-xs u-md-mr-base u-md-mb-no"><span class="c-tag-sm c-tag-red u-mr-sm">開始日時</span><span class="d-inline-block u-fs-sm">{{ $community->getDate($community->start) }} {{ $community->getTime($community->start) }}</span></div>
@@ -72,6 +72,19 @@
                             <a class="community-created-user__link" href="{{ route('user.show', ['user_name' => $community->users->user_name]) }}">{{ $community->users->user_name }}</a>
                         </div>
                     </div>
+                    @if($community->members->where('user_id', Auth::user()->id)->count())
+                    <div class="u-ta-right">
+                        <a class="c-link-blue" href="{{ route('chat.show', ['communityWithTrashed' => $community]) }}">トークルームへ</a>
+                        <span class="u-md-d-none u-d-inline-block u-ml-base">
+                            <community-like-sp
+                            :initial-is-liked-by='@json($community->isLikedBy(Auth::user()))'
+                            :authorized='@json(Auth::check())'
+                            endpoint="{{ route('communities.like', ['community' => $community]) }}"
+                            >
+                            </community-like-sp>
+                        </span>
+                    </div>
+                    @endif
                 </section>
             </div>
         @endforeach

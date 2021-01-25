@@ -59,14 +59,14 @@
                                 <a class="c-link-blue" href="{{ route('user.show', ['user_name' => $community->users->user_name]) }}">{{ $community->users->user_name }}</a>
                             </div>
                         </div>
-                        <div>
-                            <span class="u-md-d-none u-d-inline-block u-ml-base">
-                                <community-like
+                        <div class="u-ta-right">
+                            <span class="u-md-d-none u-d-inline-block">
+                                <community-like-sp
                                 :initial-is-liked-by='@json($community->isLikedBy(Auth::user()))'
                                 :authorized='@json(Auth::check())'
                                 endpoint="{{ route('communities.like', ['community' => $community]) }}"
                                 >
-                                </community-like>
+                                </community-like-sp>
                             </span>
                         </div>
                     </section>

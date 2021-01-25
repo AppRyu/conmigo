@@ -5,6 +5,7 @@ import CommunitySetTimeInput from './components/CommunitySetTimeInput.vue';
 import CommunityRecruitBtn from './components/CommunityRecruitBtn.vue';
 import CommunitySelectUser from './components/CommunitySelectUser.vue';
 import CommunityLike from './components/CommunityLike.vue';
+import CommunityLikeSp from './components/CommunityLikeSp.vue';
 import VueBurgerMenu from './components/VueBurgerMenu.vue';
 import FollowButton from './components/FollowButton.vue';
 
@@ -16,6 +17,7 @@ const app = new Vue({
         CommunityRecruitBtn,
         CommunitySelectUser,
         CommunityLike,
+        CommunityLikeSp,
         VueBurgerMenu,
         FollowButton,
     },

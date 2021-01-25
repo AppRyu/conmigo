@@ -1,21 +1,15 @@
 <template>
-        <a class="community-like" @click.prevent="clickLike">
-            <span :class="starColor">
-                <vue-star ref="icon" class="community-like__vue-star" animate="animated rubberBand">
-                    <i slot="icon" class="fas fa-star"></i>
-                </vue-star>
-            </span>
-            <span class="community-like__txt">お気に入り</span>
-        </a>
+<a @click.prevent="clickLike">
+    <span :class="starColor">
+            <i slot="icon" class="fas fa-star"></i>
+    </span>
+    <span class="u-tcd-gray">お気に入り</span>
+</a>
 </template>
 
 <script>
-import VueStar from 'vue-star';
 export default {
-    components: {
-        VueStar,
-    },
-    props: {
+        props: {
         initialIsLikedBy: {
             type: Boolean,
             default: false,
@@ -32,9 +26,6 @@ export default {
         return {
             isLikedBy: this.initialIsLikedBy,
         }
-    },
-    mounted() {
-        this.isLikedBy ? this.$refs.icon.$data.active = true : this.$refs.icon.$data.active = false;
     },
     computed: {
         starColor() {
@@ -54,7 +45,6 @@ export default {
             axios.put(this.endpoint)
             .then((response) => {
                 this.isLikedBy = true;
-                this.$refs.icon.$data.active = true;
             })
             .catch(function (error) {
                 alert('申し訳ありませんしばらく経ってから再度お試しください。');
@@ -65,7 +55,6 @@ export default {
             axios.delete(this.endpoint)
             .then((response) => {
                 this.isLikedBy = false;
-                this.$refs.icon.$data.active = false;
             }).catch(function (error) {
                 alert('申し訳ありませんしばらく経ってから再度お試しください。');
                 //console.log(error);
