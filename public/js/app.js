@@ -2014,7 +2014,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     clickLike: function clickLike() {
       if (!this.authorized) {
-        alert('いいね機能はログイン中のみしようできます');
+        alert('いいね機能はログイン中のみ使用できます');
         return;
       }
 
@@ -2344,7 +2344,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return this.isFollowedBy ? 'c-btn-blue' : 'c-btn-outline-blue';
     },
     buttonIcon: function buttonIcon() {
-      //return this.isFollowedBy ? 'fas fa-user-plus' : 'fas fa-user-plus';
       return this.isFollowedBy ? 'fas fa-user-check' : 'fas fa-user-plus';
     },
     buttonText: function buttonText() {

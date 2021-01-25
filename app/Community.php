@@ -155,8 +155,8 @@ class Community extends Model
      * @param $user
      * @return boolean
      */
-    public function isLikedBy(User $user): bool
+    public function isLikedBy(?User $user): bool
     {
-        return (bool)$this->likes->where('user_id', $user->id)->count();
+        return $user ? (bool)$this->likes->where('user_id', $user->id)->count() : false;
     }
 }

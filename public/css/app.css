@@ -8,6 +8,36 @@
 
 /*
 *******************************
+** font-size
+*******************************
+*/
+
+/*
+*******************************
+** font-weight
+*******************************
+*/
+
+/*
+*******************************
+** space (padding/margin用）
+*******************************
+*/
+
+/*
+*******************************
+** color
+*******************************
+*/
+
+/*
+*******************************
+** breakpoint
+*******************************
+*/
+
+/*
+*******************************
 ** foundation
 *******************************
 */
@@ -5209,16 +5239,29 @@ textarea {
 
 .community-like {
   font-size: 0.75rem;
-  float: right;
+  float: left;
   display: flex;
   align-items: flex-start;
   position: relative;
 }
 
+@media screen and (min-width: 992px) {
+  .community-like {
+    float: right;
+  }
+}
+
 .community-like__vue-star {
   position: absolute;
-  top: -44px;
+  top: -42px;
   left: -58px;
+}
+
+@media screen and (min-width: 992px) {
+  .community-like__vue-star {
+    top: -44px;
+    left: -58px;
+  }
 }
 
 .community-like__star {

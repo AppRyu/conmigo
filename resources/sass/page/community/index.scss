@@ -81,14 +81,21 @@
 
 .community-like {
     font-size: fs(sm);
-    float: right;
+    float: left;
     display: flex;
     align-items: flex-start;
     position: relative;
+    @include mq('md') {
+        float: right;
+    }
     &__vue-star {
         position: absolute;
-        top: -44px;
+        top: -42px;
         left: -58px;
+        @include mq('md') {
+            top: -44px;
+            left: -58px;
+        }
     }
     &__star {
         color: clr(c---dark-gray);
