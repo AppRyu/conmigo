@@ -3,6 +3,8 @@ import Router from 'vue-router';
 
 import SettingAccount from './components/SettingAccount';
 import SettingProfile from './components/SettingProfile';
+import UserFollowFollowing from './components/UserFollowsFollowing';
+import UserFollowFollower from './components/UserFollowFollower';
 
 Vue.use(Router);
 
@@ -22,6 +24,20 @@ export default new Router({
             path: '/setting/account',
             name: 'setting-account',
             component: SettingAccount,
+        },
+        {
+            path: '/follows',
+            redirect: '/follows/following',
+        },
+        {
+            path: '/follows/following',
+            name: 'follows-following',
+            component: UserFollowFollowing,
+        },
+        {
+            path: '/follows/follower',
+            name: 'follows-follower',
+            component: UserFollowFollower,
         },
     ],
 });

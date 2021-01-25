@@ -63,6 +63,9 @@ Route::namespace('Front')->group(function() {
       // コミュニティ一覧＆詳細
       Route::resource('/community', 'CommunityController')->only(['index', 'show']);
 
+      // フォロー＆フォロワー：一覧
+      Route::get('follows/{any?}', 'UserController@follows')->where('any', '.*')->name('follows');
+
 
       //  プロフィール
       Route::resource('/user', 'UserController')->parameters(['user' => 'user_name'])->only(['index', 'show']);

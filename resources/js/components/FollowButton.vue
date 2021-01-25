@@ -4,11 +4,6 @@
             <i class="u-mr-xs" :class="buttonIcon"></i>{{ buttonText }}
         </button>
     </div>
-    <!-- <div>
-        <button :class="buttonColor" @click="clickFollow">
-            <font-awesome-icon :icon="['fas', 'search']" />{{ buttonText }}
-        </button>
-    </div> -->
 </template>
 
 <script>

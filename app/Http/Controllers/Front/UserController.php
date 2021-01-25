@@ -67,6 +67,11 @@ class UserController extends Controller
         User::find($user)->delete();
     }
 
+    public function follows()
+    {
+        return view('front.user.follows');
+    }
+
     public function follow(Request $request, String $user_name)
     {
         $user = User::where('user_name', $user_name)->first();
