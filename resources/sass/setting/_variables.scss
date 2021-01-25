@@ -1,3 +1,8 @@
+/*
+*******************************
+** font-size
+*******************************
+*/
 $font-size-base: 1rem;
 $sizes: (
     xs: $font-size-base * 0.5,
@@ -8,6 +13,11 @@ $sizes: (
     xxl: $font-size-base * 1.5,
 );
 
+/*
+*******************************
+** font-weight
+*******************************
+*/
 $font-weight: (
     thin: 200,
     normal: 400,
@@ -15,6 +25,11 @@ $font-weight: (
     xbd: 700,
 );
 
+/*
+*******************************
+** space (padding/margin用）
+*******************************
+*/
 $space: 1rem;
 $spaces: (
     no: 0,
@@ -26,6 +41,11 @@ $spaces: (
     xxl: $space * 3.5,
 );
 
+/*
+*******************************
+** color
+*******************************
+*/
 $colors: (
     c---black: #4b4f56,
     c---white: #fdfdfd,
@@ -54,8 +74,11 @@ $colors: (
     c---sns--instagram: #c6529a,
 );
 
-// sm, md, lg, xl のブレイクポイントへ変更
-// bootstrapと単位がずれるから
+/*
+*******************************
+** breakpoint
+*******************************
+*/
 $breakpoints: (
     xxs: 'screen and (min-width: 425px)',
     xs: 'screen and (min-width: 576px)',
