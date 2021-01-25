@@ -237,6 +237,45 @@ img {
 *******************************
 */
 
+.nav-tab {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.nav-tab__item {
+  width: 50%;
+  display: block;
+  padding: 0.375rem;
+  color: #536dfe;
+  background-color: #fafafa;
+  border: 1px solid #ced4da;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-tab__item {
+    width: 25%;
+  }
+}
+
+.nav-tab__item.router-link-active {
+  font-weight: bold;
+  color: #4b4f56;
+  background-color: #fdfdfd;
+  border-top: 2px solid #536dfe;
+  border-bottom: 1px solid transparent;
+}
+
+.nav-tab__item:hover {
+  color: inherit;
+  background-color: #fff;
+  text-decoration: none;
+}
+
+.nav-tab__item:focus {
+  outline: none;
+}
+
 .page-tit {
   border-left: 3px solid #4b4f56;
   padding-left: 1rem;
@@ -923,6 +962,26 @@ img {
   .u-lg-d-none {
     display: none;
   }
+}
+
+.u-fb-fg-0 {
+  flex-grow: 0;
+}
+
+.u-fb-fg-1 {
+  flex-grow: 1;
+}
+
+.u-fb-jc-btw {
+  justify-content: space-between;
+}
+
+.u-fb-jc-arn {
+  justify-content: space-around;
+}
+
+.u-fb-ai-cnt {
+  align-items: center;
 }
 
 .u-fc-red {
@@ -4383,6 +4442,126 @@ img {
   text-align: justify;
 }
 
+@media screen and (min-width: 425px) {
+  .u-xxs-ta-left {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .u-xs-ta-left {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .u-sm-ta-left {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .u-md-ta-left {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .u-lg-ta-left {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .u-xxs-ta-center {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .u-xs-ta-center {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .u-sm-ta-center {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .u-md-ta-center {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .u-lg-ta-center {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .u-xxs-ta-right {
+    text-align: right;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .u-xs-ta-right {
+    text-align: right;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .u-sm-ta-right {
+    text-align: right;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .u-md-ta-right {
+    text-align: right;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .u-lg-ta-right {
+    text-align: right;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .u-xxs-ta-justify {
+    text-align: justify;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .u-xs-ta-justify {
+    text-align: justify;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .u-sm-ta-justify {
+    text-align: justify;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .u-md-ta-justify {
+    text-align: justify;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .u-lg-ta-justify {
+    text-align: justify;
+  }
+}
+
 .u-tcd-red {
   color: #bf3059;
 }
@@ -5394,6 +5573,16 @@ textarea {
   border: 1px solid transparent;
 }
 
+.follows-content {
+  padding: 1rem;
+  border: 1px solid #e9ebee;
+  border-radius: 5px;
+}
+
+.follows-content:hover {
+  background-color: #f8fcff;
+}
+
 .user-prof__img {
   background-color: #fff;
   border: 1px solid #e9ebee;
@@ -5859,6 +6048,24 @@ textarea {
   padding: 15px;
 }
 
+.sidebar-data {
+  font-size: 0.75rem;
+}
+
+.sidebar-data__link {
+  display: block;
+  padding: 5px;
+  color: #4b4f56;
+  border: 1px solid transparent;
+}
+
+.sidebar-data__link:hover {
+  color: inherit;
+  text-decoration: none;
+  background-color: #f0f2f4;
+  border: 1px solid #e2e4e7;
+}
+
 .sidebar .profile-img {
   background-color: #fff;
   border: 5px solid #fdfdfd;
@@ -5878,24 +6085,6 @@ textarea {
 .sidebar .profile-name__id {
   font-size: 0.75rem;
   color: #536dfe;
-}
-
-.sidebar .profile-data {
-  font-size: 0.75rem;
-}
-
-.sidebar .profile-data__link {
-  display: block;
-  padding: 5px;
-  color: #4b4f56;
-  border: 1px solid transparent;
-}
-
-.sidebar .profile-data__link:hover {
-  color: inherit;
-  text-decoration: none;
-  background-color: #f0f2f4;
-  border: 1px solid #e2e4e7;
 }
 
 .subnavbar {

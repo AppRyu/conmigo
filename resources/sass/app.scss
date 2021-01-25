@@ -31,8 +31,9 @@
 ** module
 *******************************
 */
+@import './module/nav-tab';
 @import './module/page-tit';
-@import './module/timeTable';
+@import './module/time-table';
 
 /*
 *******************************
@@ -53,6 +54,7 @@
 */
 @import './layout/utility/color';
 @import './layout/utility/display';
+@import './layout/utility/flex-box';
 @import './layout/utility/font-color';
 @import './layout/utility/font-size';
 @import './layout/utility/font-weight';
@@ -88,6 +90,7 @@
 @import './page/community/plan/show';
 @import './page/chat/index';
 @import './page/chat/show';
+@import './page/user/follows';
 @import './page/user/show';
 @import './page/setting/index';
 

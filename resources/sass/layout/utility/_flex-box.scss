@@ -1,0 +1,19 @@
+$flexGrowList: '0', '1';
+
+@each $flexGrow in $flexGrowList {
+    .u-fb-fg-#{$flexGrow} {
+        flex-grow: #{$flexGrow};
+    }
+}
+
+.u-fb-jc-btw {
+    justify-content: space-between;
+}
+
+.u-fb-jc-arn {
+    justify-content: space-around;
+}
+
+.u-fb-ai-cnt {
+    align-items: center;
+}

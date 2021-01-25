@@ -1,7 +1,20 @@
 $textAlignList: left, center, right, justify;
+$breakpointList: xxs, xs, sm, md, lg;
 
+// レスポンシブ対応なし、text-alignスタイル設定
 @each $textAlign in $textAlignList {
     .u-ta-#{$textAlign} {
         text-align: #{$textAlign};
+    }
+}
+
+// レスポンシブ対応なし、text-alignスタイル設定
+@each $textAlign in $textAlignList {
+    @each $breakpoint in $breakpointList {
+        .u-#{$breakpoint}-ta-#{$textAlign} {
+            @include mq(#{$breakpoint}) {
+                text-align: #{$textAlign};
+            }
+        }
     }
 }
