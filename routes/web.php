@@ -20,10 +20,14 @@ Route::namespace('Front')->group(function() {
       Route::get('/', 'TopController@index')->name('index');
 
       Route::group(['middleware' => 'auth'], function() {
+
+            // コミュニティ作成・更新・削除
             Route::resource('community', 'CommunityController')->except(['index', 'show']);
+
+            // コミュニティ申請
             Route::post('/community/{id}/apply', 'CommunityController@apply')->name('community.apply');
             
-            // 企画したコミュニティ
+            // 企画したコミュニティ：一覧・詳細・申請ユーザー認証
             Route::get('/community/plan', 'CommunityPlanedController@index')->name('community.plan.index');
             Route::get('/community/plan/{community}', 'CommunityPlanedController@show')->name('community.plan.show');
             Route::post('/community/plan/{community}', 'CommunityPlanedController@determineUser')->name('community.plan.determineUser');
@@ -47,11 +51,12 @@ Route::namespace('Front')->group(function() {
 
             // チャットルーム：一覧
             Route::get('/chat', 'ChatController@index')->name('chat.index');
+
             // チャットルーム：個別（対象コミュニティが削除後もチャット履歴は残す）
             Route::get('/chat/{communityWithTrashed}', 'ChatController@show')->name('chat.show');
             Route::post('/chat/{community}', 'ChatController@sendMessage')->name('chat.sendMessage');
 
-            // プロフィール
+            // ユーザープロフィール：作成・更新・削除
             Route::resource('/user', 'UserController')->parameters(['user' => 'user_name'])->except(['index', 'show', 'destroy']);
             Route::resource('/user', 'UserController')->only('destroy');
 
@@ -60,14 +65,13 @@ Route::namespace('Front')->group(function() {
 
       });
 
-      // コミュニティ一覧＆詳細
+      // コミュニティ：一覧・詳細
       Route::resource('/community', 'CommunityController')->only(['index', 'show']);
 
       // フォロー＆フォロワー：一覧
       Route::get('follows/{any?}', 'UserController@follows')->where('any', '.*')->name('follows');
 
-
-      //  プロフィール
+      //  ユーザープロフィール：一覧・詳細
       Route::resource('/user', 'UserController')->parameters(['user' => 'user_name'])->only(['index', 'show']);
       
       Route::get('/home', 'HomeController@index')->name('home');
