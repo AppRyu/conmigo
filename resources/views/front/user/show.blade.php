@@ -56,8 +56,8 @@
                     @endif
                 </div>
                 <div class="u-mb-lg">
-                    <a class="u-mr-sm" href=""><span class="u-mx-xs">{{ $user->count_followings }}</span>フォロー</a>
-                    <a href=""><span class="u-mx-xs">{{ $user->count_followers }}</span>フォロワー</a>
+                    <span class="u-mr-sm"><span class="u-mx-xs">{{ $user->count_followings }}</span>フォロー</span>
+                    <span><span class="u-mx-xs">{{ $user->count_followers }}</span>フォロワー</span>
                 </div>
                 <div class="user-prof__img user-prof__img--sp u-xs-d-none u-d-block">
                     @if($user->profile_image)
