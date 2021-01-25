@@ -33,6 +33,8 @@
 */
 @import './module/nav-tab';
 @import './module/page-tit';
+@import './module/sidebar';
+@import './module/sub-navbar';
 @import './module/time-table';
 
 /*
@@ -93,6 +95,3 @@
 @import './page/user/follows';
 @import './page/user/show';
 @import './page/setting/index';
-
-@import './community/sidebar';
-@import './components/subnavbar';
