@@ -31,7 +31,6 @@ export default {
             return this.isFollowedBy ? 'c-btn-blue' : 'c-btn-outline-blue';
         },
         buttonIcon() {
-            //return this.isFollowedBy ? 'fas fa-user-plus' : 'fas fa-user-plus';
             return this.isFollowedBy ? 'fas fa-user-check' : 'fas fa-user-plus';
         },
         buttonText() {
