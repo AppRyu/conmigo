@@ -35,10 +35,10 @@
         <main class="main container u-py-lg u-md-py-xxl">
         @hasSection('sidebar')
             <div class="row">
-                <article class="col-md-9">
+                <article class="col-lg-9 col-md-8 col-12">
                     @yield('content')
                 </article>
-                <aside class="col-md-3 d-none d-md-block">
+                <aside class="col-lg-3 col-md-4 d-none d-md-block">
                     @yield('sidebar')
                 </aside>
             </div>
