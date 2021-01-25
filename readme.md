@@ -7,66 +7,35 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+## Conmigo
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Web サービス「Conmigo」は、現役エンジニア・駆け出しエンジニア・Web デザイナーの方々がもくもく会を開催もしくは参加し、一緒に学習する仲間を繋げるマッチングサービスです。
+私自身、これまで独学でプログラミングを学習してきましたが、どうしてもやる気が出ない日や集中力が続かない日が多々ありました。
+そこで、私がプログラミング学習を継続するために取り入れていた手法の１つは、YouTube で一緒に勉強しよう動画や勉強耐久動画を垂れ流しながら学習することでした。これはまだ長時間学習が習慣化していない段階ではとても有効で、1 人で学習しているとサボってしまったり、休憩時間を少し長めにとってしまう等のこれらの問題は、事前に一緒に学習する日時を決めておくことでサボりぐせを軽減し学習を習慣化させることを目的としています。
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 開発言語・フレームワーク・データベース
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   フロントエンド言語：HTML, CSS(SCSS), JavaScript
+-   バックエンド言語：PHP
+-   フレームワーク：Laravel, Vue.js, Bootstrap
+-   データベース：MySQL
+-   デザインカンプ：PhotoShop
+-   バージョン管理：Git, GitHub
+-   開発環境：docker
+-   エディタ：Visual Studio Code
 
-## Learning Laravel
+## 使い方
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+学習仲間と一緒に学習する方法は２つあります。
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. コミュニティを主催する
+   画面上部のコミュニティ作成ページからコミュニティ名・開始日時・終了日時・コメント（学習を行うためのツール zoom,skype 等。スケジュール調整、求める学習仲間などの条件などを自由にお書きください）。
+   コミュニティ作成後、他ユーザーから応募があります。コミュニティ管理画面（企画済コミュニティ）ページから「仲間を選択する」から応募のあったユーザーの中から一緒に学習する仲間を選択します。選択後、自動でトークルームへ遷移します。ロークルームではビデオチャットツールの URL などを共有してください。そして指定の日時から学習をスタートしましょう。
 
-## Laravel Sponsors
+2. コミュニティに参加する
+   コミュニティ一覧ページから参加したいコミュニティに応募します。応募後、コミュニティを作成したホストユーザーから選択された場合、トークルームがオープンされます。以後の操作は主催する側と同じです。
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## 今後追加予定の機能
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+-   ダイレクトメッセージ
+-   メール通知
