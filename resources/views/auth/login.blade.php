@@ -33,11 +33,13 @@
 			<input id="remember" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
 			<label for="remember" class="auth-form__label auth-form__label_checkbox">ログイン状態を保持</label>
 		</div>
+		{{-- 今後実装
 		@if (Route::has('password.request'))
 		<div class="auth-link">
 			<a class="auth-link__forgot" href="{{ route('password.request') }}">パスワードをお忘れの方はこちらへ</a>
 		</div>
 		@endif
+		--}}
     </form>       
 </div>
 
