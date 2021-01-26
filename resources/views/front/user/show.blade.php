@@ -56,8 +56,13 @@
                     @endif
                 </div>
                 <div class="u-mb-lg">
+                    @if(Auth::id() === $user->id)
+                    <a href="{{ url('follows/following') }}"><span class="u-mr-sm"><span class="u-mx-xs">{{ $user->count_followings }}</span>フォロー</span></a>
+                    <a href="{{ url('follows/follower') }}"><span><span class="u-mx-xs">{{ $user->count_followers }}</span>フォロワー</span></a>
+                    @else
                     <span class="u-mr-sm"><span class="u-mx-xs">{{ $user->count_followings }}</span>フォロー</span>
                     <span><span class="u-mx-xs">{{ $user->count_followers }}</span>フォロワー</span>
+                    @endif
                 </div>
                 <div class="user-prof__img user-prof__img--sp u-xs-d-none u-d-block">
                     @if($user->profile_image)
