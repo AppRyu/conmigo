@@ -29,5 +29,8 @@
         <div>
             <a class="sidebar-data__link" href="{{ route('communities.likes') }}">お気に入り</a>
         </div>
+        <div>
+            <a class="sidebar-data__link" href="{{ route('setting') }}">設定</a>
+        </div>
     </div>
 </div>
