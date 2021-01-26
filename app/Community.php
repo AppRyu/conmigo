@@ -11,7 +11,7 @@ class Community extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'name', 'created_user', 'start', 'end', 'detail'
+        'name', 'created_user', 'number', 'start', 'end', 'detail'
     ];
 
     public function users() 

@@ -46,7 +46,7 @@ class ChatController extends Controller
         // コミュニティを作成したユーザーIDを追加
         $members[] = $community->created_user;
         // 取得したユーザーIDを参照して、コミュニティメンバー全員のデータを取得
-        $AllCommunityMember = User::withTrashed()->whereIn('id', $members)->select('id', 'user_name', 'profile_image')->get();
+        $AllCommunityMember = User::withTrashed()->whereIn('id', $members)->select('id', 'user_name', 'profile_image', 'last_login_at')->get();
         // ログインユーザーがコミュニティメンバーである場合
         if(in_array(auth()->user()->id, $members)) {
             $chats = CommunityMessages::where('community_id', $community->id)->select('user_id', 'message', 'created_at')->get();

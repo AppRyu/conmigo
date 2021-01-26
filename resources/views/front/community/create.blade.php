@@ -34,6 +34,21 @@
             </div>
         </div>
         <div class="form-group">
+            <label class="u-mb-sm" for="number">募集人数<span class="text-danger u-mx-xs">*</span>@error('number')<span class="d-inline-block text-danger">{{ $message }}</span>@enderror</label>
+            <select class="form-control" name="number" id="number" value="{{ old('number') }}" required>
+                <option value="1">１名</option>
+                <option value="2">２名</option>
+                <option value="3">３名</option>
+                <option value="4">４名</option>
+                <option value="5">５名</option>
+                <option value="6">６名</option>
+                <option value="7">７名</option>
+                <option value="8">８名</option>
+                <option value="9">９名</option>
+                <option value="10">１０名</option>
+            </select>
+        </div>
+        <div class="form-group">
             <label class="u-mb-sm" for="detail">コミュニティ詳細<span class="text-danger u-mx-xs">*</span>@error('detail')<span class="d-inline-block text-danger">{{ $message }}</span>@enderror</label>
             <textarea type="text" class="form-control" name="detail" id="detail" required>{{ old('detail') }}</textarea>
         </div>

@@ -13,11 +13,11 @@
             <h4 class="comm-det-desc__hd u-mb-base"><span class="comm-det-desc__hd_emphasis">コミュニティの詳細</span></h4>
             <div class="comm-det-desc__cmt">{!! nl2br(e($community->detail)) !!}</div>
         </section>
-        <p class="u-mb-base">学習する仲間を<span class="max-select-user u-mx-xs">1</span>人選択してください。</p>
+        <p class="u-mb-base">学習する仲間を<span class="max-select-user u-mx-xs">{{ $community->number }}</span>人選択してください。</p>
         <form action="{{ route('community.plan.determineUser', ['community' => $community]) }}" method="post">
             @csrf
             <community-select-user :applied-users={{ $appliedUsers }}
-                                    :max-users-number=1></community-select-user>
+                                    :max-users-number="{{ $community->number }}"></community-select-user>
         </form>
     </section>
 @endsection
