@@ -1,5 +1,3 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
-
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
@@ -7,11 +5,11 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## Conmigo
+## サービス名：Conmigo
 
-Web サービス「Conmigo」は、現役エンジニア・駆け出しエンジニア・Web デザイナーの方々がもくもく会を開催もしくは参加し、一緒に学習する仲間を繋げるマッチングサービスです。  
+Web サービス「Conmigo」は、現役エンジニア・駆け出しエンジニア・Web デザイナーの方々がもくもく会を開催もしくは参加し、一緒に学習する仲間を繋げ、共に学習を習慣化することを目的としたマッチングサービスです。  
 私自身、これまで独学でプログラミングを学習してきましたが、どうしてもやる気が出ない日や集中力が続かない日が多々ありました。  
-そこで、私がプログラミング学習を継続するために取り入れていた手法の１つは、YouTube で一緒に勉強しよう動画や勉強耐久動画を垂れ流しながら学習することでした。これはまだ長時間学習が習慣化していない段階ではとても有効で、1 人で学習しているとサボってしまったり、休憩時間を少し長めにとってしまう等のこれらの問題は、事前に一緒に学習する日時を決めておくことでサボりぐせを軽減し学習を習慣化させることを目的としています。
+そこで、私がプログラミング学習を継続するために取り入れていた手法の１つは、YouTube で一緒に勉強しよう動画や勉強耐久動画を垂れ流しながら学習することでした。ただ人が勉強しているだけの動画ですが、競争心が芽生えることで普段よりも集中力を高めることができます。ここからヒントを得て共に学習する人が共通の内容であればより有益な学習時間になるのではと考え、作成しました。
 
 ## 開発言語・フレームワーク・データベース
 
