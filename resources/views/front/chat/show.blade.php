@@ -41,10 +41,12 @@
                     <div class="c-icon-md chat-icon--border"><img src="{{ asset('/img/default-icon.png') }}" alt="ユーザープロフィール画像"></div>
                     @endif
                 </div>
-                <section>
-                    <h4 class="u-fs-lg"><a class="c-link-blue" href="{{ route('user.show', ['user_name' => $user->user_name]) }}">{{ $user->user_name }}</a></h4>
-                    <!--  TODO 最終ログイン時間を表示させる 下記例 -->
-                    <!-- <p>最終ログイン：2日前</p> -->
+                <section class="u-xs-d-flex u-d-block u-fb-jc-btw u-fb-fg-1">
+                    <div>
+                        <h4 class="u-fs-lg"><a class="c-link-blue" href="{{ route('user.show', ['user_name' => $user->user_name]) }}">{{ $user->user_name }}</a></h4>
+                        <div class="u-tcd-gray"><span>@</span>{{ $user->user_name }}</div>
+                    </div>
+                    <div class="u-tcd-gray u-ta-right">最終ログイン：{{ $user->last_login }}</div>
                 </section>
             </div>
             @endforeach

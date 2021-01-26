@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -94,5 +95,34 @@ class User extends Authenticatable
     public function getCountFollowingsAttribute(): int
     {
         return $this->followings->count();
+    }
+
+    public function getLastLoginAttribute()
+    {
+        // 最終ログイン時刻を取得
+        $lastLoginTime = new Carbon($this->attributes['last_login_at']);
+        // 最終ログイン時刻をUNIXタイムスタンプへ変換
+        $lastLoginTimeUnix = $lastLoginTime->format('U');
+        // 現在時刻を取得
+        $currentTime = new Carbon();
+        // 現在時刻をUNIXタイムスタンプへ変換
+        $currentTimeUnix = $currentTime->format('U');
+        // 差分を取得
+        $timeLag = $currentTimeUnix - $lastLoginTimeUnix;
+        if($timeLag > 2592000) {
+            $month = floor($timeLag/2592000);
+            return $month.'ヶ月前';
+        } elseif($timeLag > 86400) {
+            $day = floor($timeLag/86400);
+            return $day.'日前';
+        } elseif($timeLag > 3600) {
+            $hour = floor($timeLag/3600);
+            return $hour.'時間前';
+        } elseif($timeLag > 60) {
+            $min = floor($timeLag/60);
+            return $min.'分前';
+        } else {
+            return '0分前';
+        }
     }
 }
