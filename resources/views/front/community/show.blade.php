@@ -9,7 +9,13 @@
 	</h2>
 	<h3 class="u-fs-xl u-xs-fs-xl u-mb-base">{{ $community->name }}</h3>
 	<div class="u-mb-lg">
-		@include('./modules/timeTable', ['startDate' => $community->getDate($community->start), 'startTime' => $community->getTime($community->start), 'endDate' => $community->getDate($community->end), 'endTime' => $community->getTime($community->end)])
+		@include('./modules/timeTable', [
+											'startDate' => $community->getDate($community->start), 
+											'startTime' => $community->getTime($community->start), 
+											'endDate' => $community->getDate($community->end), 
+											'endTime' => $community->getTime($community->end),
+											'num' => $community->number,
+										])
 	</div>
 	<section class="comm-det-desc u-mb-lg">
 		<h4 class="comm-det-desc__hd u-mb-base"><span class="comm-det-desc__hd_emphasis">コミュニティの詳細</span></h4>

@@ -8,5 +8,9 @@
             <th class="time-table__th time-table__th--end" scope="row">終了日時</th>
             <td class="time-table__td"><span class="u-d-inline-block u-mr-sm">{{ $endDate }}</span><span class="u-d-inline-block">{{ $endTime }}</span></td>
         </tr>
+        <tr class="time-table__tr">
+            <th class="time-table__th time-table__th--num" scope="row">最大募集人数</th>
+            <td class="time-table__td"><span class="u-d-inline-block">{{ $num }} 人</span></td>
+        </tr>
     </tbody>
 </table>

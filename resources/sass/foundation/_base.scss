@@ -26,6 +26,10 @@ img {
     vertical-align: bottom;
 }
 
+textarea {
+    min-height: 180px;
+}
+
 #app {
     // コンテンツが少ない時フッターを最下層に固定
     min-height: 100vh;

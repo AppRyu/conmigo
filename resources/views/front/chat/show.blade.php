@@ -24,10 +24,16 @@
                 <div class="c-alert-green u-mb-base">メンバーに挨拶メッセージを送ろう。</div>
             @break
             @default
-                <div class="c-alert-gray u-mb-base">一緒に勉強する時間や方法（slack,zoom等）を話し合ってください。</div>
+                <div class="c-alert-gray u-mb-base">一緒に勉強する時間や方法（Google Meet,zoom等）を話し合ってください。</div>
             @endswitch
             <div class="u-mb-lg">
-                @include('./modules/timeTable', ['startDate' => $community->getDate($community->start), 'startTime' => $community->getTime($community->start), 'endDate' => $community->getDate($community->end), 'endTime' => $community->getTime($community->end)])
+                @include('./modules/timeTable', [
+                                                    'startDate' => $community->getDate($community->start), 
+                                                    'startTime' => $community->getTime($community->start), 
+                                                    'endDate' => $community->getDate($community->end), 
+                                                    'endTime' => $community->getTime($community->end),
+                                                    'num' => $community->number,
+                                                ])
             </div>
         </div>
         <div class="chat-container u-px-base u-pt-base">

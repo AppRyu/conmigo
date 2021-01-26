@@ -1,9 +1,9 @@
 .time-table {
     width: 100%;
     &__tr {
-        border-bottom: 1px solid clr(c---light-gray);
+        border-bottom: 1px solid clr(c---bg--dark-gray);
         &:first-child {
-            border-top: 1px solid clr(c---light-gray);
+            border-top: 1px solid clr(c---bg--dark-gray);
         }
     }
     &__th {
@@ -13,6 +13,7 @@
         padding: space(sm) space(base);
         width: 100%;
         display: block;
+        border-radius: 5px;
         @include mq('xs') {
             display: table-cell;
             text-align: center;
@@ -21,12 +22,14 @@
         &--start {
             color: clr(c---dark-red);
             background-color: clr(c---bg--light-red);
-            border-radius: 5px;
         }
         &--end {
             color: clr(c---dark-green);
             background-color: clr(c---bg--light-green);
-            border-radius: 5px;
+        }
+        &--num {
+            color: clr(c---dark-yellow);
+            background-color: clr(c---bg--light-yellow);
         }
     }
     &__td {

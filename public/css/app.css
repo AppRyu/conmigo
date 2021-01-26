@@ -235,6 +235,10 @@ img {
   vertical-align: bottom;
 }
 
+textarea {
+  min-height: 180px;
+}
+
 #app {
   min-height: 100vh;
   position: relative;
@@ -375,11 +379,11 @@ img {
 }
 
 .time-table__tr {
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1px solid #e9ebee;
 }
 
 .time-table__tr:first-child {
-  border-top: 1px solid #f5f5f5;
+  border-top: 1px solid #e9ebee;
 }
 
 .time-table__th {
@@ -389,6 +393,7 @@ img {
   padding: 0.75rem 1rem;
   width: 100%;
   display: block;
+  border-radius: 5px;
 }
 
 @media screen and (min-width: 576px) {
@@ -402,13 +407,16 @@ img {
 .time-table__th--start {
   color: #bf3059;
   background-color: #fceeee;
-  border-radius: 5px;
 }
 
 .time-table__th--end {
   color: #5ca62a;
   background-color: #eaf7dc;
-  border-radius: 5px;
+}
+
+.time-table__th--num {
+  color: #856404;
+  background-color: #fff3cd;
 }
 
 .time-table__td {
@@ -4822,14 +4830,6 @@ img {
 
 .btn-outline-primary:focus {
   box-shadow: 0 0 0 0.2rem #9faefe;
-}
-
-textarea {
-  min-height: 180px;
-}
-
-.form-control {
-  border: 1px solid #e9ebee;
 }
 
 .navbar {

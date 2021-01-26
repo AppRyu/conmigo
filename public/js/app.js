@@ -68811,15 +68811,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!****************************************************!*\
   !*** ./resources/js/components/SettingProfile.vue ***!
   \****************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SettingProfile_vue_vue_type_template_id_491d0038___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SettingProfile.vue?vue&type=template&id=491d0038& */ "./resources/js/components/SettingProfile.vue?vue&type=template&id=491d0038&");
 /* harmony import */ var _SettingProfile_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SettingProfile.vue?vue&type=script&lang=js& */ "./resources/js/components/SettingProfile.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _SettingProfile_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _SettingProfile_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -68849,7 +68848,7 @@ component.options.__file = "resources/js/components/SettingProfile.vue"
 /*!*****************************************************************************!*\
   !*** ./resources/js/components/SettingProfile.vue?vue&type=script&lang=js& ***!
   \*****************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -69221,7 +69220,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _components_SettingAccount__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/SettingAccount */ "./resources/js/components/SettingAccount.vue");
 /* harmony import */ var _components_SettingProfile__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/SettingProfile */ "./resources/js/components/SettingProfile.vue");
-/* harmony import */ var _components_UserFollowsFollowing__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/UserFollowsFollowing */ "./resources/js/components/UserFollowsFollowing.vue");
+/* harmony import */ var _components_UserFollowsFollowing__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/UserFollowsFollowing */ "./resources/js/components/UserFollowsFollowing.vue");
 /* harmony import */ var _components_UserFollowFollower__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/UserFollowFollower */ "./resources/js/components/UserFollowFollower.vue");
 
 
@@ -69249,7 +69248,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
   }, {
     path: '/follows/following',
     name: 'follows-following',
-    component: _components_UserFollowsFollowing__WEBPACK_IMPORTED_MODULE_6__["default"]
+    component: _components_UserFollowsFollowing__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, {
     path: '/follows/follower',
     name: 'follows-follower',

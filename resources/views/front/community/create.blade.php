@@ -12,7 +12,7 @@
         <div class="form-row">
             <div class="form-group col-12">
                 <label class="u-mb-sm" for="community">コミュニティ名<span class="text-danger u-mx-xs">*</span>@error('name')<span class="d-inline-block text-danger">{{ $message }}</span>@enderror</label>
-                <input type="text" class="form-control" name="name" id="community" value="{{ old('name') }}" required>
+                <input type="text" class="form-control" name="name" id="community" value="{{ old('name') }}" placeholder="（例）【朝活】プログラミング学習している方一緒に勉強しましょう。" required>
             </div>
         </div>
         <div class="form-row">
@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="u-mb-sm" for="number">募集人数<span class="text-danger u-mx-xs">*</span>@error('number')<span class="d-inline-block text-danger">{{ $message }}</span>@enderror</label>
+            <label class="u-mb-sm" for="number">最大募集人数<span class="text-danger u-mx-xs">*</span>@error('number')<span class="d-inline-block text-danger">{{ $message }}</span>@enderror</label>
             <select class="form-control" name="number" id="number" value="{{ old('number') }}" required>
                 <option value="1">１名</option>
                 <option value="2">２名</option>
@@ -50,7 +50,7 @@
         </div>
         <div class="form-group">
             <label class="u-mb-sm" for="detail">コミュニティ詳細<span class="text-danger u-mx-xs">*</span>@error('detail')<span class="d-inline-block text-danger">{{ $message }}</span>@enderror</label>
-            <textarea type="text" class="form-control" name="detail" id="detail" required>{{ old('detail') }}</textarea>
+            <textarea type="text" class="form-control" name="detail" id="detail" placeholder="（例）Google meetでオンラインもくもく会を開催します。カメラのオンオフは自由ですのでご気軽に参加してください。" required>{{ old('detail') }}</textarea>
         </div>
         <div>
             <button type="submit" class="c-btn-green u-w-100 u-sm-w-auto">コミュニティを作成</button>
