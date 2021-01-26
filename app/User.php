@@ -79,6 +79,7 @@ class User extends Authenticatable
         parent::boot();
         self::deleting(function ($user) {
             $user->communities()->delete();
+            $user->recruits()->delete();
         });
     }
 

@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Recruit extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = [
         'community_id', 'applied_user'
     ];
