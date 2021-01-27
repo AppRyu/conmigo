@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -23,8 +24,8 @@ class CommunityMessages extends Model
         return $this->belongsTo('App\Community', 'community_id', 'id');
     }
 
-    public function userWithTrashed($value)
+    public function userWithTrashed(int $value): Object
     {
-        return \App\User::withTrashed()->where('id', $value)->first();
+        return User::withTrashed()->where('id', $value)->first();
     }
 }
