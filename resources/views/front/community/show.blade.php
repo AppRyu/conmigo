@@ -7,6 +7,11 @@
 	<h2 class="page-tit u-mb-xl"><i class="fas fa-search-plus u-mr-base"></i>コミュニティ詳細
 		<div class="u-fs-sm u-fw-normal u-mt-xs">コミュニティの内容を確認してください。</div>
 	</h2>
+	@if($community->isPast($community->start))
+		<div class="c-alert-red u-mb-base">このコミュニティの募集は既に終了しました。</div>
+	@elseif($community->members->count())
+		<div class="c-alert-yellow u-mb-base">このコミュニティは既に満員です。</div>
+	@endif
 	<h3 class="u-fs-xl u-xs-fs-xl u-mb-base">{{ $community->name }}</h3>
 	<div class="u-mb-lg">
 		@include('./modules/timeTable', [
@@ -21,8 +26,8 @@
 		<h4 class="comm-det-desc__hd u-mb-base"><span class="comm-det-desc__hd_emphasis">コミュニティの詳細</span></h4>
 		<div class="comm-det-desc__cmt">{!! nl2br(e($community->detail)) !!}</div>
 	</section>
-	{{-- ログインユーザー以外が企画したコミュニティのみ応募ボタンを表示 --}}
-	@if(Auth::id() !== $community->created_user)
+	{{-- 他ユーザーが作成したもの・開始日時を過ぎていない・満員でない場合のみ表示 --}}
+	@if(Auth::id() !== $community->created_user && !$community->isPast($community->start) && !$community->members->count())
 	<community-recruit-btn
 		:initial-is-applied-by='@json($community->isAppliedBy(Auth::user()))'
 		:authorized='@json(Auth::check())'

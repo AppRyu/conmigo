@@ -4,6 +4,8 @@ namespace App;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Community extends Model
@@ -14,27 +16,27 @@ class Community extends Model
         'name', 'created_user', 'number', 'start', 'end', 'detail'
     ];
 
-    public function users() 
+    public function users(): BelongsTo
     {
         return $this->belongsTo('App\User', 'created_user', 'id');
     }
 
-    public function recruits()
+    public function recruits(): HasMany
     {
         return $this->hasMany('App\Recruit', 'community_id', 'id');
     }
 
-    public function members()
+    public function members(): HasMany
     {
         return $this->hasMany('App\Member', 'community_id', 'id');
     }
 
-    public function communityMessages()
+    public function communityMessages(): HasMany
     {
         return $this->hasMany('App\CommunityMessages', 'community_id', 'id');
     }
 
-    public function likes()
+    public function likes(): HasMany
     {
         return $this->hasMany('App\Like', 'community_id', 'id');
     }
@@ -63,10 +65,10 @@ class Community extends Model
     /**
      * 現在日時より過去が判定
      * 
-     * @param datetime
+     * @param string
      * @return boolean
      */
-    public function isPast($dateAndTime):bool
+    public function isPast(string $dateAndTime):bool
     {
         $dt = new Carbon($dateAndTime);
         return $dt->isPast();
