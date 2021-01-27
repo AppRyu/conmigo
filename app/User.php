@@ -98,7 +98,7 @@ class User extends Authenticatable
         return $this->followings->count();
     }
 
-    public function getLastLoginAttribute()
+    public function getLastLoginAttribute(): string
     {
         // 最終ログイン時刻を取得
         $lastLoginTime = new Carbon($this->attributes['last_login_at']);
