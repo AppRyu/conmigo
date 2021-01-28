@@ -42,18 +42,21 @@
 
             </div>
             <div class="col-lg-9 col-sm-8 col-12">
-                <div class="u-d-flex align-items-center justify-content-between u-mb-xs">
-                    <div>
+                <div class="u-d-flex u-md-fb-ai-cnt u-fb-jc-btw u-fb-fd-clm u-md-fb-fd-row u-mb-xs">
+                    <div class="u-md-mb-no u-mb-xs">
                         <h3 class="u-fs-xl u-fw-bold">{{ $user->name }}</h3>
                         <div class="u-fs-sm u-fw-normal"><span>@</span>{{ $user->user_name }}</div>
                     </div>
-                    @if(Auth::id() !== $user->id)
-                    <follow-button :initial-is-followed-by='@json($user->isFollowedBy(Auth::user()))'
-                                    :authorized='@json(Auth::check())'
-                                    endpoint="{{ route('users.follow', ['user_name' => $user->user_name]) }}"
-                    >
-                    </follow-button>
-                    @endif
+                    <div class="u-d-flex">
+                        <button class="c-btn-green c-btn-green--circle u-mr-sm"><i class="far fa-envelope"></i></button>
+                        @if(Auth::id() !== $user->id)
+                        <follow-button :initial-is-followed-by='@json($user->isFollowedBy(Auth::user()))'
+                                        :authorized='@json(Auth::check())'
+                                        endpoint="{{ route('users.follow', ['user_name' => $user->user_name]) }}"
+                        >
+                        </follow-button>
+                        @endif
+                    </div>
                 </div>
                 <div class="u-mb-lg">
                     @if(Auth::id() === $user->id)

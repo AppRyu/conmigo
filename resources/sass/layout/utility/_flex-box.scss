@@ -1,9 +1,18 @@
 $flexGrowList: '0', '1';
+$breakpointList: xxs, xs, sm, md, lg;
 
 @each $flexGrow in $flexGrowList {
     .u-fb-fg-#{$flexGrow} {
         flex-grow: #{$flexGrow};
     }
+}
+
+.u-fb-fd-row {
+    font-display: row;
+}
+
+.u-fb-fd-clm {
+    flex-direction: column;
 }
 
 .u-fb-jc-btw {
@@ -16,4 +25,32 @@ $flexGrowList: '0', '1';
 
 .u-fb-ai-cnt {
     align-items: center;
+}
+
+@each $breakpoint in $breakpointList {
+    .u-#{$breakpoint}-fb-fd-row {
+        @include mq(#{$breakpoint}) {
+            flex-direction: row;
+        }
+    }
+    .u-#{$breakpoint}-fb-fd-clm {
+        @include mq(#{$breakpoint}) {
+            flex-direction: column;
+        }
+    }
+    .u-#{$breakpoint}-fb-jc-btw {
+        @include mq(#{$breakpoint}) {
+            justify-content: space-between;
+        }
+    }
+    .u-#{$breakpoint}-fb-jc-arn {
+        @include mq(#{$breakpoint}) {
+            justify-content: space-around;
+        }
+    }
+    .u-#{$breakpoint}-fb-ai-cnt {
+        @include mq(#{$breakpoint}) {
+            align-items: center;
+        }
+    }
 }
