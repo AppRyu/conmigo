@@ -9,11 +9,11 @@
         @guest
         <ul class="u-sm-d-none u-d-flex u-mt-xs">
             <li>
-                <a class="u-fw-bold u-px-xs" href="{{ route('login') }}">ログイン</a>
+                <a class="u-px-xs" href="{{ route('login') }}">ログイン</a>
             </li>
             @if (Route::has('register'))
             <li>
-                <a class="u-fw-bold u-px-xs" href="{{ route('register') }}">新規登録</a>
+                <a class="u-px-xs" href="{{ route('register') }}">新規登録</a>
             </li>
             @endif
         </ul>
