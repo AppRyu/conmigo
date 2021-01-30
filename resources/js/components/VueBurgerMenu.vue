@@ -7,7 +7,7 @@
             <span :class="txtState"><i class="fas fa-school u-mr-sm"></i>コミュニティ管理</span>
         </a>
         <a :href="chatRoomUrl">
-            <span :class="txtState"><i class="fas fa-comments u-mr-base"></i>チャットルーム</span>
+            <span :class="txtState"><i class="fas fa-comments u-mr-sm"></i>チャットルーム</span>
         </a>
         <a :href="messageUrl">
             <span :class="txtState"><i class="fas fa-envelope u-mr-sm"></i>メッセージ</span>

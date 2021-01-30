@@ -24,7 +24,7 @@
             <a class="sidebar-data__link" href="{{ route('community.plan.index') }}"><i class="fas fa-school u-mr-sm"></i>コミュニティ管理</a>
         </div>
         <div>
-            <a class="sidebar-data__link" href="{{ route('chat.index') }}"><i class="fas fa-comments u-mr-base"></i>チャットルーム</a>
+            <a class="sidebar-data__link" href="{{ route('chat.index') }}"><i class="fas fa-comments u-mr-sm"></i>チャットルーム</a>
         </div>
         <div>
             <a class="sidebar-data__link" href="{{ route('message.index') }}"><i class="fas fa-envelope u-mr-sm"></i>メッセージ</a>
