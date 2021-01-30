@@ -7,7 +7,10 @@
             <span :class="txtState"><i class="fas fa-school u-mr-sm"></i>コミュニティ管理</span>
         </a>
         <a :href="chatRoomUrl">
-            <span :class="txtState"><i class="fas fa-envelope u-mr-sm"></i>トークルーム</span>
+            <span :class="txtState"><i class="fas fa-comments u-mr-base"></i>チャットルーム</span>
+        </a>
+        <a :href="messageUrl">
+            <span :class="txtState"><i class="fas fa-envelope u-mr-sm"></i>メッセージ</span>
         </a>
         <a :href="communityLikesUrl">
             <span :class="txtState"><i class="fas fa-star u-mr-sm"></i>お気に入り</span>
@@ -44,6 +47,10 @@ export default {
             required: true,
         },
         chatRoomUrl: {
+            type: String,
+            required: true,
+        },
+        messageUrl: {
             type: String,
             required: true,
         },

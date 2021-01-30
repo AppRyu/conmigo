@@ -22,6 +22,7 @@
                             profile-url="{{ route('user.show', ['user_name' => Auth::user()->user_name ]) }}"
                             community-plan-url="{{ route('community.plan.index') }}"
                             chat-room-url="{{ route('chat.index') }}"
+                            message-url="{{ route('message.index') }}"
                             community-likes-url="{{ route('communities.likes') }}"
                             setting-url="{{ route('setting') }}"
                             logout-url="{{ route('logout') }}"

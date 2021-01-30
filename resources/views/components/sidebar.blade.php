@@ -18,19 +18,22 @@
     </div>
     <div class="sidebar-data">
         <div>
-            <a class="sidebar-data__link" href="{{ route('user.show', ['user_name' => Auth::user()->user_name ]) }}">プロフィール</a>
+            <a class="sidebar-data__link" href="{{ route('user.show', ['user_name' => Auth::user()->user_name ]) }}"><i class="fas fa-user u-mr-sm"></i>プロフィール</a>
         </div>
         <div>
-            <a class="sidebar-data__link" href="{{ route('community.plan.index') }}">コミュニティ管理</a>
+            <a class="sidebar-data__link" href="{{ route('community.plan.index') }}"><i class="fas fa-school u-mr-sm"></i>コミュニティ管理</a>
         </div>
         <div>
-            <a class="sidebar-data__link" href="{{ route('chat.index') }}">トークルーム</a>
+            <a class="sidebar-data__link" href="{{ route('chat.index') }}"><i class="fas fa-comments u-mr-base"></i>チャットルーム</a>
         </div>
         <div>
-            <a class="sidebar-data__link" href="{{ route('communities.likes') }}">お気に入り</a>
+            <a class="sidebar-data__link" href="{{ route('message.index') }}"><i class="fas fa-envelope u-mr-sm"></i>メッセージ</a>
         </div>
         <div>
-            <a class="sidebar-data__link" href="{{ route('setting') }}">設定</a>
+            <a class="sidebar-data__link" href="{{ route('communities.likes') }}"><i class="fas fa-star u-mr-sm"></i>お気に入り</a>
+        </div>
+        <div>
+            <a class="sidebar-data__link" href="{{ route('setting') }}"><i class="fas fa-cog u-mr-sm"></i>設定</a>
         </div>
     </div>
 </div>
