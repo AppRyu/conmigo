@@ -56,6 +56,10 @@ Route::namespace('Front')->group(function() {
             Route::get('/chat/{communityWithTrashed}', 'ChatController@show')->name('chat.show');
             Route::post('/chat/{community}', 'ChatController@sendMessage')->name('chat.sendMessage');
 
+            // ダイレクトメッセージ
+            Route::get('/message', 'MessageController@index')->name('message.index');
+            Route::get('/message/show/{user}', 'MessageController@show')->name('message.show');
+
             // ユーザープロフィール：作成・更新・削除
             Route::resource('/user', 'UserController')->parameters(['user' => 'user_name'])->except(['index', 'show', 'destroy']);
             Route::resource('/user', 'UserController')->only('destroy');
@@ -76,5 +80,16 @@ Route::namespace('Front')->group(function() {
       
       Route::get('/home', 'HomeController@index')->name('home');
 
+});
+
+Route::namespace('Ajax')->group(function() {
+      
+      Route::group(['middleware' => 'auth'], function() {
+
+            Route::get('ajax/message', 'MessageController@index'); // メッセージ一覧を取得
+            Route::post('ajax/message', 'MessageController@create'); // メッセージ登録
+
+      });
+      
 });
 

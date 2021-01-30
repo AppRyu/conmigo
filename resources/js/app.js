@@ -8,6 +8,7 @@ import CommunityLike from './components/CommunityLike.vue';
 import CommunityLikeSp from './components/CommunityLikeSp.vue';
 import VueBurgerMenu from './components/VueBurgerMenu.vue';
 import FollowButton from './components/FollowButton.vue';
+import Message from './components/Message.vue';
 
 const app = new Vue({
     el: '#app',
@@ -20,5 +21,6 @@ const app = new Vue({
         CommunityLikeSp,
         VueBurgerMenu,
         FollowButton,
+        Message,
     },
 });

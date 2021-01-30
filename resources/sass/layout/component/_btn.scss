@@ -11,6 +11,7 @@ $btnColorList: 'red', 'blue', 'green';
         background-color: clr(c---bg--dark-#{$color});
         border: 1px solid clr(c---bg--dark-#{$color});
         &:hover {
+            color: clr(c---white);
             background-color: lighten(clr(c---bg--dark-#{$color}), 5%);
             border: 1px solid lighten(clr(c---bg--dark-#{$color}), 5%);
         }

@@ -4,7 +4,7 @@
 
 @section('content')
     <section>
-        <h2 class="page-tit u-mb-xl"><i class="fas fa-envelope u-mr-base"></i>メッセージ
+        <h2 class="page-tit u-mb-xl"><i class="fas fa-comments u-mr-base"></i>チャットルーム
             <div class="u-fs-sm u-fw-normal u-mt-xs">コミュニティのメッセージ一覧です。</div>
         </h2>
         <div class="u-mb-lg">

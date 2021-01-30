@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class User extends Authenticatable
 {
@@ -72,6 +73,16 @@ class User extends Authenticatable
     public function followings(): BelongsToMany
     {
         return $this->belongsToMany('App\User', 'follows', 'follower_id', 'followee_id')->withTimestamps();
+    }
+
+    public function messages(): HasMany
+    {
+        return $this->hasMany('App\Message');
+    }
+
+    public function rooms(): BelongsToMany
+    {
+        return $this->belongsToMany('App\Room')->withTimestamps();
     }
 
     public static function boot()

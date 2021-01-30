@@ -49,16 +49,16 @@
                         <h3 class="u-fs-xl u-fw-bold">{{ $user->name }}</h3>
                         <div class="u-fs-sm u-fw-normal"><span>@</span>{{ $user->user_name }}</div>
                     </div>
-                    <div class="u-d-flex">
-                        <button class="c-btn-green c-btn-green--circle u-mr-sm"><i class="far fa-envelope"></i></button>
-                        @if(Auth::id() !== $user->id)
+                    @if(Auth::id() !== $user->id)
+                    <div class="u-d-flex u-fb-ai-cnt">
+                        <a href="{{ route('message.show', ['user' => $user]) }}" class="c-btn-green c-btn-green--circle u-mr-sm"><i class="far fa-envelope"></i></a>
                         <follow-button :initial-is-followed-by='@json($user->isFollowedBy(Auth::user()))'
                                         :authorized='@json(Auth::check())'
                                         endpoint="{{ route('users.follow', ['user_name' => $user->user_name]) }}"
                         >
                         </follow-button>
-                        @endif
                     </div>
+                    @endif
                 </div>
                 <div class="u-mb-lg">
                     @if(Auth::id() === $user->id)
