@@ -6,6 +6,8 @@
 <section>
     <h2 class="page-tit u-mb-xl"><i class="fas fa-user u-mr-base"></i>プロフィール</h2>
     <div class="container">
+    {{-- アカウントが削除されていない場合 --}}
+    @if($user)
         <div class="row">
             <div class="col-lg-3 col-sm-4 u-xs-d-block u-d-none">
                 <div class="u-mb-sm user-prof__img">
@@ -107,6 +109,10 @@
                 </div>
             </div>
         </div>
+    {{-- アカウントが削除された場合 --}}
+    @else
+        <p>このアカウントは既に削除された可能性があります。</p>
+    @endif
     </div>
 </section>
 @endsection
