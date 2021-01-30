@@ -25,7 +25,7 @@
                 <div class="chat-form">
                     <textarea class="chat-form__textarea u-mb-base" placeholder="メッセージを入力する..." v-model="message"></textarea>
                     <div class="u-ta-center">
-                        <button class="chat-form__btn" type="button" @click="send()">送信</button>
+                        <button class="chat-form__btn" type="button" @click="send()" :disabled="isDisabled">送信</button>
                     </div>
                 </div>
             </section>
@@ -54,9 +54,13 @@ export default {
             messages: [],
         }
     },
+    computed: {
+        isDisabled() {
+            return this.message === '' ? true : false;
+        }
+    },
     mounted() {
         this.getMessages();
-
         Echo.channel('chatChannel')
         .listen('MessagePusher', (e) => {
             this.getMessages();

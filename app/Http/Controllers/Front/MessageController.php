@@ -14,7 +14,10 @@ class MessageController extends Controller
 {
     public function index() 
     {
-        return view('front.message.index');
+        $rooms_id = UserRoom::where('user_id', Auth::user()->id)->pluck('room_id');
+        $rooms = Room::whereIn('id', $rooms_id)->get();
+        
+        return view('front.message.index', ['rooms' => $rooms]);
     }
 
     public function show(User $user)
