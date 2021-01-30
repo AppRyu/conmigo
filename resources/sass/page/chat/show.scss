@@ -27,6 +27,10 @@
         font-size: fs(sm);
         color: clr(c---dark-gray);
     }
+    &__msg {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
 }
 
 .chat-icon--border {
