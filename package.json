@@ -32,6 +32,8 @@
     "dependencies": {
         "browser-image-compression": "^1.0.14",
         "k-progress": "^1.5.0",
+        "laravel-echo": "^1.10.0",
+        "pusher-js": "^7.0.3",
         "vue-burger-menu": "^2.0.5",
         "vue-ctk-date-time-picker": "^2.5.0",
         "vue-router": "^3.4.9",
