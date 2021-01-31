@@ -22,7 +22,7 @@ class Room extends Model
 
     public function getUserWithoutAuthUserAttribute(): Object
     {
-        return $this->users()->where('user_id', '!=', Auth::user()->id)->first();
+        return $this->users()->withTrashed()->where('user_id', '!=', Auth::user()->id)->first();
     }
 
     public function getMostRecentlyMessageAttribute(): ?Object

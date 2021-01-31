@@ -20,18 +20,17 @@ class MessageController extends Controller
         return view('front.message.index', ['rooms' => $rooms]);
     }
 
-    public function show(User $user)
+    public function show(Int $user)
     {
+        $user = User::withTrashed()->findOrFail($user);
 
         $matching_user_id = $user->id;
 
         // 自分の持っているチャットルームを取得
         $current_user_chat_rooms = UserRoom::where('user_id', Auth::id())->pluck('room_id');
 
-
         // 自分の持っているチャットルームからチャット相手のいるルームを探す
         $chat_room_id = UserRoom::whereIn('room_id', $current_user_chat_rooms)->where('user_id', $matching_user_id)->pluck('room_id');
-
 
         // なければ作成する
         if ($chat_room_id->isEmpty()) {
@@ -61,21 +60,12 @@ class MessageController extends Controller
             $chat_room_id = $chat_room_id->first();
         }
 
-        // チャット相手のユーザー情報を取得
-        $chat_room_user = User::findOrFail($matching_user_id);
-
-        // チャット相手のユーザー名を取得（JS用）
-        $chat_room_user_name = $chat_room_user->name;
-
         $chat_messages = Message::where('room_id', $chat_room_id)->orderby('created_at')->get();
 
         return view('front.message.show', [
                                             'matching_user' => $user,
-                                            'matching_user_id' => $matching_user_id,
                                             'chat_room_id' => $chat_room_id, 
-                                            'chat_room_user' => $chat_room_user, 
-                                            'chat_messages' => $chat_messages, 
-                                            'chat_room_user_name' => $chat_room_user_name
+                                            'chat_messages' => $chat_messages,
                                             ]);
         }
 
