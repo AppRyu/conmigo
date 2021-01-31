@@ -1,7 +1,17 @@
 <template>
     <div class="chat-container u-px-base u-pt-base">
+        <div class="chat-content u-xs-fb-fd-row u-fb-fd-clm u-pb-base">
+            <div class="u-mr-base u-xs-mb-no u-mb-sm">
+                <div class="c-icon-lg chat-icon--border" v-if="matchingUser.profile_image"><img :src="'/storage/img/' + matchingUser.profile_image" alt="チャット相手のプロフィール画像"></div>
+                <div class="c-icon-lg chat-icon--border" v-else><img src="/img/default-icon.png" alt="チャット相手のプロフィール画像"></div>
+            </div>
+            <div class="chat-content__box">
+                <h3 class="u-mb-sm"><a class="c-link-blue u-fs-xl u-fw-bold" :href="matchingUserUrl">{{ matchingUser.name }}</a></h3>
+                <div class="u-fs-sm">最終ログイン：{{ LastLoginTimeLag(matchingUser.last_login_at) }}</div>
+            </div>
+        </div>
         <div class="chat-banner u-py-base" @click="isMore()" v-if="hidingMessageNum">
-            <p class="u-ta-center u-tcd-blue">過去のメッセージを表示（{{ hidingMessageNum }}件）</p>
+            <p class="c-link-blue u-ta-center">過去のメッセージを表示（{{ hidingMessageNum }}件）</p>
         </div>
         <div class="chat-content u-py-base" v-for="(message, index) in listItems" :key="index">
             <div class="chat-content_img u-mr-base">
@@ -37,6 +47,7 @@
 </template>
 
 <script>
+import LastLoginTimeLag from '../lib/LastLoginTimeLag';
 export default {
     props: {
         roomId: {
@@ -44,6 +55,10 @@ export default {
         },
         matchingUser: {
             type: Object,
+            required: true,
+        },
+        matchingUserUrl: {
+            type: String,
             required: true,
         },
         authUser: {
@@ -100,6 +115,9 @@ export default {
             .then((response) => {
                 this.messages = response.data;
             });
+        },
+        LastLoginTimeLag(value) {
+            return LastLoginTimeLag.getLastLoginTimeLag(value);
         }
     }
 }
