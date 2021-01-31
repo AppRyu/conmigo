@@ -1,6 +1,9 @@
 <template>
     <div class="chat-container u-px-base u-pt-base">
-        <div class="chat-content u-py-base" v-for="(message, index) in messages" :key="index">
+        <div class="chat-banner u-py-base" @click="isMore()" v-if="hidingMessageNum">
+            <p class="u-ta-center u-tcd-blue">過去のメッセージを表示（{{ hidingMessageNum }}件）</p>
+        </div>
+        <div class="chat-content u-py-base" v-for="(message, index) in listItems" :key="index">
             <div class="chat-content_img u-mr-base">
                 <div class="c-icon-md chat-icon--border" v-if="authUser.id === message.user_id && authUser.profile_image"><img :src="'/storage/img/' + authUser.profile_image" alt="ユーザープロフィール画像"></div>
                 <div class="c-icon-md chat-icon--border" v-else-if="matchingUser.id === message.user_id && matchingUser.profile_image"><img :src="'/storage/img/' + matchingUser.profile_image" alt="ユーザープロフィール画像"></div>
@@ -52,9 +55,21 @@ export default {
         return {
             message: '',
             messages: [],
+            count: 10,
         }
     },
     computed: {
+        listItems() {
+            const list = this.messages;
+            return list.slice( - this.count, list.length);
+        },
+        hidingMessageNum() {
+            let num = this.messages.length - this.count;
+            if(num < 0) {
+                num = 0;
+            }
+            return num;
+        },
         isDisabled() {
             return this.message === '' ? true : false;
         }
@@ -67,6 +82,9 @@ export default {
         });
     },
     methods: {
+        isMore() {
+            this.count += 10;
+        },
         send() {
             const url = "/ajax/message";
             const params = { message: this.message, chat_room_id: this.roomId, user_id: this.authUser.id };

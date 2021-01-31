@@ -11,6 +11,12 @@
     border-radius: 5px;
 }
 
+.chat-banner {
+    background-color: clr(c---bg--dark-gray);
+    margin: 0 -16px;
+    cursor: pointer;
+}
+
 .chat-content {
     display: flex;
     justify-content: flex-start;
