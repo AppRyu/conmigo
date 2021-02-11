@@ -17,9 +17,9 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@appryu_0722">
     <meta property="og:url" content="https://appryu.net">
-    <meta property="og:title" content="Conmigo">
+    <meta property="og:title" content="Conmigo もくもく会マッチングサービス">
     <meta property="og:description" content="プログラミング学習者を対象としたもくもく会マッチングサービス。">
-    <meta property="og:image" content="{{ asset('./img/conmigoImage.png') }}">
+    <meta property="og:image" content="{{ asset('./img/org_image.png') }}">
     
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
