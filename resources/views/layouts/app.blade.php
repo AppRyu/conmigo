@@ -14,7 +14,13 @@
     @endif
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@appryu_0722">
+    <meta property="og:url" content="https://appryu.net">
+    <meta property="og:title" content="Conmigo">
+    <meta property="og:description" content="プログラミング学習者を対象としたもくもく会マッチングサービス。">
+    <meta property="og:image" content="{{ asset('./img/conmigoImage.png') }}">
+    
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -23,6 +29,9 @@
     @else
     <title>{{ config('app.name', 'Conmigo') }}</title>
     @endif
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('./img/favicon_c.svg') }}">
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
