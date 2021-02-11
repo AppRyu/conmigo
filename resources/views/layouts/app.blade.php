@@ -18,7 +18,7 @@
     <meta name="twitter:site" content="@appryu_0722">
     <meta property="og:url" content="https://appryu.net">
     <meta property="og:title" content="Conmigo もくもく会マッチングサービス">
-    <meta property="og:description" content="プログラミング学習者を対象としたもくもく会マッチングサービス。">
+    <meta property="og:description" content="プログラミング・Webデザイン学習者を対象としたオンラインもくもく会マッチングサービス。">
     <meta property="og:image" content="{{ asset('./img/org_image.png') }}">
     
     <!-- CSRF Token -->
