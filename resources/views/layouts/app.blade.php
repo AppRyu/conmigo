@@ -14,7 +14,7 @@
     @endif
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@appryu_0722">
     <meta property="og:url" content="https://appryu.net">
     <meta property="og:title" content="Conmigo">
