@@ -52,11 +52,17 @@
     user-select: none;
     border-radius: 0.25rem;
     border: 1px solid clr(c---bg--dark-gray);
-    color: clr(c---dark-red);
     background-color: clr(c---bg--light-gray);
+    &--danger {
+        color: clr(c---dark-red);
+        &:hover {
+            color: clr(c---white);
+            background-color: clr(c---bg--dark-red);
+        }
+    }
     &:hover {
         color: clr(c---white);
-        background-color: clr(c---bg--dark-red);
+        background-color: clr(c---black);
     }
     &:focus {
         outline: none;
