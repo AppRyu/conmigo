@@ -14,11 +14,12 @@
     @endif
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="プログラミング・WEBデザイン学習者を対象としたオンライン学習コミュニティマッチングサービス。1人だと学習が継続できない集中できないなどのお悩みを抱えた方はここで一緒に学習するお友達を見つけよう。">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@appryu_0722">
     <meta property="og:url" content="https://appryu.net">
     <meta property="og:title" content="Conmigo もくもく会マッチングサービス">
-    <meta property="og:description" content="プログラミング・Webデザイン学習者を対象としたオンラインもくもく会マッチングサービス。">
+    <meta property="og:description" content="プログラミング・WEBデザイン学習者を対象としたオンライン学習コミュニティマッチングサービス。1人だと学習が継続できない集中できないなどのお悩みを抱えた方はここで一緒に学習するお友達を見つけよう。">
     <meta property="og:image" content="{{ asset('./img/org_image.png') }}">
     
     <!-- CSRF Token -->
