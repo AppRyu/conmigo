@@ -40,9 +40,6 @@
 .settings-account-subTit {
     padding-bottom: space(sm);
     border-bottom: 1px solid clr(c---bg--dark-gray);
-    &--danger {
-        color: clr(c---dark-red);
-    }
 }
 
 .settings-account-btn {
@@ -53,16 +50,16 @@
     border-radius: 0.25rem;
     border: 1px solid clr(c---bg--dark-gray);
     background-color: clr(c---bg--light-gray);
+    &:hover {
+        color: clr(c---white);
+        background-color: clr(c---black);
+    }
     &--danger {
         color: clr(c---dark-red);
         &:hover {
             color: clr(c---white);
             background-color: clr(c---bg--dark-red);
         }
-    }
-    &:hover {
-        color: clr(c---white);
-        background-color: clr(c---black);
     }
     &:focus {
         outline: none;

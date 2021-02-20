@@ -25,12 +25,12 @@ class UserController extends Controller
     public function update(UserRequest $request, String $user_name)
     {
         $user = User::where('user_name', $user_name)->first();
-        
-        if(!$request->has('comment')) {
-            $user->comment = NULL;
+
+        if (!$request->has('comment') && !$request->has('email')) {
+            $user->comment = null;
         }
 
-        if($request->hasFile('profile_image')) {
+        if ($request->hasFile('profile_image')) {
             // 過去の画像を削除
             Storage::delete('public/img/'.$user->profile_image);
 
@@ -57,7 +57,7 @@ class UserController extends Controller
 
             // データベースに画像名を追加
             $user->profile_image = $fileNameToStore;
-        } 
+        }
 
         $user->fill($request->except('profile_image'))->save();
     }
