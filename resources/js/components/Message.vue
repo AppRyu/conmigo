@@ -102,12 +102,20 @@ export default {
         },
         send() {
             const url = "/ajax/message";
-            const params = { message: this.message, chat_room_id: this.roomId, user_id: this.authUser.id };
+            const params = { 
+                                message: this.message, 
+                                chat_room_id: this.roomId, 
+                                user_id: this.authUser.id, 
+                                to_user_name: this.matchingUser.name, 
+                                to_user_email: this.matchingUser.email 
+                            };
+            this.message = '';
             axios.post(url, params)
             .then((response) => {
-                // 成功したらメッセージをクリア
-                this.message = '';
-            })
+                // メッセージの送信が正常に行われました。を表示させる
+            }).catch((error) => {
+                // メッセージの送信に失敗しました。を表示させる
+            });
         },
         getMessages() {
             const url = "/ajax/message/?room_id=" + this.roomId;
