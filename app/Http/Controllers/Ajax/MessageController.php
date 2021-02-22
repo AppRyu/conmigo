@@ -43,9 +43,9 @@ class MessageController extends Controller
 
         // メールへ通知
         Mail::send('emails.dmNotification', $data, function($message) use ($data) {
-            $message->from('info@appryu.net', 'Conmigo')
+            $message->from(config('mail.from.address'), config('mail.from.name'))
                     ->to($data['to_email'], $data['to_name'])
-                    ->subject($data['to_name'].'さんから新着メッセージがあります。');
+                    ->subject($data['from_name'].'さんから新着メッセージがあります。');
         });
     }
 }
